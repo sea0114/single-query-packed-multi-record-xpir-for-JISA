@@ -16,3 +16,8 @@ version: "2026.09.26"
 date-released: "2026-09-26"
 license: GPL-3.0-or-later
 abstract: "Program license applies only to project-owned code listed in LICENSE_SCOPE.csv. Text, figures, documentation and data have separate, unspecified terms."
+
+identifiers:
+  - type: other
+    value: "bc13e9b67a5f9a8229664362be280cf81fbe43a8"
+    description: "Validated immutable research package commit cited by the manuscript"

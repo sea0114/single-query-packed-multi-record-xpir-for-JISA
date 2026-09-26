@@ -56,7 +56,7 @@ The frozen runners are retained for provenance, not as a one-command portable be
 
 ## Citation, availability and licenses
 
-Use [CITATION.cff](CITATION.cff), recording the exact Git commit from `git rev-parse HEAD`. The data archive and machine-readable manifests are versioned in this repository, so cloning a specific commit retrieves the matching evidence. The existing repository history and public visibility are preserved.
+Use [CITATION.cff](CITATION.cff), recording the exact Git commit from `git rev-parse HEAD`. The immutable [validated research package](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/bc13e9b67a5f9a8229664362be280cf81fbe43a8) is the artifact version cited by the manuscript. The data archive and machine-readable manifests are versioned in this repository, so cloning a specific commit retrieves the matching evidence. The existing repository history and public visibility are preserved.
 
 Project-owned program contributions listed in [LICENSE_SCOPE.csv](LICENSE_SCOPE.csv) are licensed **GPL-3.0-or-later**, with the full GPLv3 text in [LICENSE](LICENSE). Frozen headers were not edited. Third-party terms and original copyrights remain intact; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Manuscript text, figures, documentation and data are **not automatically covered by the code license**, and no separate blanket license is granted here. Rights-uncertain upstream files are not redistributed in this package.
 

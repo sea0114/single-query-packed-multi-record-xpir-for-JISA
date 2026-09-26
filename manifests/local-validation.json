@@ -124,7 +124,10 @@
     "status": "PASS",
     "environment": "TeX Live 2026 on Windows",
     "main_pages": 23,
-    "supplement_pages": 5
+    "supplement_pages": 5,
+    "scope": "Final linked paper after bibliography spacing adjustment; earlier core build had 24 main pages.",
+    "main_pdf_sha256": "8962b1239cd0a47debc49cbab8963c3afde23b040b721fae7abd1ef2d8171a05",
+    "supplement_pdf_sha256": "8e4d51b68e5bee8f1133a27955a840f493ca4272e10c59e61ec19e3089cae68c"
   },
   "new_presentation": {
     "status": "BYTE_IDENTICAL_TO_NEW_PAPER_GENERATED",

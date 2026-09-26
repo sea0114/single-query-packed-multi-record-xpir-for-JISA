@@ -2,8 +2,8 @@
   {
     "source": "paper/main.tex",
     "flat_name": "main.tex",
-    "source_sha256": "3abbdfc1883cfeee07eeb1bf8152a6c69a892b16c0d27cc9d20e1af7b9f4d8fd",
-    "flat_sha256": "21a1f65ef3e034119428534a3bf993e75369e0f141f2004418ab3412709a7462"
+    "source_sha256": "8a459e4ef1fd1157b4b219a8917f77aff5b8900392ecf3fbb72d94169d860814",
+    "flat_sha256": "77edc603fff1720e0f4088665f74d85c06d8a1071f4b80abfe3d58d110c1839b"
   },
   {
     "source": "paper/preamble.tex",
@@ -80,8 +80,8 @@
   {
     "source": "paper/sections/availability.tex",
     "flat_name": "availability.tex",
-    "source_sha256": "5f8b5e27da52d7e7fd81837d209958e07bde2ef0f0410960f9aca3d5bcee7f8e",
-    "flat_sha256": "5f8b5e27da52d7e7fd81837d209958e07bde2ef0f0410960f9aca3d5bcee7f8e"
+    "source_sha256": "84e4566d567648d3020b57a3406cfb01e5897b33eca1eef79cdc3775336a0ec1",
+    "flat_sha256": "84e4566d567648d3020b57a3406cfb01e5897b33eca1eef79cdc3775336a0ec1"
   },
   {
     "source": "paper/sections/conclusion.tex",
