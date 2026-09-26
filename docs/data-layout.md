@@ -1,0 +1,11 @@
+# Evidence layout
+
+`data/research-data-20260926.tar.gz` is a deterministic versioned archive in Git. `manifests/data-archives.json` records its SHA256 and every restored member's size/hash. Extraction restores exact legacy relative paths, including original identifiers and line endings. Metadata may retain necessary source-machine/account paths, host/boot identifiers and original build identities; portable replay does not open the old absolute paths. These are provenance records, not machine access credentials. No source code header, raw identifier or frozen hash was silently redacted.
+
+Primary task/worker ledgers and bootstrap references remain under `revision_notes/B1_primary_logs/`; multiplicity records under `revision_notes/B2_B_execution/`; later ledgers and 1,404 actual monitoring files under `artifact/raw/B3-formal-v1/`. The latter contain 99,751 monitoring observations, joined by the unchanged task directory/task_id. Primary/multiplicity individual monitoring samples were not retained originally and are not reconstructed here.
+
+The archive also includes finite functional evidence: two-record profile ledgers, additional multiplicity/API checks, the capacity functional report and its 448 hash-indexed worker results. Deterministic fixture bytes in results are public test data. Key fingerprints are hashes, not secret-key material. The bounded prepublication scan found no private keys, access tokens, OS seeds or PRNG state in the selected files; this statement covers the enumerated release, not every original historical directory.
+
+Analysis references are retained because immutable replay checks them, even where a human reader mainly needs the smaller final tables. The frozen display source and old displays are comparison evidence; new semantic captions live in `paper/generated/`. Manuscript editorial snapshots, author photographs, third-party full-text PDFs, caches, system libraries and native executables are excluded.
+
+Optional files used only by old host-specific preflights are not all redistributed. A future campaign cannot invoke those preflights successfully merely because replay passed. `artifact/README.md` is preserved historical provenance; this repository's root README is the active researcher entry point.

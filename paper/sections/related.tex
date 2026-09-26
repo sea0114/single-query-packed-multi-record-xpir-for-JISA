@@ -1,0 +1,105 @@
+\section{Related Work}
+\label{sec:related-work}
+
+\subsection{XPIR and RLWE-based PIR}
+XPIR~\cite{melchor2016xpir} is the closest backend reference. Its
+homomorphic query and database evaluation support efficient polynomial
+arithmetic, and its broader design includes aggregation and recursion.
+Our scope retains the one-dimensional linear path, with a direct SKE
+selector vector and explicit coefficient layout. This restricted path
+does not exhaust XPIR's optimization space. The empirical conclusions below
+concern concurrent same-profile repeated XPIR. No measured superiority
+across all XPIR configurations is claimed. The pinned implementation~\cite{xpir_github} establishes
+artifact provenance, not a substitute citation for the XPIR paper or
+evidence that its native sampler realizes our formal distribution.
+
+\subsection{Multi-value and Weighted Retrieval}
+Hsu et al.~\cite[Secs.~III--V]{mulityquery} are the closest conceptual
+prior work. Their group-homomorphic construction already supports an
+encrypted weight at each selected position, encryptions of zero elsewhere,
+a homomorphic weighted sum, and client-side recovery of two or more
+values. They also discuss retrieval-count limits imposed by the plaintext
+modulus and a privacy argument from the underlying encryption security.
+Neither the multi-value goal nor that generic weighted architecture is
+new here.
+
+The positional weights \(K=(1,B,\ldots,B^{\alpha-1})\) are public and
+target-independent. This instantiation replaces growing-weight
+remainder recovery with ordinary radix digit extraction. Radix itself is
+standard. The research increment is the precise connection between this
+choice, record-to-polynomial encoding, exact capacity and the integer
+no-wrap condition of the XPIR-style RLWE interface. The aggregate error
+depends on all encoded database polynomials, whereas direct encryption of
+a weight does not scale its encryption error by that weight. The formal
+privacy reduction and native mapping concern this instantiation; generic
+homomorphic privacy arguments and modulus limitations already occur in
+the prior work. The conditional theorem alone establishes no concrete
+security-admissible region. The separately tested native API frontier in
+Section~\ref{sec:native-validation} concerns implementation feasibility and
+finite functional execution, not a native noise or security certificate.
+
+\subsection{Batch, SIMD, and Preprocessed PIR}
+Angel et al.~\cite{angel2018pir} introduce SealPIR's compressed queries
+and, separately, probabilistic batch codes (PBCs) for amortizing a batch.
+The latter distribute encoded database items across buckets and use a
+retrieval schedule, including cuckoo placement. SealPIR and the PBC
+transformation are separate contributions in that same paper.
+Vectorized BatchPIR~\cite{vectorized2023} uses vectorized RLWE homomorphic
+encryption, bucketed batch retrieval, SIMD operations and ciphertext merging.
+PIRANA~\cite{pirana2024} combines constant-weight index encoding with
+homomorphic slot operations and a batch-code route; rotations and response
+organization depend on the payload and configuration. Their setup,
+evaluation keys and placement failure models matter to a comparison.
+
+SimplePIR and DoublePIR are two protocols in the same
+paper~\cite{henzinger2023one}. They use LWE-based linear processing with
+database-dependent hints downloaded by the client; DoublePIR trades
+additional processing for a smaller hint. Online work cannot be compared
+to an entire fresh task while omitting this state and its lifecycle.
+These protocols provide preprocessing context rather than the direct
+weighted-packing precedent.
+
+Respire~\cite[Secs.~2--4]{respire2024} directly studies small records and
+batch queries. It uses subrings, ring switching, query compression and
+response packing, and composes with PBCs for batch retrieval. Its model
+includes reusable client query-key material and server database
+preprocessing. SPIRIT~\cite[Secs.~2--5]{spirit2026} combines PBC scheduling
+with LWE-to-RLWE conversion, shared key-expansion state and response
+compression. Its hintless online interface does not mean absence of
+server preprocessing or state. Thus neither short-record support,
+small-batch access, lack of an offline client hint nor response packing
+alone distinguishes the present work.
+
+\begin{table}[t]
+\centering
+\caption{Mechanism summary, without a performance ranking. State and
+assumptions differ across rows. The artifact provides an expanded mechanism comparison.}
+\label{tab:mechanisms}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{4.1cm}>{\raggedright\arraybackslash}p{4.7cm}@{}}
+\toprule
+Scheme & Retrieval mechanism & Relation to this study \\
+\midrule
+XPIR & Encrypted selection; linear evaluation; optional aggregation/recursion & Backend and empirical comparator; current path is flat. \\
+Hsu et al. & Encrypted weights, weighted sum and integer recovery & Closest generic multi-value precedent; modulus/count limits already studied. \\
+SealPIR / PBC & Compressed queries; separate bucketed batch transformation & Compression and placement are distinct mechanisms. \\
+Vectorized BatchPIR & Bucket placement, SIMD processing and ciphertext merging & Batch alternative; not a local timing baseline. \\
+PIRANA & Constant-weight selection, slots/rotations and batch codes & Alternative batch organization and payload tradeoffs. \\
+SimplePIR / DoublePIR & LWE linear processing with client-downloaded hints & Preprocessing and amortization context. \\
+Respire & Subring/ring-switching compression and response packing; batch codes & Direct short-record and small-batch precedent. \\
+SPIRIT & PBCs, stateful ciphertext conversion and packed responses & Direct hintless-batch and response-packing precedent. \\
+This construction & Several scalar digits per coefficient; unchanged linear ReplyGen & Restricted instantiation; capacity/noise/backend feasibility remains central. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+Radix packing here separates records by integer digit positions within
+each coefficient, without bucket placement or SIMD rotations to recover
+the targets. These architecture properties do not imply lower latency,
+memory or failure probability. The contribution is the explicit
+encoding/capacity/noise connection and its scoped evaluation within
+XPIR, rather than query compression, offline hints or large-batch
+optimization. External schemes provide mechanism and state context;
+their published timings are not mixed with the local measurements.

@@ -1,0 +1,238 @@
+\section{Preliminaries and Problem Model}
+\label{sec:preliminaries}
+\subsection{Notation and Public Parameters}
+\label{sec:notation-params}
+For a positive integer \(d\), write \([d]=\{1,\ldots,d\}\).
+The security parameter is \(\kappa\); PPT means probabilistic polynomial time.
+For an integer \(z\) and modulus \(d\ge2\), \([z]_d\) is its canonical
+representative in \(\{0,\ldots,d-1\}\). This notation extends coefficient-wise.
+For a monic polynomial \(f\in\mathbb Z[X]\) of degree \(n\), write
+\[
+ R=\mathbb Z[X]/(f),\qquad R_q=R/qR,\qquad R_t=R/tR.
+\]
+The construction uses \(f=X^n+1\), with \(n\) a power of two,
+\(t=2^w\), \(q>t\), and \(\gcd(t,q)=1\).
+The privacy reduction does not require \(q\) to be prime.
+All parameter descriptions have polynomial bit length in \(\kappa\);
+ring degrees and sample counts in the reductions are polynomially bounded.
+Every ring element has a unique representative of degree less than \(n\).
+For \(P\in R_t\), \(\widehat P\in R\) denotes the lift whose coefficients
+lie in \([0,t)\). This lift, followed by reduction modulo \(q\), is an
+encoding into \(R_q\), not a ring homomorphism from \(R_t\).
+For \(z\in R_q\), \(\operatorname{center}_q(z)\in R\) is obtained by choosing
+each coefficient in \([-q/2,q/2)\). The infinity norm in \(R\) is the maximum
+absolute value of its integer coefficients.
+
+\begin{table}[t]
+\centering
+\caption{Public parameters and encoding units.}
+\label{tab:notation}
+\small
+\begin{tabular}{@{}lp{8.9cm}@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+\(N,n\) & Number of database records; coefficients per polynomial (\(n\) a power of two). \\
+\(\ell,\rho_0\) & Original record length and segment width, in bits; both at least one. \\
+\(B,w,t\) & Segment bound \(B=2^{\rho_0}\); selected backend coefficient width \(w\); \(t=2^w\). \\
+\(J,L\) & Segments per record \(J=\lceil\ell/\rho_0\rceil\); polynomial blocks per record \(L=\lceil J/n\rceil\). \\
+\(\alpha,K\) & Number of distinct targets, \(1\le\alpha\le N\); derived radix weights \(K=(1,B,\ldots,B^{\alpha-1})\). \\
+\(\ell_{\rm enc}\) & Full-block encoded bit length \(Lnw\); distinct from \(\ell\) and \(Jw\). \\
+\(\chi_r,r\) & Coefficient-wise rounded Gaussian family and its public continuous standard deviation \(r>0\); \(\chi_s=\chi_e=\chi_r\). \\
+\(p_{\rm unit}\) & Probability that a uniform element of \(R_q\) is invertible. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The public parameters \(pp\) specify \(\kappa,N,f,n,q,t,w,\ell,\rho_0,\alpha,K\),
+the public width \(r>0\), the family \(\chi=\chi_r\) defined below, and the
+encoding layout; \(B,K,J,L\) are derived, with \(k_\nu=B^{\nu-1}\), \(\nu\in[\alpha]\). We retain
+\(\chi_s=\chi_e=\chi_r\) as aliases in the construction and its separate
+correctness statement. All public parameters are fixed independently
+of the secret target tuple. In particular, \(pp\)
+is not a public encryption key. The exact radix capacity condition is
+\(t\ge B^\alpha\), equivalently \(w\ge\alpha\rho_0\), as in
+Lemma~\ref{lemma:packing-condition}. The weights are canonical elements of
+\(\mathbb Z_t\), not necessarily units; no weight coprimality or inverse
+is required. The condition \(\gcd(t,q)=1\) remains necessary for the
+security reduction. 
+
+\subsection{Retrieval Task and Interfaces}
+\label{sec:mq-model}
+A legal database is an ordered list \(M=(m_1,\ldots,m_N)\in
+(\{0,1\}^{\ell})^N\). A legal request is an ordered tuple
+\(I=(i_1,\ldots,i_\alpha)\in[N]^\alpha\) of pairwise-distinct indices;
+record contents at distinct indices may be equal. Write
+\(M[I]=(m_{i_1},\ldots,m_{i_\alpha})\).
+The deterministic record map \(\mathsf{Encode}:\{0,1\}^{\ell}\to R_t^L\)
+is specified in Section~\ref{sec:encoding}. We use
+\(\mathsf{DBEncode}(M)=(\mathsf{Encode}(m_i))_{i\in[N]}\)
+only as its row-wise abbreviation, not as an additional protocol.
+
+\begin{table}[t]
+\centering\small
+\caption{Protocol interfaces and ownership. Public parameters determine all
+dimensions. Query generation is randomized; reply generation and extraction
+are deterministic for their inputs.}
+\label{tab:interfaces}
+\begin{tabularx}{\linewidth}{@{}llX@{}}
+\toprule Algorithm & Party & Input and output \\
+\midrule
+\(\mathsf{KeyGen}\) & Client & \(pp\mapsto sk=s\); one fresh secret per query. \\
+\(\mathsf{QueryGen}\) & Client & \((pp,sk,I)\mapsto(Q,\mathsf{st})\), where
+\(Q\in(R_q^2)^N\) and private \(\mathsf{st}=I\). \\
+\(\mathsf{ReplyGen}\) & Server & \((pp,P,Q)\mapsto\mathsf{Resp}\in(R_q^2)^L\),
+where \(P=\mathsf{DBEncode}(M)\in R_t^{N\times L}\). \\
+\(\mathsf{ReplyExt}\) & Client & \((pp,sk,\mathsf{Resp},\mathsf{st})\mapsto
+\widehat M\in(\{0,1\}^{\ell})^\alpha\), in the requested order. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+Only \(Q\) leaves the client; \(sk\) and \(\mathsf{st}\) remain private.
+A single query is a vector of \(N\) ciphertexts, and the response contains
+\(L\) ciphertexts. Public parameters, including the encoding and weights,
+are fixed independently of the target tuple.
+
+\subsection{Correctness Goal}
+For every admissible \(pp\), legal \(M\), and legal \(I\), consider the
+honest execution
+\[
+ sk\leftarrow\mathsf{KeyGen}(pp),\quad
+ (Q,\mathsf{st})\leftarrow\mathsf{QueryGen}(pp,sk,I),
+\]
+\[
+ \mathsf{Resp}=\mathsf{ReplyGen}(pp,\mathsf{DBEncode}(M),Q),\quad
+ \widehat M=\mathsf{ReplyExt}(pp,sk,\mathsf{Resp},\mathsf{st}).
+\]
+Define \(\mathrm{Corr}=[\widehat M=M[I]]\). A correctness target
+\(\Pr[\neg\mathrm{Corr}]\le\delta_{\rm corr}(pp)\) quantifies over all
+such databases and requests, with probability over key generation and
+all encryption randomness. This target is a specification, not an
+unconditional negligible-failure claim. Section~\ref{sec:corr} proves
+ordered recovery under an integer no-wrap condition and derives a bound
+for the specified error law.
+
+\subsection{Single-challenge Index Privacy}
+\label{sec:mq-privacy}
+\begin{definition}[Index privacy for packed multi-record retrieval]
+\label{def:mq-cpir-privacy}
+Fix admissible public parameters \(pp\) independently of the targets. The database and target tuples must be legal as defined above; both
+challenge tuples use the same public layout and weight tuple. For a two-stage PPT adversary \(\mathcal A=(\mathcal A_1,\mathcal A_2)\),
+the experiment is:
+\begin{enumerate}
+\item The challenger samples \(sk\leftarrow\mathsf{KeyGen}(pp)\).
+\item \(\mathcal A_1(pp)\) outputs \((M,I_0,I_1,\sigma)\), where \(\sigma\)
+is its polynomial-length private state. Both tuples and the database must be
+legal. The tuples may coincide, covering degenerate instances such as
+\(N=\alpha=1\). On illegal input, the experiment terminates with an independent
+fair success bit.
+\item The challenger samples \(b\leftarrow\{0,1\}\), computes
+\[
+ (Q,\mathsf{st})\leftarrow\mathsf{QueryGen}(pp,sk,I_b),\qquad
+ P=\mathsf{DBEncode}(M),
+\]
+\[
+ \mathsf{Resp}=\mathsf{ReplyGen}(pp,P,Q),
+\]
+and gives \((Q,\mathsf{Resp})\) to the adversary.
+\item \(b'\leftarrow\mathcal A_2(pp,M,I_0,I_1,\sigma,Q,\mathsf{Resp})\).
+The experiment succeeds iff \(b'=b\).
+\end{enumerate}
+Neither \(sk\) nor the client state \(\mathsf{st}\) is disclosed. Define
+\[
+ \Adv^{\rm priv}_{\Pi,\mathcal A}(\kappa)
+   =\left|\Pr[\text{experiment succeeds}]-\tfrac12\right|.
+\]
+Single-challenge index privacy means this advantage is negligible for every
+PPT adversary. The probability includes key generation, all encryptions,
+the challenge bit, and adversary randomness.
+\end{definition}
+The public parameters, database, and adversary state are part of the server's
+view. Its deterministic intermediate computations are functions of these
+values and the query. No decryption outcome or client extraction state is
+included in this game.
+
+\subsection{Specified Error Law}
+We adopt the coefficient-wise Gaussian family explicitly defined by
+Brakerski and Vaikuntanathan~\cite[Sec.~1.3]{homomorphic}:
+\[
+ Y_j\leftarrow\mathcal N(0,r^2),\qquad
+ Z_j=\operatorname{round}(Y_j),\qquad
+ \chi_r=\mathcal L\!\left(\sum_{j=0}^{n-1}Z_jX^j\right),
+\]
+where the \(Y_j\) are independent and rounding is to the nearest integer.
+Equivalently, one coefficient has probability mass
+\[
+ p_r(z)=\int_{z-1/2}^{z+1/2}
+       \frac{\exp(-y^2/(2r^2))}{\sqrt{2\pi}\,r}\,dy,\qquad z\in\mathbb Z.
+\]
+Half-integer ties have probability zero under the ideal continuous law.
+Both the secret and every fresh encryption error use this same
+product distribution, independently across coefficients and draws.
+Here \(r\) is the standard deviation before rounding; its numerical value
+remains to be selected jointly with the other parameters.
+
+
+This rounded law differs from the integer Gaussian with mass proportional
+to \(\exp(-\pi z^2/\eta^2)\) and is not identified here with a
+canonical-embedding Gaussian. Efficient machine realization and its
+approximation to this ideal law require separate justification.
+
+\subsection{Linear Encryption Interface}
+\label{sec:prelim}
+We use the symmetric-key algebraic interface of the Ring-LWE construction
+of Brakerski and Vaikuntanathan~\cite{homomorphic}, in the linear evaluation
+setting of XPIR~\cite{melchor2016xpir}. All ciphertext arithmetic below is in
+\(R_q\); all message lifts use canonical coefficients.
+\begin{align*}
+ \mathsf{KeyGen}(pp)&:\ s\leftarrow\chi,\quad sk=s,\\
+ \mathsf{Enc}_s(v)&:\ a\leftarrow R_q\text{ uniformly},\quad e\leftarrow\chi,
+   \quad C=(as+te+\widehat v,-a),\\
+ \mathsf{Dec}_s(C)&:=
+   [\operatorname{center}_q(c_0+c_1s)]_t,\\
+ \mathsf{Add}(C,C')&:=(c_0+c'_0,c_1+c'_1),\\
+ \Absorb(P,C)&:=(\widehat P c_0,\widehat P c_1).
+\end{align*}
+Each encryption samples fresh independent \(a,e\), including encryptions of
+zero. The client alone possesses \(sk\), encrypts queries, and decrypts
+replies. The server needs only \(pp\), the encoded database, and ciphertexts
+to perform \(\mathsf{Add}\) and \(\Absorb\). No ciphertext--ciphertext
+multiplication or public key is required.
+
+XPIR's mathematical representation \((a,b)\), with \(b=as+te+v\), corresponds
+to our \(C=(b,-a)\), so \(c_0+c_1s=b-as\). This correspondence makes no claim
+of identical binary serialization. The final mod-\(t\) step returns canonical
+coefficients, whereas the preceding mod-\(q\) step uses centered coefficients.
+Correctness requires control of the integer value before reduction modulo
+\(q\), as formalized in Theorem~\ref{thm:correctness}.
+
+\subsection{Uniform-secret Decisional PLWE}
+\label{sec:rlwe-plwe}
+\begin{definition}[Uniform-secret decisional PLWE]
+\label{def:uplwe}
+Fix a publicly specified parameter family \((f,q,\chi)\), where \(\chi\)
+is efficiently sampleable over \(R\). For a polynomially bounded
+\(\tau=\tau(\kappa)\), consider
+\[
+ \mathcal U_{\rm real}^{(\tau)}
+   =((a_i,a_i s+e_i))_{i=1}^{\tau},\qquad
+ \mathcal U_{\rm unif}^{(\tau)}
+   =((a_i,u_i))_{i=1}^{\tau}
+\]
+in \((R_q^2)^\tau\). One secret \(s\leftarrow U(R_q)\) is shared by all
+samples. All \(a_i,u_i\leftarrow U(R_q)\) and \(e_i\leftarrow\chi\)
+are mutually independent and independent of \(s\); errors are reduced
+modulo \(q\) when used in \(R_q\). For a PPT distinguisher \(\mathcal B\), define
+\[
+ \Adv^{\rm uPLWE}_{\mathcal B}(\kappa;\tau)=
+ \left|\Pr[\mathcal B(pp,\mathcal U_{\rm real}^{(\tau)})=1]
+       -\Pr[\mathcal B(pp,\mathcal U_{\rm unif}^{(\tau)})=1]\right|.
+\]
+The \(\tau\)-sample assumption for this family is that this advantage is
+negligible in \(\kappa\) for every PPT \(\mathcal B\).
+\end{definition}
+This is a distribution-specific decisional assumption, following the
+uniform-secret PLWE formulation discussed in~\cite[Sec.~2]{homomorphic}.
+Hardness is assumed only for the corresponding instance, not for every
+efficiently sampleable \(\chi\). We make no worst-case ideal-lattice
+reduction claim and certify no concrete security level.

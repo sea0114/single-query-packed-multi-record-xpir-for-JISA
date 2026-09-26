@@ -1,0 +1,17 @@
+\begin{table}[tbp]
+\centering\small
+\caption{Exact native buffer accounting for representative byte-aligned workloads with $\rho_0=8$. P/R denotes packed/repeated retrieval. Raw database size counts each record once.}
+\label{tab:payload}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}rrrrcc@{}}
+\toprule
+$N$ & $\ell$ (bits) & $\alpha$ & Raw (KiB) & Query P/R (MiB) & Reply P/R (KiB) \\
+\midrule
+256 & 256 & 2 & 8 & 32/64 & 128/256 \\
+16384 & 2048 & 2 & 4096 & 2048/4096 & 128/256 \\
+1024 & 8192 & 4 & 1024 & 128/512 & 128/512 \\
+1024 & 16384 & 4 & 2048 & 128/512 & 128/512 \\
+1024 & 65536 & 4 & 8192 & 128/512 & 256/1024 \\
+\bottomrule\end{tabular}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize One ciphertext occupies 128 KiB. These are in-memory buffer sizes; transport, framing and metadata are unmeasured.\end{minipage}
+\end{table}

@@ -1,0 +1,39 @@
+% CLAIMS: C3 C4 C5 C6; exact audited rows, rounded only for display.
+\begin{table}[t]
+\centering
+\caption{Supplementary multiplicity scaling under the B2-B contract, at
+fixed $\rho_0=8$ and $w=8\alpha$, with serial packed execution and
+$\alpha$ concurrent repeated workers. All 24 observed median ratios exceed
+one; pointwise intervals lie fully above one in 3/8 $\alpha=2$ cells and
+all eight cells for each of $\alpha=3$ and $\alpha=4$. All eight tested rows
+show observed $R_2<R_3<R_4$; this ordering is descriptive only. B2-B
+$\alpha=2$ is the internal reference for this experiment and is reported
+separately from B1.}
+\label{tab:multiplicity}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}rrlccc@{}}
+\toprule
+$N$ & $\ell$ (bits) & View & $R_2$ [95\% CI] & $R_3$ [95\% CI] & $R_4$ [95\% CI] \\
+\midrule
+1024 & 512 & COLD & \shortstack{1.0504\\\scriptsize [1.0054, 1.0781]} & \shortstack{1.0976\\\scriptsize [1.0377, 1.1286]} & \shortstack{1.1400\\\scriptsize [1.1193, 1.1842]} \\[3pt]
+1024 & 512 & ONLINE & \shortstack{1.0551\\\scriptsize [1.0295, 1.0821]} & \shortstack{1.0917\\\scriptsize [1.0773, 1.1073]} & \shortstack{1.1508\\\scriptsize [1.1062, 1.2348]} \\[3pt]
+1024 & 2048 & COLD & \shortstack{1.0358\\\scriptsize [1.0059, 1.0563]} & \shortstack{1.1144\\\scriptsize [1.0781, 1.1372]} & \shortstack{1.1542\\\scriptsize [1.1172, 1.1859]} \\[3pt]
+1024 & 2048 & ONLINE & \shortstack{1.0330\\\scriptsize [0.9805, 1.0670]} & \shortstack{1.0964\\\scriptsize [1.0740, 1.1303]} & \shortstack{1.1214\\\scriptsize [1.0882, 1.1434]} \\[3pt]
+4096 & 512 & COLD & \shortstack{1.0247\\\scriptsize [0.9999, 1.0525]} & \shortstack{1.0932\\\scriptsize [1.0393, 1.1060]} & \shortstack{1.1224\\\scriptsize [1.0955, 1.1438]} \\[3pt]
+4096 & 512 & ONLINE & \shortstack{1.0241\\\scriptsize [0.9984, 1.0386]} & \shortstack{1.0650\\\scriptsize [1.0431, 1.0828]} & \shortstack{1.1084\\\scriptsize [1.0941, 1.1382]} \\[3pt]
+4096 & 2048 & COLD & \shortstack{1.0132\\\scriptsize [0.9856, 1.0261]} & \shortstack{1.0715\\\scriptsize [1.0607, 1.0803]} & \shortstack{1.1287\\\scriptsize [1.1098, 1.1524]} \\[3pt]
+4096 & 2048 & ONLINE & \shortstack{1.0147\\\scriptsize [0.9933, 1.0339]} & \shortstack{1.0664\\\scriptsize [1.0533, 1.0784]} & \shortstack{1.1165\\\scriptsize [1.0975, 1.1583]} \\[3pt]
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\linewidth}\footnotesize
+Each cell has ten complete measured pairs and zero incomplete pairs.
+Intervals are pointwise, not family-wise. All workloads have $L=1$.
+This is not a fixed-total-core comparison; parent affinity is
+$\{0,2,4,6\}$. Values are rounded to four decimals; full precision is
+retained in the accompanying supplement. No universal monotonicity,
+combined B1/B2-B estimator or causal explanation is implied.
+\end{minipage}
+\end{table}
+

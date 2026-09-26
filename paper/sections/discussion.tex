@@ -1,0 +1,53 @@
+\section{Discussion and Limitations}
+\label{sec:discussion}
+\paragraph{Formal and native scope.}
+The formal result separates conditional recovery from single-challenge
+index privacy. The latter assumes distribution-specific uniform-secret
+PLWE hardness and efficient sampling; it neither follows from empirical
+correctness nor requires a successful decryption event. The rounded
+Gaussian width remains symbolic. Its exact efficient machine realization,
+approximation and computational randomness require independent evidence.
+The native bounded, biased sampler and OS-seeded PRNG have not been
+bridged to that law, and a public native noise parameter is not a proved
+absolute bound on integer coefficients. Consequently neither finite
+native passes nor the parametric bound supplies a native negligible-failure
+claim or a contemporary concrete-security certificate.
+
+After a suitable joint-law and implementation bridge, task accounting
+could take the form
+\(\epsilon_{\rm task}\le\epsilon_{\rm dec}+d_{\rm joint}
++\epsilon_{\rm other}\), with separately justified sampling, abort and
+runtime terms. An abort included in the joint-law distance is not counted
+again. PRNG replacement needs a separate computational failure-test bound.
+No such bound is established here. Independent repeated requests must
+also share one complete-task reliability budget, as detailed in the
+supplement. The privacy game gives neither symmetric PIR nor protection
+against malicious replies, adaptive key reuse or decryption oracles.
+
+\paragraph{Empirical generality.}
+The measurements cover one flat backend path, one WSL2 host and finite
+workloads. The comparator uses concurrent private workers under the same
+profile within each experiment; it is not a globally optimized XPIR
+service with shared persistent preprocessing. External PIR timings are
+not aligned measurements. The capacity study adds one two-block length,
+and bundle sensitivity covers only one workload. Neither supports
+arbitrary-block, cross-host or bare-metal extrapolation.
+
+The primary and multiplicity resource limits were enforced by their
+runners, but individual monitoring samples were not retained. Their
+transient virtual-memory and swap behavior cannot be reconstructed from
+the surviving endpoints and summaries. The sensitivity/capacity data
+retain actual monitor timestamps, yet sampled maxima are still not
+instantaneous peaks. This difference limits resource diagnosis without
+establishing invalidity of the recorded task times. Bootstrap intervals
+are pointwise; three successive sessions give descriptive variation.
+The unexplained two-record effect difference remains part of the evidence.
+
+\paragraph{Design tradeoff.}
+Radix packing places several bounded values in each coefficient without
+bucket placement or additional SIMD rotations, while consuming plaintext
+capacity and no-wrap margin. It retains a linear-size query and does not
+claim general communication efficiency. A deployment would require a
+joint choice of correctness and security parameters, a justified sampler
+and randomness implementation, transport measurements, and comparisons
+with optimized preprocessing and query-compression alternatives.

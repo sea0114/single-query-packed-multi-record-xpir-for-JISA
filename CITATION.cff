@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript and record the exact artifact Git commit."
+type: software
+title: "Radix-Packed Multi-Record Retrieval over an XPIR-Style RLWE Interface: Research Artifact"
+authors:
+  - family-names: Hsu
+    given-names: Hao-Yi
+  - family-names: Su
+    given-names: Po-Chun
+  - family-names: Tso
+    given-names: Raylin
+  - family-names: Hsu
+    given-names: Jen-Chieh
+repository-code: "https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA"
+version: "2026.09.26"
+date-released: "2026-09-26"
+license: GPL-3.0-or-later
+abstract: "Program license applies only to project-owned code listed in LICENSE_SCOPE.csv. Text, figures, documentation and data have separate, unspecified terms."

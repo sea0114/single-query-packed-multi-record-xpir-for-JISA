@@ -1,0 +1,38 @@
+% CLAIMS: C1 C9; source: B2_A_feasibility_frontier.json; formatting only.
+\begin{table}[t]
+\centering
+\caption{Native feasibility of the nine tested multiplicity/segment-width
+profiles on the pinned $n=4096$, Q2 XPIR path. Structural radix capacity is
+distinguished from current width/weight API support. $\alpha=2$ results are
+inherited from S4-N; B2-A adds ten passing encrypted E2E cases for each of
+$(\alpha,\rho_0,w)=(3,8,24),(3,12,36),(4,8,32)$. API-blocked profiles were
+not executed. These finite functional checks establish neither performance
+nor a native security/failure certificate.}
+\label{tab:native-frontier}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}rrrrlll@{}}
+\toprule
+$\alpha$ & $\rho_0$ & $w$ & $K_{\max}$ & Structural & Native API & E2E provenance \\
+\midrule
+2 & 8 & 16 & $2^{8}$ & PASS & Supported & Inherited: 82/82 \\
+2 & 12 & 24 & $2^{12}$ & PASS & Supported & Inherited: 82/82 \\
+2 & 16 & 32 & $2^{16}$ & PASS & Supported & Inherited: 82/82 \\
+3 & 8 & 24 & $2^{16}$ & PASS & Supported & New: 10/10 \\
+3 & 12 & 36 & $2^{24}$ & PASS & Supported & New: 10/10 \\
+3 & 16 & 48 & $2^{32}$ & PASS & Weight limit & Not executed \\
+4 & 8 & 32 & $2^{24}$ & PASS & Supported & New: 10/10 \\
+4 & 12 & 48 & $2^{36}$ & PASS & Weight limit & Not executed \\
+4 & 16 & 64 & $2^{48}$ & PASS & Weight + width & Not executed \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\linewidth}\footnotesize
+Structural PASS denotes exact capacity and the zero-noise arithmetic
+screen, not a positive calibrated noise parameter. No inherited
+$\alpha=2$ case was rerun for this frontier. ``Weight limit'' means a
+direct weight above $2^{32}-1$; the $w=64$ row also exceeds the checked
+$1\le w\le56$ guard. $K_{\max}$ is the largest direct selector weight.
+\end{minipage}
+\end{table}
+

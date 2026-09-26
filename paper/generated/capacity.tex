@@ -1,0 +1,17 @@
+\begin{table}[tbp]
+\centering\small
+\caption{Capacity experiment: $N=1024$, $\alpha=4$, $\rho_0=8$, $w=32$, full-block extraction and the four-CPU parent allowance. Entries are median paired ratios with observed ranges of three session medians.}
+\label{tab:capacity}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}rrrrcc@{}}
+\toprule
+$\ell$ (bits) & $J$ & $L$ & $u$ & Cold & Online \\
+\midrule
+4096 & 512 & 1 & 0.5 & 1.339 [1.312, 1.376] & 1.308 [1.232, 1.360] \\
+8192 & 1024 & 1 & 1 & 1.311 [1.284, 1.318] & 1.271 [1.268, 1.286] \\
+12288 & 1536 & 1 & 1.5 & 1.311 [1.277, 1.336] & 1.287 [1.287, 1.299] \\
+16384 & 2048 & 1 & 2 & 1.319 [1.293, 1.337] & 1.258 [1.257, 1.266] \\
+65536 & 8192 & 2 & 8 & 1.294 [1.275, 1.310] & 1.305 [1.293, 1.310] \\
+\bottomrule\end{tabular}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize Each cell has 30 measured pairs. Brackets are descriptive session ranges, not confidence intervals. Query buffers are 128/512 MiB for packed/repeated; reply buffers are 128/512 KiB for $L=1$ and 256/1024 KiB for $L=2$.\end{minipage}
+\end{table}

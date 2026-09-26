@@ -1,0 +1,135 @@
+{
+  "historical_replay": {
+    "status": "PASS",
+    "native_measurements": 0,
+    "original_pipeline_replay": true,
+    "exact_comparison_targets": 6,
+    "exact_match_targets": 6,
+    "difference_count": 0,
+    "B1": {
+      "task_rows": 4896,
+      "worker_rows": 7344,
+      "pairs": 2448,
+      "warmup_tasks": 576,
+      "measured_tasks": 4320,
+      "task_status": {
+        "COMPLETE": 4896
+      },
+      "worker_status": {
+        "COMPLETE": 7344
+      },
+      "duplicate_or_missing_pairs": 0,
+      "failed": 0,
+      "incomplete": 0,
+      "excluded_outliers": 0,
+      "imputed": 0,
+      "retries": 0,
+      "schedule_accounting": "EXACT",
+      "endpoint_and_worker_accounting": "PASS",
+      "persisted_session_id": false,
+      "persisted_block_id": false,
+      "session_semantics": "One archived execution batch; rounds/repetition are available, not independent sessions."
+    },
+    "B2B": {
+      "task_rows": 624,
+      "worker_rows": 1248,
+      "pairs": 312,
+      "warmup_tasks": 144,
+      "measured_tasks": 480,
+      "task_status": {
+        "COMPLETE": 624
+      },
+      "worker_status": {
+        "COMPLETE": 1248
+      },
+      "duplicate_or_missing_pairs": 0,
+      "failed": 0,
+      "incomplete": 0,
+      "excluded_outliers": 0,
+      "imputed": 0,
+      "retries": 0,
+      "schedule_accounting": "EXACT",
+      "endpoint_and_worker_accounting": "PASS",
+      "persisted_session_id": false,
+      "persisted_block_id": false,
+      "session_semantics": "One archived execution batch; rounds/repetition are available, not independent sessions."
+    },
+    "cells": 120,
+    "median_and_CI_values_reproduced": 360,
+    "B1_bootstrap_samples_compared_exactly": 960000,
+    "separate_median_packed_lower_by_stage": {
+      "B1": 96,
+      "B2B": 24
+    },
+    "separate_median_claim_scope": "Independent computation from real task rows; not implied by median paired ratio.",
+    "confidence_scope": "Historical pointwise pair-bootstrap replay. Does not establish iid observations, advertised coverage under temporal dependence, simultaneous coverage, or cross-session generalization.",
+    "monitoring_trace": "UNAVAILABLE; retained endpoint/lifetime resource observations are not 10 ms traces.",
+    "sessions": "No original independent session IDs; method-order/chronological diagnostics remain descriptive.",
+    "outlier_deletion": false,
+    "retries": false,
+    "imputation": false,
+    "cross_stage_pooling": false
+  },
+  "accounting": {
+    "status": "PASS_NUMERICAL_AND_TABLE_CONTENT",
+    "frozen_replay_status": "DIFFERENCE",
+    "reference_tex_sha256": "17639cf8bdae30b99b6e0e529e4b90df3969849917006a9101c267cd95c2ed92",
+    "new_tex_sha256": "78d09c4ca72918617a2d7aa2a0aaf0573f417082233e812f4f860e9e95e0e1f1",
+    "tex_byte_identical": false,
+    "only_difference": "CRLF/LF line endings",
+    "rows": 68,
+    "original_replay_report_unchanged": true,
+    "native_observations": 0
+  },
+  "followup_replay": {
+    "status": "PASS_EXACT_CELL_CSV",
+    "measured_pairs": 540,
+    "cells": 18,
+    "tasks": 1404,
+    "failed": 0
+  },
+  "source_acquisition": {
+    "status": "PASS",
+    "official_download": true,
+    "files_verified": 142,
+    "archive_sha256": "a6d7f1231cfe1ea69fdb6c253451346d8a5d899dbd16df7a7b6b5f45bcd47f4f"
+  },
+  "native_build": {
+    "status": "PASS_NEW_BUILD",
+    "build_manifest_sha256": "d5b0b6dbd0c1585bf74dad62cec70f4006236ea33bbc554c9f631ecbdfbc350c",
+    "historical_binary_identity": false
+  },
+  "native_functional": {
+    "status": "PASS",
+    "expected_tasks": 208,
+    "successful_tasks": 208,
+    "failed_tasks": 0,
+    "successful_worker_processes": 448,
+    "formal_observations": 0
+  },
+  "adapter_guards": {
+    "status": "PASS",
+    "rejections": 6,
+    "supported_profile": true,
+    "performance_observations": 0
+  },
+  "unit_tests": {
+    "artifact_tests": 81,
+    "encoding": 16,
+    "correctness": 10,
+    "status": "PASS_AFTER_LOCAL_MPMATH_DEPENDENCY",
+    "initial_missing_dependency_retained": true
+  },
+  "paper_build": {
+    "status": "PASS",
+    "environment": "TeX Live 2026 on Windows",
+    "main_pages": 23,
+    "supplement_pages": 5
+  },
+  "new_presentation": {
+    "status": "BYTE_IDENTICAL_TO_NEW_PAPER_GENERATED",
+    "environment": "Python 3.14.4 / Matplotlib 3.10.9 on Windows"
+  },
+  "new_performance_observations": 0,
+  "scope": "Executed in the isolated release checkout during this revision. Does not promote old PASS records to new execution."
+}

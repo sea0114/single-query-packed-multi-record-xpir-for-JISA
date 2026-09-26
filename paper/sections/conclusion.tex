@@ -1,0 +1,18 @@
+\section{Conclusion}
+\label{sec:conclusion}
+Radix-packed retrieval combines bounded segments from several records
+within each reply coefficient while retaining an XPIR-style linear
+interface. Its specification makes encoding, exact capacity, integer
+no-wrap correctness and single-challenge privacy explicit. The privacy
+reduction uses \(N+1\) uniform-secret PLWE samples and the stated
+unit-probability loss; the full-task reliability bound remains parametric
+in the specified rounded Gaussian law.
+
+On the measured WSL2 host, the primary two-record comparison finds lower
+median completed-task latency than concurrent same-profile repeated XPIR
+throughout the tested grid. Separate multiplicity, sensitivity and
+capacity experiments describe additional finite regimes, including one
+two-block workload. Native buffer savings remain relative to repeated
+execution; the flat query still exceeds raw database size at these lengths.
+The unresolved native/formal bridge, distinct experimental resource
+contracts and unmeasured transport delimit the conclusions.

@@ -1,0 +1,22 @@
+{
+  "inputs": {
+    "revision_notes/B1_primary_audit/paired_ratio_recomputed.json": "440a8570d9a701a24a6fa9353e4b59895450f8489dda79d197019a6d693f019c",
+    "revision_notes/B1_primary_audit/statistics_recomputed.json": "bed5140487eac5265c5737a8eedab95507aff486c99fe800a63711975deb597b",
+    "revision_notes/B2_B_result_audit/scaling_audit.json": "bc35a70e51833f2520509f9fc7f0d86e7cfb1710a4a2be580d77215681acb8d8",
+    "revision_notes/B2_A_feasibility_frontier.json": "09e8a63c023de32372e646cd63cdf16dd39d23a08d66d719434940ca7603fa44",
+    "revision_notes/B2_B_result_audit/B1_B2B_sanity_details.json": "6d702ab02bfe52f8d9740cbe05460c19a57011cb1b11688b83e4395a74d4b534",
+    "artifact/results/B3_descriptive_v1/B3_cells.csv": "55cf45578eaf8c99f62f861fb5ce5bb08069e8a242e66115d43b4c041c3e0d01"
+  },
+  "outputs": {
+    "absolute.tex": "f14801fc10cfa24ec15d557d996a589da675eb7808151fda69843d9db8515ac2",
+    "capacity.tex": "75a188e4f7292e7b33ed87db6e2012b7506a12e058ad59f8a0d94930e000c5a9",
+    "display_data.json": "737780073a3ef85198d4b772ad9f2e4015bb0689137ce2af717fac35f822033b",
+    "frontier.tex": "4daa378de62469bbc75dc506b959fc528c2070290494ceec298d5d5fbe3d78b8",
+    "multiplicity.tex": "31f179e945cc3530f604bb1c4b04bfc9c3c8330a0fa97b112c25883579e82652",
+    "payload.tex": "1fb6344888fc6835d8c6862de01d1602f3f4cd0abaeb2144caa2140e6784de31",
+    "primary.pdf": "9ab5b2ae18aceb34d33f04828b7529b578c2b905d7d9a114cf6c41e5f24cc12c",
+    "primary.tex": "97ac112cfe069c893c3644b8550eb687f7a079b489dcfbd096f45dad12dcccf8",
+    "sensitivity.tex": "2e237f471ea6c6835a50a9af68fb85146ecf8ad41ad5187d7266aa508924ff44",
+    "supplement_tables.tex": "9ef4c2a12ad32d40701936cc88a229cbd6c98d8134ca26061ddbc73596d5016c"
+  }
+}
