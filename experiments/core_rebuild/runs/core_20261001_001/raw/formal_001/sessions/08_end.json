@@ -1,0 +1,12 @@
+{
+  "session_id": 8,
+  "start_ns": 6048413232756,
+  "end_ns": 6901755637205,
+  "elapsed_ns": 853342404449,
+  "complete": true,
+  "expected_tasks": 588,
+  "executed_tasks": 588,
+  "complete_tasks": 588,
+  "not_started_tasks": 0,
+  "stopped_reason": null
+}

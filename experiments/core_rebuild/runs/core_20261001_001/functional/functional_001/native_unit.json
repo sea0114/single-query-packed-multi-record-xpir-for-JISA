@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/runs/core_20261001_001/build/build_002/unit/test_native_unit",
+    "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/runs/core_20261001_001/functional/functional_001/readonly_mapping_probe.bin"
+  ],
+  "returncode": 0,
+  "binary_sha256": "7f7fc443cfed3c7bc8bce829fe904ec34ce886e3755499b0743786f0b8e4e6bc",
+  "result": {
+    "status": "PASS_NATIVE_WRAPPER_UNIT",
+    "layout_alpha_checks": 60,
+    "cryptographic_initializations": 0,
+    "measurements": 0
+  }
+}

@@ -1,0 +1,547 @@
+{
+  "status": "COMPLETE",
+  "provisional_tier": "compact",
+  "completed_workloads": 12,
+  "planned_workloads": 12,
+  "completed_tasks": 1408,
+  "elapsed_seconds": 2220.658103806,
+  "budget_seconds": 3600,
+  "stopped_reason": null,
+  "winners": [
+    {
+      "workload": {
+        "workload_id": "primary_N256_a2_ell4096",
+        "study": "primary",
+        "N": 256,
+        "alpha": 2,
+        "ell_bits": 4096
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho04_c1_t1",
+          "kind": "P",
+          "rho_0": 4,
+          "concurrency": 1,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho24_c2_t2",
+          "kind": "R",
+          "rho_0": 24,
+          "concurrency": 2,
+          "threads": 2,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho04_c2_t2",
+          "kind": "R",
+          "rho_0": 4,
+          "concurrency": 2,
+          "threads": 2,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 542918589,
+        "R_independent": 634148683,
+        "R_matched": 559852484
+      },
+      "baseline_alias": false
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N256_a2_ell32768",
+        "study": "primary",
+        "N": 256,
+        "alpha": 2,
+        "ell_bits": 32768
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho08_c1_t4",
+          "kind": "P",
+          "rho_0": 8,
+          "concurrency": 1,
+          "threads": 4,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho16_c2_t1",
+          "kind": "R",
+          "rho_0": 16,
+          "concurrency": 2,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho08_c2_t1",
+          "kind": "R",
+          "rho_0": 8,
+          "concurrency": 2,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 569290091,
+        "R_independent": 617709472,
+        "R_matched": 643529906
+      },
+      "baseline_alias": false
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N256_a3_ell4096",
+        "study": "primary",
+        "N": 256,
+        "alpha": 3,
+        "ell_bits": 4096
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho06_c1_t4",
+          "kind": "P",
+          "rho_0": 6,
+          "concurrency": 1,
+          "threads": 4,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho24_c3_t1",
+          "kind": "R",
+          "rho_0": 24,
+          "concurrency": 3,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho06_c3_t1",
+          "kind": "R",
+          "rho_0": 6,
+          "concurrency": 3,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 502804758,
+        "R_independent": 681364226,
+        "R_matched": 677910981
+      },
+      "baseline_alias": false
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N256_a3_ell32768",
+        "study": "primary",
+        "N": 256,
+        "alpha": 3,
+        "ell_bits": 32768
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho08_c1_t1",
+          "kind": "P",
+          "rho_0": 8,
+          "concurrency": 1,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho12_c3_t1",
+          "kind": "R",
+          "rho_0": 12,
+          "concurrency": 3,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho08_c3_t1",
+          "kind": "R",
+          "rho_0": 8,
+          "concurrency": 3,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 578076162,
+        "R_independent": 697689589,
+        "R_matched": 726555141
+      },
+      "baseline_alias": false
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N256_a4_ell4096",
+        "study": "primary",
+        "N": 256,
+        "alpha": 4,
+        "ell_bits": 4096
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho04_c1_t1",
+          "kind": "P",
+          "rho_0": 4,
+          "concurrency": 1,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho04_c4_t1",
+          "kind": "R",
+          "rho_0": 4,
+          "concurrency": 4,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho04_c4_t1",
+          "kind": "R",
+          "rho_0": 4,
+          "concurrency": 4,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 536394358,
+        "R_independent": 678045138,
+        "R_matched": 678045138
+      },
+      "baseline_alias": true
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N256_a4_ell32768",
+        "study": "primary",
+        "N": 256,
+        "alpha": 4,
+        "ell_bits": 32768
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho06_c1_t1",
+          "kind": "P",
+          "rho_0": 6,
+          "concurrency": 1,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho08_c4_t1",
+          "kind": "R",
+          "rho_0": 8,
+          "concurrency": 4,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho06_c4_t1",
+          "kind": "R",
+          "rho_0": 6,
+          "concurrency": 4,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 711629228,
+        "R_independent": 770759480,
+        "R_matched": 867101434
+      },
+      "baseline_alias": false
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N1024_a2_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 4096
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho04_c1_t4",
+          "kind": "P",
+          "rho_0": 4,
+          "concurrency": 1,
+          "threads": 4,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho04_c2_t2",
+          "kind": "R",
+          "rho_0": 4,
+          "concurrency": 2,
+          "threads": 2,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho04_c2_t1",
+          "kind": "R",
+          "rho_0": 4,
+          "concurrency": 2,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 1486867280,
+        "R_independent": 1569358084,
+        "R_matched": 1490893727
+      },
+      "baseline_alias": false
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N1024_a2_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 32768
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho12_c1_t1",
+          "kind": "P",
+          "rho_0": 12,
+          "concurrency": 1,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho16_c2_t1",
+          "kind": "R",
+          "rho_0": 16,
+          "concurrency": 2,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho12_c2_t1",
+          "kind": "R",
+          "rho_0": 12,
+          "concurrency": 2,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 1605989610,
+        "R_independent": 1777529819,
+        "R_matched": 1652669123
+      },
+      "baseline_alias": false
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N1024_a3_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 3,
+        "ell_bits": 4096
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho08_c1_t1",
+          "kind": "P",
+          "rho_0": 8,
+          "concurrency": 1,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho04_c3_t1",
+          "kind": "R",
+          "rho_0": 4,
+          "concurrency": 3,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho08_c3_t1",
+          "kind": "R",
+          "rho_0": 8,
+          "concurrency": 3,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 1560459668,
+        "R_independent": 1493301877,
+        "R_matched": 1696707470
+      },
+      "baseline_alias": false
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N1024_a3_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 3,
+        "ell_bits": 32768
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho08_c1_t1",
+          "kind": "P",
+          "rho_0": 8,
+          "concurrency": 1,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho24_c3_t1",
+          "kind": "R",
+          "rho_0": 24,
+          "concurrency": 3,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho08_c3_t1",
+          "kind": "R",
+          "rho_0": 8,
+          "concurrency": 3,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 1561313519,
+        "R_independent": 1731563810,
+        "R_matched": 1738969033
+      },
+      "baseline_alias": false
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N1024_a4_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 4096
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho04_c1_t4",
+          "kind": "P",
+          "rho_0": 4,
+          "concurrency": 1,
+          "threads": 4,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho12_c4_t1",
+          "kind": "R",
+          "rho_0": 12,
+          "concurrency": 4,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho04_c4_t1",
+          "kind": "R",
+          "rho_0": 4,
+          "concurrency": 4,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 1500935067,
+        "R_independent": 1556052862,
+        "R_matched": 1830341468
+      },
+      "baseline_alias": false
+    },
+    {
+      "workload": {
+        "workload_id": "primary_N1024_a4_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 32768
+      },
+      "roles": {
+        "P": {
+          "config_id": "P_rho04_c1_t4",
+          "kind": "P",
+          "rho_0": 4,
+          "concurrency": 1,
+          "threads": 4,
+          "w": 24,
+          "n": 4096
+        },
+        "R_independent": {
+          "config_id": "R_rho16_c4_t1",
+          "kind": "R",
+          "rho_0": 16,
+          "concurrency": 4,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        },
+        "R_matched": {
+          "config_id": "R_rho04_c4_t1",
+          "kind": "R",
+          "rho_0": 4,
+          "concurrency": 4,
+          "threads": 1,
+          "w": 24,
+          "n": 4096
+        }
+      },
+      "full_wall_upper_ns": {
+        "P": 1661975612,
+        "R_independent": 1888864333,
+        "R_matched": 1999228573
+      },
+      "baseline_alias": false
+    }
+  ],
+  "source_hashes": {
+    "tune.py": "0e93ab27a95c91ef6e7a1412112beece08a17daaa8dbd954622e6e4456356fdd",
+    "runner.py": "7284412bc5fe14dba88bf9603b8b1ec3602be1a48d460c291b5e30a442078058",
+    "common.py": "873acdcdba4634404f880fd8c59438f60f9fb5d5b1b74b434348d5fb0ff92c91",
+    "resources.py": "1e0cc0cd7627bde8852973ea07c4d49d360214ca68e83937b25228f6ed1057f4"
+  },
+  "objective": "Median of three complete task latencies in preprocessing-excluded scope; one separate warmup; stable lexical config ID tie break; no formal selection"
+}

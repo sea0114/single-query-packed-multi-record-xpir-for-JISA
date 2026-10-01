@@ -1,0 +1,123 @@
+{
+  "status": "COMPLETE",
+  "expected_tasks": 336,
+  "completed_tasks": 336,
+  "elapsed_seconds": 520.784460851,
+  "cumulative_pilot_seconds": 1519.812041613,
+  "pilot_budget_seconds": 1800,
+  "stopped_reason": null,
+  "max_block_overhead_seconds": 0.064909552,
+  "tier_tuning_estimates": [
+    {
+      "tier": "compact",
+      "complete_cost_samples": true,
+      "tuning_base_seconds": 2193.779747208,
+      "tuning_with_50pct_margin_seconds": 3290.669620812,
+      "fits_tuning": true,
+      "workloads": [
+        {
+          "workload_id": "primary_N256_a2_ell4096",
+          "base_seconds": 88.06063533199999,
+          "matched_stage_upper_seconds": 10.494609532
+        },
+        {
+          "workload_id": "primary_N256_a2_ell32768",
+          "base_seconds": 96.295124596,
+          "matched_stage_upper_seconds": 11.54963246
+        },
+        {
+          "workload_id": "primary_N256_a3_ell4096",
+          "base_seconds": 82.921384168,
+          "matched_stage_upper_seconds": 9.843690368
+        },
+        {
+          "workload_id": "primary_N256_a3_ell32768",
+          "base_seconds": 91.313483984,
+          "matched_stage_upper_seconds": 11.782099984
+        },
+        {
+          "workload_id": "primary_N256_a4_ell4096",
+          "base_seconds": 89.923612124,
+          "matched_stage_upper_seconds": 11.484830752
+        },
+        {
+          "workload_id": "primary_N256_a4_ell32768",
+          "base_seconds": 100.75795504800001,
+          "matched_stage_upper_seconds": 13.579214384
+        },
+        {
+          "workload_id": "primary_N1024_a2_ell4096",
+          "base_seconds": 241.44247398800002,
+          "matched_stage_upper_seconds": 29.386257244
+        },
+        {
+          "workload_id": "primary_N1024_a2_ell32768",
+          "base_seconds": 279.312648236,
+          "matched_stage_upper_seconds": 35.607567848
+        },
+        {
+          "workload_id": "primary_N1024_a3_ell4096",
+          "base_seconds": 241.386267216,
+          "matched_stage_upper_seconds": 30.6486116
+        },
+        {
+          "workload_id": "primary_N1024_a3_ell32768",
+          "base_seconds": 279.43239149199997,
+          "matched_stage_upper_seconds": 37.38012018
+        },
+        {
+          "workload_id": "primary_N1024_a4_ell4096",
+          "base_seconds": 287.166644616,
+          "matched_stage_upper_seconds": 37.46303066
+        },
+        {
+          "workload_id": "primary_N1024_a4_ell32768",
+          "base_seconds": 315.76712640799997,
+          "matched_stage_upper_seconds": 43.035036976
+        }
+      ]
+    },
+    {
+      "tier": "minimal",
+      "complete_cost_samples": true,
+      "tuning_base_seconds": 1644.5075519559998,
+      "tuning_with_50pct_margin_seconds": 2466.761327934,
+      "fits_tuning": true,
+      "workloads": [
+        {
+          "workload_id": "primary_N1024_a2_ell4096",
+          "base_seconds": 241.44247398800002,
+          "matched_stage_upper_seconds": 29.386257244
+        },
+        {
+          "workload_id": "primary_N1024_a2_ell32768",
+          "base_seconds": 279.312648236,
+          "matched_stage_upper_seconds": 35.607567848
+        },
+        {
+          "workload_id": "primary_N1024_a3_ell4096",
+          "base_seconds": 241.386267216,
+          "matched_stage_upper_seconds": 30.6486116
+        },
+        {
+          "workload_id": "primary_N1024_a3_ell32768",
+          "base_seconds": 279.43239149199997,
+          "matched_stage_upper_seconds": 37.38012018
+        },
+        {
+          "workload_id": "primary_N1024_a4_ell4096",
+          "base_seconds": 287.166644616,
+          "matched_stage_upper_seconds": 37.46303066
+        },
+        {
+          "workload_id": "primary_N1024_a4_ell32768",
+          "base_seconds": 315.76712640799997,
+          "matched_stage_upper_seconds": 43.035036976
+        }
+      ]
+    }
+  ],
+  "provisional_tuning_tier": "compact",
+  "formal_tier_not_frozen": true,
+  "cost_policy": "Actual complete task wall cost for every candidate and exact fixed capacity config, 50% margin; matched stage bounded over all packed layout choices. Formal cost must be rechecked from actual selected configuration after complete tuning."
+}

@@ -1,5 +1,17 @@
 # Evidence layout
 
+## Current core run
+
+The current entry point is [core_rebuild/README.md](../experiments/core_rebuild/README.md). New evidence retains the independent `experiments/core_rebuild/` layout: `runs/core_20261001_001/provenance/freeze.json` freezes the schedule/seeds/configurations; `raw/formal_001/observations.jsonl` and `formal_report.json` record every physical task and completion status. Under `results/core_20261001_001/`, `summary.json`, `fullprecision.csv`, `session_effects.csv`, `configurations_and_buffers.csv`, `claim_map.json`, `failure_ledger.json` and `analysis_provenance.json` provide full precision, all sessions, buffers, claim pointers and exact input/output identities.
+
+The separate portable wrapper copies a verified minimal closure to an explicitly new output root. `analyze` executes the frozen session-cluster estimator, including its prescribed bootstrap; `redraw` reads the accepted summary without resampling. Neither launches native code or opens historical datasets. Original absolute build/environment paths remain provenance records, not portable commands. See the core README for actual execution receipts and public metadata checks. Current manuscript/PDF/submission materials, native binaries, objects, dependency headers/libraries and caches are excluded from this increment.
+
+The historical dependency pin `revision_notes/B0_logs/build_environment.json` is promoted byte-for-byte for the new build route. Its duplicate archive member, original archive hash and license scope remain unchanged. Existing archives, canonical historical summaries and earlier publication history are preserved; no historical samples are merged into the core estimates.
+
+## Retained historical data and replay routes
+
+All sections below describe the earlier evidence and presentation. Assertions about no new measurements apply to that earlier presentation update, not the separately completed core run above.
+
 ## Included canonical presentation inputs
 
 The shortest redraw route reads only these already included full-precision references:
@@ -11,7 +23,7 @@ The shortest redraw route reads only these already included full-precision refer
 - `revision_notes/B2_A_feasibility_frontier.json`
 - `artifact/results/B3_descriptive_v1/B3_cells.csv`
 
-[experiment-map.md](experiment-map.md) gives fields, conditions and current output names. `scripts/present_results.py --root . --out UNUSED` reads those files without archive extraction, native code or bootstrap. All generated figures, tables, JSON, manifests and caches go into the unused output tree; `paper/generated/` remains historical evidence.
+[experiment-map.md](experiment-map.md) gives the earlier fields, conditions and output names. `scripts/present_results.py --root . --out UNUSED` reads those files without archive extraction, native code or bootstrap. All generated figures, tables, JSON, manifests and caches go into the unused output tree; `paper/generated/` remains historical evidence.
 
 ## Archived observations and detailed checks
 
@@ -21,11 +33,11 @@ Primary task/worker ledgers and bootstrap references are under `revision_notes/B
 
 Functional evidence includes `revision_notes/S4_N_status.json`, `revision_notes/B2_A_logs/`, and the separate `artifact/results/native_validation/full-v1/validation_report.json`, `functional_matrix.json` and 448 worker-result records. The [frontier summary](../revision_notes/B2_A_feasibility_frontier.json) points to exact profile evidence. This includes 246 historical two-record cases, ten cases for each of three supported additional profiles, and the separate 208-task/448-process suite. Test data cover zero, maximum-segment, alternating and deterministic pseudorandom records, reversed targets and full-block boundaries. Test bytes and expected/actual outputs are public fixtures. Key fingerprints are hashes, not secret-key material.
 
-The historical prepublication scan found no secret keys, access tokens, OS seeds or PRNG state in its enumerated release files. That is the scope of the recorded check, not clearance of every historical working directory. No newly generated measurements or archives accompany this update.
+The historical prepublication scan found no secret keys, access tokens, OS seeds or PRNG state in its enumerated release files. That is the scope of the recorded check, not clearance of every historical working directory. No new measurements or archives accompanied that earlier presentation update.
 
 ## Historical statistical replay
 
-This optional route uses raw records and the original estimators, including bootstrap recomputation. It is separate from result redrawing and was not run during the current presentation update. Use Python 3.12.3 for comparison with the recorded exact replay, extract data first, and choose unused output directories:
+This optional route uses raw records and the original estimators, including bootstrap recomputation. It is separate from result redrawing and was not run during the earlier presentation update. Use Python 3.12.3 for comparison with the recorded exact replay, extract data first, and choose unused output directories:
 
 ```bash
 python3 -B scripts/unpack_data.py

@@ -1,0 +1,422 @@
+{
+  "P": [
+    {
+      "configuration": {
+        "config_id": "P_rho04_c1_t4",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 647000016,
+      "max_full_wall_ns": 1486867280
+    },
+    {
+      "configuration": {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 658027023,
+      "max_full_wall_ns": 1588240779
+    },
+    {
+      "configuration": {
+        "config_id": "P_rho12_c1_t1",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 735804340,
+      "max_full_wall_ns": 1469412115
+    },
+    {
+      "configuration": {
+        "config_id": "P_rho08_c1_t1",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 744106013,
+      "max_full_wall_ns": 1599230200
+    },
+    {
+      "configuration": {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 761450636,
+      "max_full_wall_ns": 1490670172
+    },
+    {
+      "configuration": {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 763043810,
+      "max_full_wall_ns": 1605020084
+    },
+    {
+      "configuration": {
+        "config_id": "P_rho06_c1_t1",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 772922968,
+      "max_full_wall_ns": 1520375691
+    },
+    {
+      "configuration": {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 793663169,
+      "max_full_wall_ns": 1520152149
+    }
+  ],
+  "R_independent": [
+    {
+      "configuration": {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 666625240,
+      "max_full_wall_ns": 1569358084
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho16_c2_t1",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 2,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 682227434,
+      "max_full_wall_ns": 1418081983
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho04_c2_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 712631971,
+      "max_full_wall_ns": 1428412361
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 717616005,
+      "max_full_wall_ns": 1585507864
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho12_c2_t1",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 2,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 718614396,
+      "max_full_wall_ns": 1501853827
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho12_c2_t2",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 720572151,
+      "max_full_wall_ns": 1551066564
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho08_c2_t2",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 721039005,
+      "max_full_wall_ns": 1602890632
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho08_c2_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 2,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 762851800,
+      "max_full_wall_ns": 1541311055
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho16_c2_t2",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 776220074,
+      "max_full_wall_ns": 1519845149
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho24_c2_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 779958428,
+      "max_full_wall_ns": 1650852087
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho06_c2_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 2,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 808862064,
+      "max_full_wall_ns": 1477907384
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho06_c2_t2",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 811105514,
+      "max_full_wall_ns": 1619899453
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho12_c1_t4",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1337169107,
+      "max_full_wall_ns": 2481704665
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho06_c1_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1522423332,
+      "max_full_wall_ns": 2356678287
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho08_c1_t4",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1522881049,
+      "max_full_wall_ns": 2248698613
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho24_c1_t4",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1526444636,
+      "max_full_wall_ns": 2309538504
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1536375666,
+      "max_full_wall_ns": 2471288650
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho12_c1_t1",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1537736284,
+      "max_full_wall_ns": 2363183834
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho04_c1_t4",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1555587555,
+      "max_full_wall_ns": 2452668939
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho08_c1_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1573946330,
+      "max_full_wall_ns": 2549714567
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1581694733,
+      "max_full_wall_ns": 2541558185
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho16_c1_t1",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1593784455,
+      "max_full_wall_ns": 2564196497
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho16_c1_t4",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1607939201,
+      "max_full_wall_ns": 2493793108
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho06_c1_t4",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 1612246752,
+      "max_full_wall_ns": 2410747742
+    }
+  ]
+}

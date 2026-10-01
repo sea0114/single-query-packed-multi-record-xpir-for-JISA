@@ -1,0 +1,962 @@
+[
+  {
+    "case_id": "a1_rho04_short_zero",
+    "alpha": 1,
+    "rho": 4,
+    "ell": 9,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho04_short_max",
+    "alpha": 1,
+    "rho": 4,
+    "ell": 9,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho04_short_equal",
+    "alpha": 1,
+    "rho": 4,
+    "ell": 9,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho04_short_random",
+    "alpha": 1,
+    "rho": 4,
+    "ell": 9,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho04_before",
+    "alpha": 1,
+    "rho": 4,
+    "ell": 16383,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho04_exact",
+    "alpha": 1,
+    "rho": 4,
+    "ell": 16384,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho04_after",
+    "alpha": 1,
+    "rho": 4,
+    "ell": 16385,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho04_two_blocks",
+    "alpha": 1,
+    "rho": 4,
+    "ell": 32768,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho06_short_zero",
+    "alpha": 1,
+    "rho": 6,
+    "ell": 13,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho06_short_max",
+    "alpha": 1,
+    "rho": 6,
+    "ell": 13,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho06_short_equal",
+    "alpha": 1,
+    "rho": 6,
+    "ell": 13,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho06_short_random",
+    "alpha": 1,
+    "rho": 6,
+    "ell": 13,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho06_before",
+    "alpha": 1,
+    "rho": 6,
+    "ell": 24575,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho06_exact",
+    "alpha": 1,
+    "rho": 6,
+    "ell": 24576,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho06_after",
+    "alpha": 1,
+    "rho": 6,
+    "ell": 24577,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho06_two_blocks",
+    "alpha": 1,
+    "rho": 6,
+    "ell": 49152,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho08_short_zero",
+    "alpha": 1,
+    "rho": 8,
+    "ell": 17,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho08_short_max",
+    "alpha": 1,
+    "rho": 8,
+    "ell": 17,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho08_short_equal",
+    "alpha": 1,
+    "rho": 8,
+    "ell": 17,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho08_short_random",
+    "alpha": 1,
+    "rho": 8,
+    "ell": 17,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho08_before",
+    "alpha": 1,
+    "rho": 8,
+    "ell": 32767,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho08_exact",
+    "alpha": 1,
+    "rho": 8,
+    "ell": 32768,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho08_after",
+    "alpha": 1,
+    "rho": 8,
+    "ell": 32769,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho08_two_blocks",
+    "alpha": 1,
+    "rho": 8,
+    "ell": 65536,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho12_short_zero",
+    "alpha": 1,
+    "rho": 12,
+    "ell": 25,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho12_short_max",
+    "alpha": 1,
+    "rho": 12,
+    "ell": 25,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho12_short_equal",
+    "alpha": 1,
+    "rho": 12,
+    "ell": 25,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho12_short_random",
+    "alpha": 1,
+    "rho": 12,
+    "ell": 25,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho12_before",
+    "alpha": 1,
+    "rho": 12,
+    "ell": 49151,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho12_exact",
+    "alpha": 1,
+    "rho": 12,
+    "ell": 49152,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho12_after",
+    "alpha": 1,
+    "rho": 12,
+    "ell": 49153,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho12_two_blocks",
+    "alpha": 1,
+    "rho": 12,
+    "ell": 98304,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho16_short_zero",
+    "alpha": 1,
+    "rho": 16,
+    "ell": 33,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho16_short_max",
+    "alpha": 1,
+    "rho": 16,
+    "ell": 33,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho16_short_equal",
+    "alpha": 1,
+    "rho": 16,
+    "ell": 33,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho16_short_random",
+    "alpha": 1,
+    "rho": 16,
+    "ell": 33,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho16_before",
+    "alpha": 1,
+    "rho": 16,
+    "ell": 65535,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho16_exact",
+    "alpha": 1,
+    "rho": 16,
+    "ell": 65536,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho16_after",
+    "alpha": 1,
+    "rho": 16,
+    "ell": 65537,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho16_two_blocks",
+    "alpha": 1,
+    "rho": 16,
+    "ell": 131072,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho24_short_zero",
+    "alpha": 1,
+    "rho": 24,
+    "ell": 49,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho24_short_max",
+    "alpha": 1,
+    "rho": 24,
+    "ell": 49,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho24_short_equal",
+    "alpha": 1,
+    "rho": 24,
+    "ell": 49,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho24_short_random",
+    "alpha": 1,
+    "rho": 24,
+    "ell": 49,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a1_rho24_before",
+    "alpha": 1,
+    "rho": 24,
+    "ell": 98303,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho24_exact",
+    "alpha": 1,
+    "rho": 24,
+    "ell": 98304,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho24_after",
+    "alpha": 1,
+    "rho": 24,
+    "ell": 98305,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a1_rho24_two_blocks",
+    "alpha": 1,
+    "rho": 24,
+    "ell": 196608,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho04_short_zero",
+    "alpha": 2,
+    "rho": 4,
+    "ell": 9,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho04_short_max",
+    "alpha": 2,
+    "rho": 4,
+    "ell": 9,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho04_short_equal",
+    "alpha": 2,
+    "rho": 4,
+    "ell": 9,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho04_short_random",
+    "alpha": 2,
+    "rho": 4,
+    "ell": 9,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho04_before",
+    "alpha": 2,
+    "rho": 4,
+    "ell": 16383,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho04_exact",
+    "alpha": 2,
+    "rho": 4,
+    "ell": 16384,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho04_after",
+    "alpha": 2,
+    "rho": 4,
+    "ell": 16385,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho04_two_blocks",
+    "alpha": 2,
+    "rho": 4,
+    "ell": 32768,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho06_short_zero",
+    "alpha": 2,
+    "rho": 6,
+    "ell": 13,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho06_short_max",
+    "alpha": 2,
+    "rho": 6,
+    "ell": 13,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho06_short_equal",
+    "alpha": 2,
+    "rho": 6,
+    "ell": 13,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho06_short_random",
+    "alpha": 2,
+    "rho": 6,
+    "ell": 13,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho06_before",
+    "alpha": 2,
+    "rho": 6,
+    "ell": 24575,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho06_exact",
+    "alpha": 2,
+    "rho": 6,
+    "ell": 24576,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho06_after",
+    "alpha": 2,
+    "rho": 6,
+    "ell": 24577,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho06_two_blocks",
+    "alpha": 2,
+    "rho": 6,
+    "ell": 49152,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho08_short_zero",
+    "alpha": 2,
+    "rho": 8,
+    "ell": 17,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho08_short_max",
+    "alpha": 2,
+    "rho": 8,
+    "ell": 17,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho08_short_equal",
+    "alpha": 2,
+    "rho": 8,
+    "ell": 17,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho08_short_random",
+    "alpha": 2,
+    "rho": 8,
+    "ell": 17,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho08_before",
+    "alpha": 2,
+    "rho": 8,
+    "ell": 32767,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho08_exact",
+    "alpha": 2,
+    "rho": 8,
+    "ell": 32768,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho08_after",
+    "alpha": 2,
+    "rho": 8,
+    "ell": 32769,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho08_two_blocks",
+    "alpha": 2,
+    "rho": 8,
+    "ell": 65536,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho12_short_zero",
+    "alpha": 2,
+    "rho": 12,
+    "ell": 25,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho12_short_max",
+    "alpha": 2,
+    "rho": 12,
+    "ell": 25,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho12_short_equal",
+    "alpha": 2,
+    "rho": 12,
+    "ell": 25,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho12_short_random",
+    "alpha": 2,
+    "rho": 12,
+    "ell": 25,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a2_rho12_before",
+    "alpha": 2,
+    "rho": 12,
+    "ell": 49151,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho12_exact",
+    "alpha": 2,
+    "rho": 12,
+    "ell": 49152,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho12_after",
+    "alpha": 2,
+    "rho": 12,
+    "ell": 49153,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a2_rho12_two_blocks",
+    "alpha": 2,
+    "rho": 12,
+    "ell": 98304,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho04_short_zero",
+    "alpha": 3,
+    "rho": 4,
+    "ell": 9,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho04_short_max",
+    "alpha": 3,
+    "rho": 4,
+    "ell": 9,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho04_short_equal",
+    "alpha": 3,
+    "rho": 4,
+    "ell": 9,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho04_short_random",
+    "alpha": 3,
+    "rho": 4,
+    "ell": 9,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho04_before",
+    "alpha": 3,
+    "rho": 4,
+    "ell": 16383,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho04_exact",
+    "alpha": 3,
+    "rho": 4,
+    "ell": 16384,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho04_after",
+    "alpha": 3,
+    "rho": 4,
+    "ell": 16385,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho04_two_blocks",
+    "alpha": 3,
+    "rho": 4,
+    "ell": 32768,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho06_short_zero",
+    "alpha": 3,
+    "rho": 6,
+    "ell": 13,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho06_short_max",
+    "alpha": 3,
+    "rho": 6,
+    "ell": 13,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho06_short_equal",
+    "alpha": 3,
+    "rho": 6,
+    "ell": 13,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho06_short_random",
+    "alpha": 3,
+    "rho": 6,
+    "ell": 13,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho06_before",
+    "alpha": 3,
+    "rho": 6,
+    "ell": 24575,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho06_exact",
+    "alpha": 3,
+    "rho": 6,
+    "ell": 24576,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho06_after",
+    "alpha": 3,
+    "rho": 6,
+    "ell": 24577,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho06_two_blocks",
+    "alpha": 3,
+    "rho": 6,
+    "ell": 49152,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho08_short_zero",
+    "alpha": 3,
+    "rho": 8,
+    "ell": 17,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho08_short_max",
+    "alpha": 3,
+    "rho": 8,
+    "ell": 17,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho08_short_equal",
+    "alpha": 3,
+    "rho": 8,
+    "ell": 17,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho08_short_random",
+    "alpha": 3,
+    "rho": 8,
+    "ell": 17,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a3_rho08_before",
+    "alpha": 3,
+    "rho": 8,
+    "ell": 32767,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho08_exact",
+    "alpha": 3,
+    "rho": 8,
+    "ell": 32768,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho08_after",
+    "alpha": 3,
+    "rho": 8,
+    "ell": 32769,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a3_rho08_two_blocks",
+    "alpha": 3,
+    "rho": 8,
+    "ell": 65536,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a4_rho04_short_zero",
+    "alpha": 4,
+    "rho": 4,
+    "ell": 9,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a4_rho04_short_max",
+    "alpha": 4,
+    "rho": 4,
+    "ell": 9,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a4_rho04_short_equal",
+    "alpha": 4,
+    "rho": 4,
+    "ell": 9,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a4_rho04_short_random",
+    "alpha": 4,
+    "rho": 4,
+    "ell": 9,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a4_rho04_before",
+    "alpha": 4,
+    "rho": 4,
+    "ell": 16383,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a4_rho04_exact",
+    "alpha": 4,
+    "rho": 4,
+    "ell": 16384,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a4_rho04_after",
+    "alpha": 4,
+    "rho": 4,
+    "ell": 16385,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a4_rho04_two_blocks",
+    "alpha": 4,
+    "rho": 4,
+    "ell": 32768,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a4_rho06_short_zero",
+    "alpha": 4,
+    "rho": 6,
+    "ell": 13,
+    "kind": "zero",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a4_rho06_short_max",
+    "alpha": 4,
+    "rho": 6,
+    "ell": 13,
+    "kind": "max",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a4_rho06_short_equal",
+    "alpha": 4,
+    "rho": 6,
+    "ell": 13,
+    "kind": "equal",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a4_rho06_short_random",
+    "alpha": 4,
+    "rho": 6,
+    "ell": 13,
+    "kind": "random",
+    "category": "segments_and_padding"
+  },
+  {
+    "case_id": "a4_rho06_before",
+    "alpha": 4,
+    "rho": 6,
+    "ell": 24575,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a4_rho06_exact",
+    "alpha": 4,
+    "rho": 6,
+    "ell": 24576,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a4_rho06_after",
+    "alpha": 4,
+    "rho": 6,
+    "ell": 24577,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  },
+  {
+    "case_id": "a4_rho06_two_blocks",
+    "alpha": 4,
+    "rho": 6,
+    "ell": 49152,
+    "kind": "random",
+    "category": "bit_exact_block_boundary"
+  }
+]

@@ -1,6 +1,14 @@
 # Measurement and statistical definitions
 
-This is the active method reference for existing experiments and current result presentation. Immutable evidence retains its original identifiers; [experiment-map.md](experiment-map.md) maps them to research names. All measurements predate this update. Presentation reads frozen summaries without new measurements or resampling.
+## Current core evaluation
+
+The current definitions and commands are in [core_rebuild/README.md](../experiments/core_rebuild/README.md). The new runner gives each method one shared, sealed preprocessed database and fresh query processes. Included timing starts before preparation dispatch; excluded timing starts after the shared database is ready. Both end after all requested record bytes and completion signals are collected. Whole-group CPU includes the coordinator and timed native children; preprocessing is recorded directly. A common four-CPU guest affinity pool and the accepted sampled 8 GiB monitor policy apply to every method. These are guest resource controls, not host exclusivity or a hard memory limit.
+
+The formal matrix has 28 conditions and ten sessions. A latency contrast first takes each session's median of six paired `baseline/P` ratios, then the median across ten sessions. Absolute costs use within-session medians followed by the median across sessions. Joint whole-session resampling uses 10,000 common index draws across contrasts and metrics, with pointwise linear-percentile intervals. Every expected task, including warmups, must be complete and validated before a condition receives an estimate. The recorded time variation, weaker comparisons and actual buffer counts remain in the full-precision outputs. The primary study includes matched-layout and independently tuned repeated baselines; the capacity study uses predeclared fixed layouts. None of the historical samples below is pooled with this run.
+
+## Retained historical definitions
+
+The remainder records the earlier experiments and presentation, using their original timing, resource and statistical definitions. Immutable evidence retains its original identifiers; [experiment-map.md](experiment-map.md) maps them to research names. Its statement that measurements predated the earlier presentation update does not apply to the newly completed core run.
 
 ## Tasks, encoding and timing
 

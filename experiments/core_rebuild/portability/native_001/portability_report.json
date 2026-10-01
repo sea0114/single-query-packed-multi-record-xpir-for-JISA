@@ -1,0 +1,37 @@
+{
+  "status": "INCOMPLETE",
+  "run_id": "portable_native_001",
+  "packages": [
+    {
+      "name": "libssl-dev",
+      "bytes": 2408494,
+      "sha256": "cefc6371d90d953a4cbb35d72d871f057e4b961a3107186f67fe96a88040cdb8"
+    },
+    {
+      "name": "libssl3t64",
+      "bytes": 1944134,
+      "sha256": "3d0955bc049bbcca0f4c3e78a3a8b994593d96db7d84f4320217224433844534"
+    }
+  ],
+  "source_closure_sha256": {
+    "experiments/core_rebuild/scripts/build.py": "e1b88193234bf32f6dfe1a3f8572229e8ed5552911597e7ec6ae5b997eb26217",
+    "experiments/core_rebuild/scripts/build_unit.py": "b8655e0e3786833990632c1c2dcc7c575e046520ab68a641173f8241135a233a",
+    "experiments/core_rebuild/scripts/common.py": "873acdcdba4634404f880fd8c59438f60f9fb5d5b1b74b434348d5fb0ff92c91",
+    "experiments/core_rebuild/scripts/resources.py": "1e0cc0cd7627bde8852973ea07c4d49d360214ca68e83937b25228f6ed1057f4",
+    "experiments/core_rebuild/scripts/runner.py": "7284412bc5fe14dba88bf9603b8b1ec3602be1a48d460c291b5e30a442078058",
+    "experiments/core_rebuild/scripts/functional.py": "d7ff28dbcdd9919bccee69d6811403678d6db94deaaf5d8bb06329f45d79d078",
+    "experiments/core_rebuild/src/core_native.cpp": "a1df94dfa85f7097bbf3352c766c8420520c4902d55df7c29badb747ce038753",
+    "experiments/core_rebuild/src/core_native.hpp": "e6646abcae4cba7776fb74be589d7b04df743b49c5a70e1cefdabb185e88ae6e",
+    "experiments/core_rebuild/tests/test_native_unit.cpp": "e1dc0e9e8e4be0a41317b37a9656d4956dc285161fdc912f0a1c85721b61ad86"
+  },
+  "B0_manifest_sha256": "19acb1fe7b90ada0160b403c4fff0b52645b1ca2dd54db9c7cf0ab8e118128c1",
+  "new_performance_observations": 0,
+  "system_packages_installed": 0,
+  "measured_evidence_changed": false,
+  "dependency_payload_publication": false,
+  "error": {
+    "type": "KeyboardInterrupt",
+    "message": ""
+  },
+  "commands": {}
+}

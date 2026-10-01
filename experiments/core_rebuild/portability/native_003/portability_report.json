@@ -1,0 +1,135 @@
+{
+  "status": "PASS_ISOLATED_NATIVE_PORTABILITY_GATE",
+  "run_id": "portable_native_003",
+  "packages": [
+    {
+      "name": "libssl-dev",
+      "bytes": 2408684,
+      "sha256": "2b4734df0475e305ac03abb0a2cc5659651ed37ef02d967a1c4033a154cf714b"
+    },
+    {
+      "name": "libssl3t64",
+      "bytes": 1945300,
+      "sha256": "219f43b1cd836a4da550938db5fda93160d269d39a4edcf1f1ce698a470db797"
+    }
+  ],
+  "source_closure_sha256": {
+    "experiments/core_rebuild/scripts/build.py": "e1b88193234bf32f6dfe1a3f8572229e8ed5552911597e7ec6ae5b997eb26217",
+    "experiments/core_rebuild/scripts/build_unit.py": "b8655e0e3786833990632c1c2dcc7c575e046520ab68a641173f8241135a233a",
+    "experiments/core_rebuild/scripts/common.py": "873acdcdba4634404f880fd8c59438f60f9fb5d5b1b74b434348d5fb0ff92c91",
+    "experiments/core_rebuild/scripts/resources.py": "1e0cc0cd7627bde8852973ea07c4d49d360214ca68e83937b25228f6ed1057f4",
+    "experiments/core_rebuild/scripts/runner.py": "7284412bc5fe14dba88bf9603b8b1ec3602be1a48d460c291b5e30a442078058",
+    "experiments/core_rebuild/scripts/functional.py": "d7ff28dbcdd9919bccee69d6811403678d6db94deaaf5d8bb06329f45d79d078",
+    "experiments/core_rebuild/src/core_native.cpp": "a1df94dfa85f7097bbf3352c766c8420520c4902d55df7c29badb747ce038753",
+    "experiments/core_rebuild/src/core_native.hpp": "e6646abcae4cba7776fb74be589d7b04df743b49c5a70e1cefdabb185e88ae6e",
+    "experiments/core_rebuild/tests/test_native_unit.cpp": "e1dc0e9e8e4be0a41317b37a9656d4956dc285161fdc912f0a1c85721b61ad86"
+  },
+  "B0_manifest_sha256": "19acb1fe7b90ada0160b403c4fff0b52645b1ca2dd54db9c7cf0ab8e118128c1",
+  "new_performance_observations": 0,
+  "system_packages_installed": 0,
+  "measured_evidence_changed": false,
+  "dependency_payload_publication": false,
+  "build_environment": {
+    "CPLUS_INCLUDE_PATH": "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/include:/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/include/x86_64-linux-gnu",
+    "LIBRARY_PATH": "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/lib/x86_64-linux-gnu",
+    "LD_LIBRARY_PATH": "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/lib/x86_64-linux-gnu",
+    "TMPDIR": "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/runtime/tmp"
+  },
+  "build_manifest_sha256": "d04c862d1354ec9675d0ab839bddef095f1e76361eb5c4204e815d89c230b640",
+  "new_binary_sha256": "7fd6d2d0a8e4baf3e339b1cce32cc1e79ee239b9ed9410d810d8deb91f3e286a",
+  "no_historical_fallback_dependency": true,
+  "staged_header_sha256": {
+    "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/include/openssl/sha.h": "06500535b9b3d9742e745558dc02e52d0df6d75b038457d4f6c374ed68d39eaf",
+    "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/include/openssl/macros.h": "e480df214285bb3225da7549c0468590f7156ca399591167ee41360936264c46",
+    "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/include/x86_64-linux-gnu/openssl/opensslconf.h": "890184233890bacd52fd420fef07befad411b9a318b97efbf36f46673d3e7841",
+    "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/include/x86_64-linux-gnu/openssl/configuration.h": "eee44bb7885f6e6b9a2a139100a7751c2564f1b83090ed237f178c1470737046",
+    "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/include/openssl/opensslv.h": "724c362124239abc4b77decaf5d5f70af61476ea0fa84b1cb7a97c15957c1415",
+    "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/include/openssl/e_os2.h": "a5c404e815f8ea17c46ed1b78118f32c2e31fd3ce42f761af2bf8fb5a5864550"
+  },
+  "staged_libcrypto_sha256": "6866ed711dab8927e1bf82bf1cd30e828bdfc34f3cc1e83b1c9eb01ce6c37d9a",
+  "actual_loader_readback": "\tlinux-vdso.so.1 (0x00007ffee75e6000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x0000762473c02000)\n\tlibcrypto.so.3 => /mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007624736ee000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000762473400000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000762473317000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x0000762473696000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007624732e9000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000762473000000)\n\t/lib64/ld-linux-x86-64.so.2 (0x0000762473cdf000)\n",
+  "actual_library_sha256": {
+    "/lib/x86_64-linux-gnu/libgmp.so.10": "0ccdfb6d6f5c039465f6d002cf7e4c072d48ac6a2cffc8dd6c748dec31592804",
+    "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root/usr/lib/x86_64-linux-gnu/libcrypto.so.3": "6866ed711dab8927e1bf82bf1cd30e828bdfc34f3cc1e83b1c9eb01ce6c37d9a",
+    "/lib/x86_64-linux-gnu/libstdc++.so.6": "1fd75fe70354a416d75aef22bcae68c47bd25d20e2d0568c30b1a9838cf62f11",
+    "/lib/x86_64-linux-gnu/libm.so.6": "e9c4b28d340e415b8137480ec442662f981e1399386c5931dae0e886e3639e91",
+    "/lib/x86_64-linux-gnu/libgomp.so.1": "135f3c8f006d2fe5e68e51281c7974cb991a03de3bfb3593d68d174dfcf854d1",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1": "d93224d2b0dab4247598be683adca02f5cf00586f99c187579cd7e92058fb7cb",
+    "/lib/x86_64-linux-gnu/libc.so.6": "8db37cf3f2169f59a0f07ef1fea308c35656668c64c8ff294e1860f4121eb161"
+  },
+  "manifest_supplement": "Complete-path ldd parsing retains spaces; frozen builder is unchanged",
+  "upstream_verified_files": 142,
+  "functional_report_sha256": "e913670fd61f046698068c0cf61ba6892bef4ec77b39206f10bd82ec8fc67dca",
+  "complete_native_tasks": 130,
+  "commands": {
+    "extract_libssl-dev": {
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/host_downloads_001/attempt_01_libssl-dev_3.0.13-0ubuntu3.16_amd64.deb",
+        "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root"
+      ],
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0
+    },
+    "extract_libssl3t64": {
+      "command": [
+        "dpkg-deb",
+        "-x",
+        "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/host_downloads_001/attempt_01_libssl3t64_3.0.13-0ubuntu3.16_amd64.deb",
+        "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/dependencies_001/root"
+      ],
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0
+    },
+    "fetch": {
+      "method": "existing-original-upstream-exact-B0-file-pin-copy",
+      "verified_files": 142,
+      "official_codeload_available": false,
+      "source_fetcher_preserved_verbatim": true
+    },
+    "build": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/checkout_001/experiments/core_rebuild/scripts/build.py",
+        "--run-id",
+        "portable_native_003",
+        "--build-id",
+        "build_001"
+      ],
+      "log_sha256": "16efe03fd7e11d29b3f89e0ab24533545f41201a862f773796a93523dac6b7be",
+      "returncode": 0
+    },
+    "unit_build": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/checkout_001/experiments/core_rebuild/scripts/build_unit.py",
+        "--manifest",
+        "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/checkout_001/experiments/core_rebuild/runs/portable_native_003/build/build_001/build_manifest.json"
+      ],
+      "log_sha256": "e48deb3c3ba5812faa2a18b77f38fd3ff118201746cf970530cef1bdc8278156",
+      "returncode": 0
+    },
+    "functional": {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/checkout_001/experiments/core_rebuild/scripts/functional.py",
+        "--run-id",
+        "portable_native_003",
+        "--binary",
+        "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/checkout_001/experiments/core_rebuild/runs/portable_native_003/build/build_001/core_native",
+        "--unit-binary",
+        "/mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/portability/native_003/checkout_001/experiments/core_rebuild/runs/portable_native_003/build/build_001/unit/test_native_unit",
+        "--policy",
+        "monitor",
+        "--cpus",
+        "0,2,4,6"
+      ],
+      "log_sha256": "4fcace40a813e0513705b018b8f3aff863de6fc041e5c8f65b65e77eeb02aa5d",
+      "returncode": 0
+    }
+  }
+}

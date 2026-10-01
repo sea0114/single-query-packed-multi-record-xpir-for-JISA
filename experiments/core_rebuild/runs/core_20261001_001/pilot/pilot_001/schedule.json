@@ -1,0 +1,3314 @@
+[
+  {
+    "profile_id": 0,
+    "workload": {
+      "N": 256,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "included",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100101,
+    "target_seed": 2026100102,
+    "configs": [
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 0,
+    "workload": {
+      "N": 256,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "included",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100102,
+    "target_seed": 2026100103,
+    "configs": [
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 0,
+    "workload": {
+      "N": 256,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "included",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100103,
+    "target_seed": 2026100104,
+    "configs": [
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 0,
+    "workload": {
+      "N": 256,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "excluded",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100101,
+    "target_seed": 2026100102,
+    "configs": [
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 0,
+    "workload": {
+      "N": 256,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "excluded",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100102,
+    "target_seed": 2026100103,
+    "configs": [
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 0,
+    "workload": {
+      "N": 256,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "excluded",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100103,
+    "target_seed": 2026100104,
+    "configs": [
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 1,
+    "workload": {
+      "N": 256,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "included",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100111,
+    "target_seed": 2026100112,
+    "configs": [
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 1,
+    "workload": {
+      "N": 256,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "included",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100112,
+    "target_seed": 2026100113,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 1,
+    "workload": {
+      "N": 256,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "included",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100113,
+    "target_seed": 2026100114,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 1,
+    "workload": {
+      "N": 256,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "excluded",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100111,
+    "target_seed": 2026100112,
+    "configs": [
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 1,
+    "workload": {
+      "N": 256,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "excluded",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100112,
+    "target_seed": 2026100113,
+    "configs": [
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 1,
+    "workload": {
+      "N": 256,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "excluded",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100113,
+    "target_seed": 2026100114,
+    "configs": [
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 2,
+    "workload": {
+      "N": 4096,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "included",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100121,
+    "target_seed": 2026100122,
+    "configs": [
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 2,
+    "workload": {
+      "N": 4096,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "included",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100122,
+    "target_seed": 2026100123,
+    "configs": [
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 2,
+    "workload": {
+      "N": 4096,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "included",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100123,
+    "target_seed": 2026100124,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 2,
+    "workload": {
+      "N": 4096,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "excluded",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100121,
+    "target_seed": 2026100122,
+    "configs": [
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 2,
+    "workload": {
+      "N": 4096,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "excluded",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100122,
+    "target_seed": 2026100123,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 2,
+    "workload": {
+      "N": 4096,
+      "alpha": 2,
+      "ell_bits": 4096
+    },
+    "scope": "excluded",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100123,
+    "target_seed": 2026100124,
+    "configs": [
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 3,
+    "workload": {
+      "N": 4096,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "included",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100131,
+    "target_seed": 2026100132,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 3,
+    "workload": {
+      "N": 4096,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "included",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100132,
+    "target_seed": 2026100133,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 3,
+    "workload": {
+      "N": 4096,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "included",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100133,
+    "target_seed": 2026100134,
+    "configs": [
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 3,
+    "workload": {
+      "N": 4096,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "excluded",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100131,
+    "target_seed": 2026100132,
+    "configs": [
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 3,
+    "workload": {
+      "N": 4096,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "excluded",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100132,
+    "target_seed": 2026100133,
+    "configs": [
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 3,
+    "workload": {
+      "N": 4096,
+      "alpha": 4,
+      "ell_bits": 32768
+    },
+    "scope": "excluded",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100133,
+    "target_seed": 2026100134,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 4,
+    "workload": {
+      "N": 1024,
+      "alpha": 3,
+      "ell_bits": 32768
+    },
+    "scope": "included",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100141,
+    "target_seed": 2026100142,
+    "configs": [
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c3_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c3_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 4,
+    "workload": {
+      "N": 1024,
+      "alpha": 3,
+      "ell_bits": 32768
+    },
+    "scope": "included",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100142,
+    "target_seed": 2026100143,
+    "configs": [
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c3_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c3_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 4,
+    "workload": {
+      "N": 1024,
+      "alpha": 3,
+      "ell_bits": 32768
+    },
+    "scope": "included",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100143,
+    "target_seed": 2026100144,
+    "configs": [
+      {
+        "config_id": "R_rho24_c3_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c3_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 4,
+    "workload": {
+      "N": 1024,
+      "alpha": 3,
+      "ell_bits": 32768
+    },
+    "scope": "excluded",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100141,
+    "target_seed": 2026100142,
+    "configs": [
+      {
+        "config_id": "R_rho04_c3_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c3_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 4,
+    "workload": {
+      "N": 1024,
+      "alpha": 3,
+      "ell_bits": 32768
+    },
+    "scope": "excluded",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100142,
+    "target_seed": 2026100143,
+    "configs": [
+      {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c3_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c3_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 4,
+    "workload": {
+      "N": 1024,
+      "alpha": 3,
+      "ell_bits": 32768
+    },
+    "scope": "excluded",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100143,
+    "target_seed": 2026100144,
+    "configs": [
+      {
+        "config_id": "R_rho04_c3_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c3_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 5,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 4096
+    },
+    "scope": "included",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100151,
+    "target_seed": 2026100152,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 5,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 4096
+    },
+    "scope": "included",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100152,
+    "target_seed": 2026100153,
+    "configs": [
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 5,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 4096
+    },
+    "scope": "included",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100153,
+    "target_seed": 2026100154,
+    "configs": [
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 5,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 4096
+    },
+    "scope": "excluded",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100151,
+    "target_seed": 2026100152,
+    "configs": [
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 5,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 4096
+    },
+    "scope": "excluded",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100152,
+    "target_seed": 2026100153,
+    "configs": [
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 5,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 4096
+    },
+    "scope": "excluded",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100153,
+    "target_seed": 2026100154,
+    "configs": [
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 6,
+    "workload": {
+      "N": 1024,
+      "alpha": 2,
+      "ell_bits": 98304
+    },
+    "scope": "included",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100161,
+    "target_seed": 2026100162,
+    "configs": [
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 6,
+    "workload": {
+      "N": 1024,
+      "alpha": 2,
+      "ell_bits": 98304
+    },
+    "scope": "included",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100162,
+    "target_seed": 2026100163,
+    "configs": [
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 6,
+    "workload": {
+      "N": 1024,
+      "alpha": 2,
+      "ell_bits": 98304
+    },
+    "scope": "included",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100163,
+    "target_seed": 2026100164,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 6,
+    "workload": {
+      "N": 1024,
+      "alpha": 2,
+      "ell_bits": 98304
+    },
+    "scope": "excluded",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100161,
+    "target_seed": 2026100162,
+    "configs": [
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 6,
+    "workload": {
+      "N": 1024,
+      "alpha": 2,
+      "ell_bits": 98304
+    },
+    "scope": "excluded",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100162,
+    "target_seed": 2026100163,
+    "configs": [
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 6,
+    "workload": {
+      "N": 1024,
+      "alpha": 2,
+      "ell_bits": 98304
+    },
+    "scope": "excluded",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100163,
+    "target_seed": 2026100164,
+    "configs": [
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c2_t2",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho12_c1_t4",
+        "kind": "P",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c2_t2",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 2,
+        "threads": 2,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 7,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 49152
+    },
+    "scope": "included",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100171,
+    "target_seed": 2026100172,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 7,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 49152
+    },
+    "scope": "included",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100172,
+    "target_seed": 2026100173,
+    "configs": [
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 7,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 49152
+    },
+    "scope": "included",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100173,
+    "target_seed": 2026100174,
+    "configs": [
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 7,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 49152
+    },
+    "scope": "excluded",
+    "round_id": 0,
+    "phase": "warmup",
+    "fixture_seed": 2026100171,
+    "target_seed": 2026100172,
+    "configs": [
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 7,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 49152
+    },
+    "scope": "excluded",
+    "round_id": 1,
+    "phase": "pilot",
+    "fixture_seed": 2026100172,
+    "target_seed": 2026100173,
+    "configs": [
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  },
+  {
+    "profile_id": 7,
+    "workload": {
+      "N": 1024,
+      "alpha": 4,
+      "ell_bits": 49152
+    },
+    "scope": "excluded",
+    "round_id": 2,
+    "phase": "pilot",
+    "fixture_seed": 2026100173,
+    "target_seed": 2026100174,
+    "configs": [
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c4_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c4_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  }
+]

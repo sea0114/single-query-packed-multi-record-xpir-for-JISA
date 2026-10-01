@@ -1,0 +1,111 @@
+{
+  "status": "PASS_PORTABLE_ANALYZE_REDRAW_AND_REFUSAL_GATE",
+  "native_executions": 0,
+  "new_native_performance_observations": 0,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\sover\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "analysis_outputs": {
+    "summary.json": {
+      "byte_identical": false,
+      "normalized_line_endings_byte_identical": true,
+      "parsed_data_identical": true,
+      "source_sha256": "fa4f02c7ea2657c5740d531b42d15ebcbeedcc162de367a834639cb1ce6db863",
+      "reproduced_sha256": "4ef4218438d00b716a2cbfb5704510ae86a83abe63e56a1aa2582a35e922e1af"
+    },
+    "fullprecision.csv": {
+      "byte_identical": true,
+      "normalized_line_endings_byte_identical": true,
+      "parsed_data_identical": true,
+      "source_sha256": "ecf5e28614c67e5f42de51e37427f339aca4e85590dcda842a2f61b7e93f8426",
+      "reproduced_sha256": "ecf5e28614c67e5f42de51e37427f339aca4e85590dcda842a2f61b7e93f8426"
+    },
+    "session_effects.csv": {
+      "byte_identical": true,
+      "normalized_line_endings_byte_identical": true,
+      "parsed_data_identical": true,
+      "source_sha256": "19c455cead21424328361048915c10ec526d1565b6e25c2485227055f2af3e9a",
+      "reproduced_sha256": "19c455cead21424328361048915c10ec526d1565b6e25c2485227055f2af3e9a"
+    },
+    "configurations_and_buffers.csv": {
+      "byte_identical": true,
+      "normalized_line_endings_byte_identical": true,
+      "parsed_data_identical": true,
+      "source_sha256": "666c64b1e500d347042483b2d7ac74284bd384ae48e96fe72cea183060140535",
+      "reproduced_sha256": "666c64b1e500d347042483b2d7ac74284bd384ae48e96fe72cea183060140535"
+    },
+    "claim_map.json": {
+      "byte_identical": false,
+      "normalized_line_endings_byte_identical": true,
+      "parsed_data_identical": true,
+      "source_sha256": "23f4b5629641bd504e2fe504040c65b49b1aa0dddd49ba5ca6460563f6e40c65",
+      "reproduced_sha256": "1adb037d976eb56d7e0a0fac2e48b1d848f05d3c73489b322243287edc6ad333"
+    },
+    "failure_ledger.json": {
+      "byte_identical": false,
+      "normalized_line_endings_byte_identical": true,
+      "parsed_data_identical": true,
+      "source_sha256": "b4f54554494ca2a78b3f727288c1ac9b481ee514ec42d3c079e6f8e969ce7287",
+      "reproduced_sha256": "6a771b8be905e1365377d1ca5170839d42c1e194bba407e9621f52068f68962f"
+    }
+  },
+  "figure_outputs": {
+    "retrieval_performance.pdf": {
+      "byte_identical": true,
+      "sha256": "6f4abed51e0b1880cc2e1a351eebc559c1b5fd550cf28ce4e060ea17f97fb868"
+    },
+    "capacity_tradeoff.pdf": {
+      "byte_identical": true,
+      "sha256": "6fe6d7bd4c23925b36aaa84a4a210954c29f16f31dee996d6a21e6d6b3059469"
+    },
+    "figure_data.json": {
+      "byte_identical": true,
+      "sha256": "0a9725e2f28f36874e7cf425c8672b1995598201df258023fe0f1c0d4705485a"
+    },
+    "caption_data.json": {
+      "byte_identical": true,
+      "sha256": "1272c41ed67df871762ed2cbbf25a2250246d2648df3b9b9f81fae9d5a7172b2"
+    }
+  },
+  "refusals": [
+    {
+      "case": "existing_root",
+      "returncode": 2,
+      "response": {
+        "status": "REJECTED",
+        "type": "ValueError",
+        "message": "Output root already exists; refusing overwrite"
+      },
+      "log_sha256": "87019661629b74a3afd185c7773a4d6225bc5dafe866ec64e5f98585f9c700e4"
+    },
+    {
+      "case": "wrong_freeze_digest",
+      "returncode": 2,
+      "response": {
+        "status": "REJECTED",
+        "type": "ValueError",
+        "message": "Source integrity mismatch: experiments/core_rebuild/runs/core_20261001_001/provenance/freeze.json"
+      },
+      "log_sha256": "2b1655a0cfab9ba50343758d2e83d820ef5cacc5f3080da8aa174f84d90d542d"
+    }
+  ],
+  "analysis_provenance_semantics_identical_except_generated_utc_and_output_serialization_digests": true,
+  "figure_provenance_semantics_identical_except_generated_utc": true,
+  "analyze": {
+    "closure_files": 7,
+    "result_sha256": "fbe8dfb5ad0fe1d2a77cb2e109d99d7bdd900131d444898c1869660b27cd9df6",
+    "request_sha256": "38546949ff5763d2b3d2a9ad91b39e4aeefce69161ef4d8360c2102f31dd3d7a"
+  },
+  "redraw": {
+    "closure_files": 9,
+    "result_sha256": "a468ca4c4afa65043635586d9199cd68a464e8e0a0a3c813d5fe32cec2486c1e",
+    "request_sha256": "56f3790cecc6e45453293c59ac8158c295087fcf2429f74b120dd9a481a07653"
+  },
+  "source_inputs_unchanged": true,
+  "existing_output_tree_unchanged": true,
+  "matplotlib_version": "3.10.9",
+  "matplotlib_dependency_location": "manuscript/build/section6_focus/presentation/deps (readonly host dependency lookup only; not copied)",
+  "runtime_dependency_output_confined": [
+    "runtime/tmp",
+    "runtime/matplotlib"
+  ]
+}

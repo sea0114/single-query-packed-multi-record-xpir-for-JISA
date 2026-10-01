@@ -1,0 +1,189 @@
+{
+  "session_id": 7,
+  "start_ns": 5196283934069,
+  "started_utc": "2026-10-01T15:33:03.344850+00:00",
+  "environment": {
+    "captured_utc": "2026-10-01T15:33:03.327425+00:00",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "boot_id": "94d108c3-eb08-4185-b9ca-2f427baf2251",
+    "affinity": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "processes": [
+      {
+        "pid": 1,
+        "ppid": 0,
+        "start_ticks": 100,
+        "command": "/sbin/init "
+      },
+      {
+        "pid": 2,
+        "ppid": 1,
+        "start_ticks": 109,
+        "command": "/init "
+      },
+      {
+        "pid": 6,
+        "ppid": 2,
+        "start_ticks": 149,
+        "command": "plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate "
+      },
+      {
+        "pid": 52,
+        "ppid": 1,
+        "start_ticks": 193,
+        "command": "/usr/lib/systemd/systemd-journald "
+      },
+      {
+        "pid": 97,
+        "ppid": 1,
+        "start_ticks": 203,
+        "command": "/usr/lib/systemd/systemd-udevd "
+      },
+      {
+        "pid": 153,
+        "ppid": 1,
+        "start_ticks": 225,
+        "command": "/usr/lib/systemd/systemd-resolved "
+      },
+      {
+        "pid": 154,
+        "ppid": 1,
+        "start_ticks": 226,
+        "command": "/usr/lib/systemd/systemd-timesyncd "
+      },
+      {
+        "pid": 166,
+        "ppid": 1,
+        "start_ticks": 258,
+        "command": "/usr/sbin/cron -f -P "
+      },
+      {
+        "pid": 167,
+        "ppid": 1,
+        "start_ticks": 259,
+        "command": "@dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only "
+      },
+      {
+        "pid": 174,
+        "ppid": 1,
+        "start_ticks": 261,
+        "command": "/usr/lib/systemd/systemd-logind "
+      },
+      {
+        "pid": 176,
+        "ppid": 1,
+        "start_ticks": 262,
+        "command": "/usr/libexec/wsl-pro-service -vv "
+      },
+      {
+        "pid": 178,
+        "ppid": 1,
+        "start_ticks": 263,
+        "command": "/sbin/agetty -o -p -- \\u --noclear --keep-baud - 115200,38400,9600 vt220 "
+      },
+      {
+        "pid": 183,
+        "ppid": 1,
+        "start_ticks": 264,
+        "command": "/usr/sbin/rsyslogd -n -iNONE "
+      },
+      {
+        "pid": 188,
+        "ppid": 1,
+        "start_ticks": 265,
+        "command": "/sbin/agetty -o -p -- \\u --noclear - linux "
+      },
+      {
+        "pid": 204,
+        "ppid": 1,
+        "start_ticks": 267,
+        "command": "/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal "
+      },
+      {
+        "pid": 292,
+        "ppid": 2,
+        "start_ticks": 361,
+        "command": "/init "
+      },
+      {
+        "pid": 293,
+        "ppid": 292,
+        "start_ticks": 361,
+        "command": "/init "
+      },
+      {
+        "pid": 294,
+        "ppid": 293,
+        "start_ticks": 361,
+        "command": "python3 -B /mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/scripts/formal.py --freeze /mnt/c/Users/sover/Desktop/IEEE Access/Single_Query_Packed_Multi_Record_Retrieval_for_RLWE_based_Private_Information_Retrieval/experiments/core_rebuild/runs/core_20261001_001/provenance/freeze.json "
+      },
+      {
+        "pid": 295,
+        "ppid": 2,
+        "start_ticks": 362,
+        "command": "/bin/login -f      "
+      },
+      {
+        "pid": 338,
+        "ppid": 1,
+        "start_ticks": 408,
+        "command": "/usr/lib/systemd/systemd --user "
+      },
+      {
+        "pid": 339,
+        "ppid": 338,
+        "start_ticks": 409,
+        "command": "(sd-pam) "
+      },
+      {
+        "pid": 363,
+        "ppid": 295,
+        "start_ticks": 422,
+        "command": "-bash "
+      },
+      {
+        "pid": 38315,
+        "ppid": 1,
+        "start_ticks": 512903,
+        "command": "/bin/sh /etc/update-motd.d/50-motd-news --force "
+      },
+      {
+        "pid": 38335,
+        "ppid": 38315,
+        "start_ticks": 512947,
+        "command": "wget --timeout 60 -U wget/1.21.4-1ubuntu4.1 Ubuntu/24.04.1/LTS GNU/Linux/6.6.87.2-microsoft-standard-WSL2/x86_64 AMD/Ryzen/7/3700X/8-Core/Processor cloud_id/unknown -O- --content-on-error https://motd.ubuntu.com "
+      }
+    ],
+    "lscpu": "{\n   \"lscpu\": [\n      {\n         \"field\": \"Architecture:\",\n         \"data\": \"x86_64\"\n      },{\n         \"field\": \"CPU op-mode(s):\",\n         \"data\": \"32-bit, 64-bit\"\n      },{\n         \"field\": \"Address sizes:\",\n         \"data\": \"48 bits physical, 48 bits virtual\"\n      },{\n         \"field\": \"Byte Order:\",\n         \"data\": \"Little Endian\"\n      },{\n         \"field\": \"CPU(s):\",\n         \"data\": \"16\"\n      },{\n         \"field\": \"On-line CPU(s) list:\",\n         \"data\": \"0-15\"\n      },{\n         \"field\": \"Vendor ID:\",\n         \"data\": \"AuthenticAMD\"\n      },{\n         \"field\": \"Model name:\",\n         \"data\": \"AMD Ryzen 7 3700X 8-Core Processor\"\n      },{\n         \"field\": \"CPU family:\",\n         \"data\": \"23\"\n      },{\n         \"field\": \"Model:\",\n         \"data\": \"113\"\n      },{\n         \"field\": \"Thread(s) per core:\",\n         \"data\": \"2\"\n      },{\n         \"field\": \"Core(s) per socket:\",\n         \"data\": \"8\"\n      },{\n         \"field\": \"Socket(s):\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"Stepping:\",\n         \"data\": \"0\"\n      },{\n         \"field\": \"BogoMIPS:\",\n         \"data\": \"7200.03\"\n      },{\n         \"field\": \"Flags:\",\n         \"data\": \"fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip rdpid\"\n      },{\n         \"field\": \"Virtualization:\",\n         \"data\": \"AMD-V\"\n      },{\n         \"field\": \"Hypervisor vendor:\",\n         \"data\": \"Microsoft\"\n      },{\n         \"field\": \"Virtualization type:\",\n         \"data\": \"full\"\n      },{\n         \"field\": \"L1d cache:\",\n         \"data\": \"256 KiB (8 instances)\"\n      },{\n         \"field\": \"L1i cache:\",\n         \"data\": \"256 KiB (8 instances)\"\n      },{\n         \"field\": \"L2 cache:\",\n         \"data\": \"4 MiB (8 instances)\"\n      },{\n         \"field\": \"L3 cache:\",\n         \"data\": \"16 MiB (1 instance)\"\n      },{\n         \"field\": \"NUMA node(s):\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"NUMA node0 CPU(s):\",\n         \"data\": \"0-15\"\n      },{\n         \"field\": \"Vulnerability Gather data sampling:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Itlb multihit:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability L1tf:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Mds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Meltdown:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Mmio stale data:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Reg file data sampling:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Retbleed:\",\n         \"data\": \"Mitigation; untrained return thunk; SMT enabled with STIBP protection\"\n      },{\n         \"field\": \"Vulnerability Spec rstack overflow:\",\n         \"data\": \"Vulnerable: Safe RET, no microcode\"\n      },{\n         \"field\": \"Vulnerability Spec store bypass:\",\n         \"data\": \"Mitigation; Speculative Store Bypass disabled via prctl\"\n      },{\n         \"field\": \"Vulnerability Spectre v1:\",\n         \"data\": \"Mitigation; usercopy/swapgs barriers and __user pointer sanitization\"\n      },{\n         \"field\": \"Vulnerability Spectre v2:\",\n         \"data\": \"Mitigation; Retpolines; IBPB conditional; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected\"\n      },{\n         \"field\": \"Vulnerability Srbds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Tsx async abort:\",\n         \"data\": \"Not affected\"\n      }\n   ]\n}\n",
+    "meminfo": "MemTotal:       32827572 kB\nMemFree:        31968908 kB\nMemAvailable:   32068624 kB\nBuffers:           51548 kB\nCached:           340476 kB\nSwapCached:            0 kB\nActive:           109692 kB\nInactive:         397348 kB\nActive(anon):       3060 kB\nInactive(anon):   115716 kB\nActive(file):     106632 kB\nInactive(file):   281632 kB\nUnevictable:           0 kB\nMlocked:               0 kB\nSwapTotal:       8388608 kB\nSwapFree:        8388608 kB\nDirty:               144 kB\nWriteback:             0 kB\nAnonPages:        115056 kB\nMapped:            80712 kB\nShmem:              3728 kB\nKReclaimable:      25444 kB\nSlab:              87628 kB\nSReclaimable:      25444 kB\nSUnreclaim:        62184 kB\nKernelStack:        4560 kB\nPageTables:         2888 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    24802392 kB\nCommitted_AS:     567928 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       30776 kB\nVmallocChunk:          0 kB\nPercpu:             6528 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       80896 kB\nDirectMap2M:     4073472 kB\nDirectMap1G:    38797312 kB\n",
+    "loadavg": "2.71 2.40 2.26 1/267 38840\n",
+    "cgroup": "0::/init.scope\n",
+    "cgroup_mounts": [
+      "cgroup2 /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime,nsdelegate 0 0"
+    ],
+    "tools": {
+      "python3": "/usr/bin/python3",
+      "g++": "/usr/bin/g++",
+      "taskset": "/usr/bin/taskset"
+    },
+    "python": "3.12.3",
+    "disk": {
+      "total": 998994063360,
+      "used": 340286046208,
+      "free": 658708017152
+    },
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "existing_lock_paths": [
+      {
+        "path": "experiments/measurement.lock",
+        "content": "{\"acquired_utc\": \"2026-10-01T14:06:33.076010+00:00\", \"boot_id\": \"94d108c3-eb08-4185-b9ca-2f427baf2251\", \"owner_token\": \"565432f0aec14bf0a39fa0b90cbbe76d\", \"pid\": 294, \"process_start_ticks\": 361, \"run_id\": \"core_20261001_001-formal\", \"schema_version\": 1}\n"
+      }
+    ]
+  },
+  "session_note": "Same-host fresh batch, not an independent host/day"
+}

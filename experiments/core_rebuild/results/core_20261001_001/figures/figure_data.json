@@ -1,0 +1,3710 @@
+{
+  "schema": "CORE_FIGURE_DATA_V1",
+  "run_id": "core_20261001_001",
+  "summary_sha256": "fa4f02c7ea2657c5740d531b42d15ebcbeedcc162de367a834639cb1ce6db863",
+  "source_sha256": "e2c11cd376fe425e139f706839dab4c10cadc34c52bda5e98381970e62f1a501",
+  "figure_condition_map": {
+    "retrieval_performance": [
+      "primary_N1024_a2_ell4096_included",
+      "primary_N1024_a2_ell4096_excluded",
+      "primary_N1024_a2_ell32768_included",
+      "primary_N1024_a2_ell32768_excluded",
+      "primary_N1024_a3_ell4096_included",
+      "primary_N1024_a3_ell4096_excluded",
+      "primary_N1024_a3_ell32768_included",
+      "primary_N1024_a3_ell32768_excluded",
+      "primary_N1024_a4_ell4096_included",
+      "primary_N1024_a4_ell4096_excluded",
+      "primary_N1024_a4_ell32768_included",
+      "primary_N1024_a4_ell32768_excluded"
+    ],
+    "capacity_tradeoff": [
+      "capacity_N1024_a2_ell49144_included",
+      "capacity_N1024_a2_ell49144_excluded",
+      "capacity_N1024_a2_ell49152_included",
+      "capacity_N1024_a2_ell49152_excluded",
+      "capacity_N1024_a2_ell49160_included",
+      "capacity_N1024_a2_ell49160_excluded",
+      "capacity_N1024_a2_ell98304_included",
+      "capacity_N1024_a2_ell98304_excluded",
+      "capacity_N1024_a4_ell24568_included",
+      "capacity_N1024_a4_ell24568_excluded",
+      "capacity_N1024_a4_ell24576_included",
+      "capacity_N1024_a4_ell24576_excluded",
+      "capacity_N1024_a4_ell24584_included",
+      "capacity_N1024_a4_ell24584_excluded",
+      "capacity_N1024_a4_ell49152_included",
+      "capacity_N1024_a4_ell49152_excluded"
+    ],
+    "costs": [
+      "primary_N1024_a2_ell4096_included",
+      "primary_N1024_a2_ell4096_excluded",
+      "primary_N1024_a2_ell32768_included",
+      "primary_N1024_a2_ell32768_excluded",
+      "primary_N1024_a3_ell4096_included",
+      "primary_N1024_a3_ell4096_excluded",
+      "primary_N1024_a3_ell32768_included",
+      "primary_N1024_a3_ell32768_excluded",
+      "primary_N1024_a4_ell4096_included",
+      "primary_N1024_a4_ell4096_excluded",
+      "primary_N1024_a4_ell32768_included",
+      "primary_N1024_a4_ell32768_excluded",
+      "capacity_N1024_a2_ell49144_included",
+      "capacity_N1024_a2_ell49144_excluded",
+      "capacity_N1024_a2_ell49152_included",
+      "capacity_N1024_a2_ell49152_excluded",
+      "capacity_N1024_a2_ell49160_included",
+      "capacity_N1024_a2_ell49160_excluded",
+      "capacity_N1024_a2_ell98304_included",
+      "capacity_N1024_a2_ell98304_excluded",
+      "capacity_N1024_a4_ell24568_included",
+      "capacity_N1024_a4_ell24568_excluded",
+      "capacity_N1024_a4_ell24576_included",
+      "capacity_N1024_a4_ell24576_excluded",
+      "capacity_N1024_a4_ell24584_included",
+      "capacity_N1024_a4_ell24584_excluded",
+      "capacity_N1024_a4_ell49152_included",
+      "capacity_N1024_a4_ell49152_excluded"
+    ]
+  },
+  "figures": [
+    {
+      "filename": "retrieval_performance.pdf",
+      "width_inches": 6.6,
+      "height_inches": 4.65,
+      "minimum_font_size_pt": 8.5,
+      "common_y_limits": [
+        0,
+        1.439668991625688
+      ],
+      "panels": [
+        {
+          "scope": "excluded",
+          "alpha": 2,
+          "series": [
+            {
+              "method": "R_independent",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a2_ell4096_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a2_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 4096
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.0570487986833532,
+                  "CI95": [
+                    1.024120535894228,
+                    1.0867151045776884
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho04_c2_t2",
+                    "kind": "R",
+                    "rho_0": 4,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a2_ell4096_excluded/ratios/R_independent"
+                },
+                {
+                  "condition_id": "primary_N1024_a2_ell32768_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a2_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 32768
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.0963885920990784,
+                  "CI95": [
+                    1.059817223683216,
+                    1.1161654540695403
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho16_c2_t1",
+                    "kind": "R",
+                    "rho_0": 16,
+                    "concurrency": 2,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 2048,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a2_ell32768_excluded/ratios/R_independent"
+                }
+              ]
+            },
+            {
+              "method": "R_matched",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a2_ell4096_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a2_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 4096
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.076813496602222,
+                  "CI95": [
+                    1.0386690763266793,
+                    1.1115617698593265
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho04_c2_t1",
+                    "kind": "R",
+                    "rho_0": 4,
+                    "concurrency": 2,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a2_ell4096_excluded/ratios/R_matched"
+                },
+                {
+                  "condition_id": "primary_N1024_a2_ell32768_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a2_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 32768
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.0845930620644673,
+                  "CI95": [
+                    1.0507892356220103,
+                    1.1228642528098152
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c2_t1",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 2,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 2731,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a2_ell32768_excluded/ratios/R_matched"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "scope": "excluded",
+          "alpha": 3,
+          "series": [
+            {
+              "method": "R_independent",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a3_ell4096_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a3_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 3,
+                    "ell_bits": 4096
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.1814306015534788,
+                  "CI95": [
+                    1.1619760284299376,
+                    1.2011422045381428
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho04_c3_t1",
+                    "kind": "R",
+                    "rho_0": 4,
+                    "concurrency": 3,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 3,
+                    "query_ciphertexts": 3072,
+                    "reply_ciphertexts": 3,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 402653184,
+                    "reply_buffer_bytes": 393216,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a3_ell4096_excluded/ratios/R_independent"
+                },
+                {
+                  "condition_id": "primary_N1024_a3_ell32768_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a3_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 3,
+                    "ell_bits": 32768
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.1734268958170835,
+                  "CI95": [
+                    1.1617908549828653,
+                    1.2023249145118091
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c3_t1",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 3,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 3,
+                    "query_ciphertexts": 3072,
+                    "reply_ciphertexts": 3,
+                    "actual_L": 1,
+                    "planned_J": 1366,
+                    "query_buffer_bytes": 402653184,
+                    "reply_buffer_bytes": 393216,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a3_ell32768_excluded/ratios/R_independent"
+                }
+              ]
+            },
+            {
+              "method": "R_matched",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a3_ell4096_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a3_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 3,
+                    "ell_bits": 4096
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.1805581605057625,
+                  "CI95": [
+                    1.1584092818931582,
+                    1.2117635189143912
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho08_c3_t1",
+                    "kind": "R",
+                    "rho_0": 8,
+                    "concurrency": 3,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 3,
+                    "query_ciphertexts": 3072,
+                    "reply_ciphertexts": 3,
+                    "actual_L": 1,
+                    "planned_J": 512,
+                    "query_buffer_bytes": 402653184,
+                    "reply_buffer_bytes": 393216,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a3_ell4096_excluded/ratios/R_matched"
+                },
+                {
+                  "condition_id": "primary_N1024_a3_ell32768_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a3_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 3,
+                    "ell_bits": 32768
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.18839618229705,
+                  "CI95": [
+                    1.1551687009264868,
+                    1.2038532144705876
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho08_c3_t1",
+                    "kind": "R",
+                    "rho_0": 8,
+                    "concurrency": 3,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 3,
+                    "query_ciphertexts": 3072,
+                    "reply_ciphertexts": 3,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 402653184,
+                    "reply_buffer_bytes": 393216,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a3_ell32768_excluded/ratios/R_matched"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "scope": "excluded",
+          "alpha": 4,
+          "series": [
+            {
+              "method": "R_independent",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a4_ell4096_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a4_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 4096
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.2188009877093753,
+                  "CI95": [
+                    1.1916318862009578,
+                    1.2484875979079555
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c4_t1",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 342,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a4_ell4096_excluded/ratios/R_independent"
+                },
+                {
+                  "condition_id": "primary_N1024_a4_ell32768_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a4_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 32768
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.2368366787461964,
+                  "CI95": [
+                    1.2178379035709552,
+                    1.2656355798056553
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho16_c4_t1",
+                    "kind": "R",
+                    "rho_0": 16,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 2048,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a4_ell32768_excluded/ratios/R_independent"
+                }
+              ]
+            },
+            {
+              "method": "R_matched",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a4_ell4096_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a4_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 4096
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.2017799089640326,
+                  "CI95": [
+                    1.1854402885574356,
+                    1.215308173799051
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho04_c4_t1",
+                    "kind": "R",
+                    "rho_0": 4,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a4_ell4096_excluded/ratios/R_matched"
+                },
+                {
+                  "condition_id": "primary_N1024_a4_ell32768_excluded",
+                  "workload": {
+                    "workload_id": "primary_N1024_a4_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 32768
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.2946014705835276,
+                  "CI95": [
+                    1.27835492493027,
+                    1.308789992386989
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho04_c4_t1",
+                    "kind": "R",
+                    "rho_0": 4,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 8,
+                    "actual_L": 2,
+                    "planned_J": 8192,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 1048576,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a4_ell32768_excluded/ratios/R_matched"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "scope": "included",
+          "alpha": 2,
+          "series": [
+            {
+              "method": "R_independent",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a2_ell4096_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a2_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 4096
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.053743119056867,
+                  "CI95": [
+                    1.0274113307497283,
+                    1.0818682795833579
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho04_c2_t2",
+                    "kind": "R",
+                    "rho_0": 4,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a2_ell4096_included/ratios/R_independent"
+                },
+                {
+                  "condition_id": "primary_N1024_a2_ell32768_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a2_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 32768
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.055642232773271,
+                  "CI95": [
+                    1.0369311022472723,
+                    1.080630154040342
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho16_c2_t1",
+                    "kind": "R",
+                    "rho_0": 16,
+                    "concurrency": 2,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 2048,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a2_ell32768_included/ratios/R_independent"
+                }
+              ]
+            },
+            {
+              "method": "R_matched",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a2_ell4096_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a2_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 4096
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.0545131635183707,
+                  "CI95": [
+                    1.0246577811235742,
+                    1.082448795014163
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho04_c2_t1",
+                    "kind": "R",
+                    "rho_0": 4,
+                    "concurrency": 2,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a2_ell4096_included/ratios/R_matched"
+                },
+                {
+                  "condition_id": "primary_N1024_a2_ell32768_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a2_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 32768
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.0567176144265227,
+                  "CI95": [
+                    1.0342354967479146,
+                    1.0747293756260476
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c2_t1",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 2,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 2731,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a2_ell32768_included/ratios/R_matched"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "scope": "included",
+          "alpha": 3,
+          "series": [
+            {
+              "method": "R_independent",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a3_ell4096_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a3_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 3,
+                    "ell_bits": 4096
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.1121915084213452,
+                  "CI95": [
+                    1.084536171349481,
+                    1.1165722994650982
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho04_c3_t1",
+                    "kind": "R",
+                    "rho_0": 4,
+                    "concurrency": 3,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 3,
+                    "query_ciphertexts": 3072,
+                    "reply_ciphertexts": 3,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 402653184,
+                    "reply_buffer_bytes": 393216,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a3_ell4096_included/ratios/R_independent"
+                },
+                {
+                  "condition_id": "primary_N1024_a3_ell32768_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a3_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 3,
+                    "ell_bits": 32768
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.1646575535041932,
+                  "CI95": [
+                    1.1365634545465015,
+                    1.1902959505350146
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c3_t1",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 3,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 3,
+                    "query_ciphertexts": 3072,
+                    "reply_ciphertexts": 3,
+                    "actual_L": 1,
+                    "planned_J": 1366,
+                    "query_buffer_bytes": 402653184,
+                    "reply_buffer_bytes": 393216,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a3_ell32768_included/ratios/R_independent"
+                }
+              ]
+            },
+            {
+              "method": "R_matched",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a3_ell4096_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a3_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 3,
+                    "ell_bits": 4096
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.1021143478507032,
+                  "CI95": [
+                    1.0826473610815086,
+                    1.1306814430651555
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho08_c3_t1",
+                    "kind": "R",
+                    "rho_0": 8,
+                    "concurrency": 3,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 3,
+                    "query_ciphertexts": 3072,
+                    "reply_ciphertexts": 3,
+                    "actual_L": 1,
+                    "planned_J": 512,
+                    "query_buffer_bytes": 402653184,
+                    "reply_buffer_bytes": 393216,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a3_ell4096_included/ratios/R_matched"
+                },
+                {
+                  "condition_id": "primary_N1024_a3_ell32768_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a3_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 3,
+                    "ell_bits": 32768
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.112696062867749,
+                  "CI95": [
+                    1.0965028821569534,
+                    1.1305434110414403
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho08_c3_t1",
+                    "kind": "R",
+                    "rho_0": 8,
+                    "concurrency": 3,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 3,
+                    "query_ciphertexts": 3072,
+                    "reply_ciphertexts": 3,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 402653184,
+                    "reply_buffer_bytes": 393216,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a3_ell32768_included/ratios/R_matched"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "scope": "included",
+          "alpha": 4,
+          "series": [
+            {
+              "method": "R_independent",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a4_ell4096_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a4_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 4096
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.2201570586626322,
+                  "CI95": [
+                    1.1779192730430543,
+                    1.2579404550772688
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c4_t1",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 342,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a4_ell4096_included/ratios/R_independent"
+                },
+                {
+                  "condition_id": "primary_N1024_a4_ell32768_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a4_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 32768
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.0169148114181896,
+                  "CI95": [
+                    0.9833611136380069,
+                    1.0366340383204173
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho16_c4_t1",
+                    "kind": "R",
+                    "rho_0": 16,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 2048,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a4_ell32768_included/ratios/R_independent"
+                }
+              ]
+            },
+            {
+              "method": "R_matched",
+              "x_categories": [
+                4096,
+                32768
+              ],
+              "points": [
+                {
+                  "condition_id": "primary_N1024_a4_ell4096_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a4_ell4096",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 4096
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.1579468166450737,
+                  "CI95": [
+                    1.1294217648010951,
+                    1.1718051292802532
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho04_c4_t1",
+                    "kind": "R",
+                    "rho_0": 4,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a4_ell4096_included/ratios/R_matched"
+                },
+                {
+                  "condition_id": "primary_N1024_a4_ell32768_included",
+                  "workload": {
+                    "workload_id": "primary_N1024_a4_ell32768",
+                    "study": "primary",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 32768
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "paired_latency_ratio_to_P",
+                  "estimate": 1.1657039713612791,
+                  "CI95": [
+                    1.1442374878597061,
+                    1.1878771186370018
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho04_c4_t1",
+                    "kind": "R",
+                    "rho_0": 4,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 8,
+                    "actual_L": 2,
+                    "planned_J": 8192,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 1048576,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/primary_N1024_a4_ell32768_included/ratios/R_matched"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "caption": "Completion latency for the full ordered retrieval task at both timing scopes. Points summarize paired baseline/packed ratios by a median within each of ten sessions, followed by the median across sessions; bars are pointwise 95% whole-session percentile intervals from 10000 common resamples. Independently tuned repeated retrieval is the primary comparison; matched-layout repeated retrieval is secondary. Values above one favor packed retrieval. Only measured points are shown; connecting segments are visual guides. Complete absolute latency, CPU and preprocessing summaries, buffers, configurations and all ten session effects accompany the fixed results.",
+      "minimal_tier_note": "Only N=1024 was measured; this figure does not assess N scaling."
+    },
+    {
+      "filename": "capacity_tradeoff.pdf",
+      "width_inches": 6.6,
+      "height_inches": 5.15,
+      "minimum_font_size_pt": 8.5,
+      "common_y_limits_ms": [
+        0,
+        1900.9039282750002
+      ],
+      "panels": [
+        {
+          "scope": "excluded",
+          "alpha": 2,
+          "packed_rho_0": 12,
+          "boundary_bits": 49152,
+          "x_type": "categorical measured record lengths; not equal-spaced continuous bits",
+          "series": [
+            {
+              "method": "P",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a2_ell49144_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49144",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49144,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 672260776.75,
+                  "CI95": [
+                    660387265.5,
+                    679853386.75
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho12_c1_t4",
+                    "kind": "P",
+                    "rho_0": 12,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 1,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 131072,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49144_excluded/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49152_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49152,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 657590569.25,
+                  "CI95": [
+                    652760566.25,
+                    673617925.75
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho12_c1_t4",
+                    "kind": "P",
+                    "rho_0": 12,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 1,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 131072,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49152_excluded/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49160_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49160",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49160,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 657991407.75,
+                  "CI95": [
+                    653875144.5,
+                    663524728.0
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho12_c1_t4",
+                    "kind": "P",
+                    "rho_0": 12,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 2,
+                    "planned_J": 4097,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49160_excluded/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell98304_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell98304",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 98304,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 659644951.75,
+                  "CI95": [
+                    650591651.0,
+                    687861014.0
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho12_c1_t4",
+                    "kind": "P",
+                    "rho_0": 12,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 2,
+                    "planned_J": 8192,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell98304_excluded/absolute/P/task_latency_ns"
+                }
+              ]
+            },
+            {
+              "method": "R_matched",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a2_ell49144_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49144",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49144,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 729384054.5,
+                  "CI95": [
+                    687592349.0,
+                    740591767.75
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c2_t2",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49144_excluded/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49152_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49152,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 716101504.5,
+                  "CI95": [
+                    684573628.5,
+                    726495096.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c2_t2",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49152_excluded/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49160_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49160",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49160,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 748897236.5,
+                  "CI95": [
+                    731072866.5,
+                    759435529.25
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c2_t2",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 2,
+                    "planned_J": 4097,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49160_excluded/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell98304_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell98304",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 98304,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 747529753.0,
+                  "CI95": [
+                    713570363.0,
+                    792866486.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c2_t2",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 2,
+                    "planned_J": 8192,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell98304_excluded/absolute/R_matched/task_latency_ns"
+                }
+              ]
+            },
+            {
+              "method": "R_independent",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a2_ell49144_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49144",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49144,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 714616162.5,
+                  "CI95": [
+                    691821197.0,
+                    726899322.25
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c2_t2",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 2048,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49144_excluded/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49152_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49152,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 720654864.25,
+                  "CI95": [
+                    701209799.75,
+                    743820997.5
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c2_t2",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 2048,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49152_excluded/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49160_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49160",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49160,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 712934827.25,
+                  "CI95": [
+                    703018401.5,
+                    722095201.75
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c2_t2",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 2049,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49160_excluded/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell98304_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell98304",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 98304,
+                    "packed_rho": 12
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 751118784.0,
+                  "CI95": [
+                    731265341.5,
+                    771798595.75
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c2_t2",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell98304_excluded/absolute/R_independent/task_latency_ns"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "scope": "excluded",
+          "alpha": 4,
+          "packed_rho_0": 6,
+          "boundary_bits": 24576,
+          "x_type": "categorical measured record lengths; not equal-spaced continuous bits",
+          "series": [
+            {
+              "method": "P",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a4_ell24568_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24568",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24568,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 652795532.5,
+                  "CI95": [
+                    645235478.25,
+                    659881281.0
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho06_c1_t4",
+                    "kind": "P",
+                    "rho_0": 6,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 1,
+                    "actual_L": 1,
+                    "planned_J": 4095,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 131072,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24568_excluded/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24576_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24576",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24576,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 651075939.5,
+                  "CI95": [
+                    645328099.25,
+                    659807962.0
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho06_c1_t4",
+                    "kind": "P",
+                    "rho_0": 6,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 1,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 131072,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24576_excluded/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24584_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24584",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24584,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 658086355.0,
+                  "CI95": [
+                    646011870.5,
+                    668755778.0
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho06_c1_t4",
+                    "kind": "P",
+                    "rho_0": 6,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 2,
+                    "planned_J": 4098,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24584_excluded/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell49152_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 49152,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 660350494.0,
+                  "CI95": [
+                    652114750.25,
+                    676836936.5
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho06_c1_t4",
+                    "kind": "P",
+                    "rho_0": 6,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 2,
+                    "planned_J": 8192,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell49152_excluded/absolute/P/task_latency_ns"
+                }
+              ]
+            },
+            {
+              "method": "R_matched",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a4_ell24568_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24568",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24568,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 807649181.75,
+                  "CI95": [
+                    795817235.0,
+                    820571001.75
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho06_c4_t1",
+                    "kind": "R",
+                    "rho_0": 6,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 4095,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24568_excluded/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24576_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24576",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24576,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 823064040.75,
+                  "CI95": [
+                    810539748.5,
+                    850673154.75
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho06_c4_t1",
+                    "kind": "R",
+                    "rho_0": 6,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24576_excluded/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24584_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24584",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24584,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 868687724.75,
+                  "CI95": [
+                    854796764.75,
+                    882812506.25
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho06_c4_t1",
+                    "kind": "R",
+                    "rho_0": 6,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 8,
+                    "actual_L": 2,
+                    "planned_J": 4098,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 1048576,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24584_excluded/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell49152_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 49152,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 885074804.5,
+                  "CI95": [
+                    873283134.5,
+                    888245326.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho06_c4_t1",
+                    "kind": "R",
+                    "rho_0": 6,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 8,
+                    "actual_L": 2,
+                    "planned_J": 8192,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 1048576,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell49152_excluded/absolute/R_matched/task_latency_ns"
+                }
+              ]
+            },
+            {
+              "method": "R_independent",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a4_ell24568_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24568",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24568,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 810390137.5,
+                  "CI95": [
+                    798251083.0,
+                    834124868.5
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c4_t1",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24568_excluded/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24576_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24576",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24576,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 821648339.75,
+                  "CI95": [
+                    794022349.5,
+                    837921073.5
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c4_t1",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24576_excluded/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24584_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24584",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24584,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 824390048.5,
+                  "CI95": [
+                    815657061.0,
+                    834982585.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c4_t1",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 1025,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24584_excluded/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell49152_excluded",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 49152,
+                    "packed_rho": 6
+                  },
+                  "scope": "excluded",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 826837206.75,
+                  "CI95": [
+                    808028184.0,
+                    851380783.25
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c4_t1",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 2048,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell49152_excluded/absolute/R_independent/task_latency_ns"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "scope": "included",
+          "alpha": 2,
+          "packed_rho_0": 12,
+          "boundary_bits": 49152,
+          "x_type": "categorical measured record lengths; not equal-spaced continuous bits",
+          "series": [
+            {
+              "method": "P",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a2_ell49144_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49144",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49144,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 1148995648.0,
+                  "CI95": [
+                    1124450291.0,
+                    1166524864.75
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho12_c1_t4",
+                    "kind": "P",
+                    "rho_0": 12,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 1,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 131072,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49144_included/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49152_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49152,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 1145174012.75,
+                  "CI95": [
+                    1125845031.5,
+                    1168688141.5
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho12_c1_t4",
+                    "kind": "P",
+                    "rho_0": 12,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 1,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 131072,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49152_included/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49160_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49160",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49160,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 1354997145.0,
+                  "CI95": [
+                    1336725819.5,
+                    1370116097.5
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho12_c1_t4",
+                    "kind": "P",
+                    "rho_0": 12,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 2,
+                    "planned_J": 4097,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49160_included/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell98304_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell98304",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 98304,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 1609169849.25,
+                  "CI95": [
+                    1594097227.75,
+                    1626138898.9812474
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho12_c1_t4",
+                    "kind": "P",
+                    "rho_0": 12,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 2,
+                    "planned_J": 8192,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell98304_included/absolute/P/task_latency_ns"
+                }
+              ]
+            },
+            {
+              "method": "R_matched",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a2_ell49144_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49144",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49144,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 1210675164.75,
+                  "CI95": [
+                    1163728251.5,
+                    1234409353.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c2_t2",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49144_included/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49152_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49152,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 1202608584.25,
+                  "CI95": [
+                    1194758073.0,
+                    1233460455.5
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c2_t2",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49152_included/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49160_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49160",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49160,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 1443096467.25,
+                  "CI95": [
+                    1387937071.5,
+                    1470265346.5
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c2_t2",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 2,
+                    "planned_J": 4097,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49160_included/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell98304_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell98304",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 98304,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 1721371964.75,
+                  "CI95": [
+                    1689729764.0,
+                    1728094480.25
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho12_c2_t2",
+                    "kind": "R",
+                    "rho_0": 12,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 2,
+                    "planned_J": 8192,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell98304_included/absolute/R_matched/task_latency_ns"
+                }
+              ]
+            },
+            {
+              "method": "R_independent",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a2_ell49144_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49144",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49144,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 1248736851.75,
+                  "CI95": [
+                    1217173857.75,
+                    1278890949.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c2_t2",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 2048,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49144_included/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49152_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49152,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 1232957827.5,
+                  "CI95": [
+                    1204963281.0,
+                    1267343483.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c2_t2",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 2048,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49152_included/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell49160_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell49160",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 49160,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 1244384134.25,
+                  "CI95": [
+                    1223775195.0,
+                    1266638940.5
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c2_t2",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 2049,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell49160_included/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a2_ell98304_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a2_ell98304",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 2,
+                    "ell_bits": 98304,
+                    "packed_rho": 12
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 1525029864.5,
+                  "CI95": [
+                    1502598234.5,
+                    1542040053.5
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c2_t2",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 2,
+                    "threads": 2,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 2,
+                    "query_ciphertexts": 2048,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 268435456,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a2_ell98304_included/absolute/R_independent/task_latency_ns"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "scope": "included",
+          "alpha": 4,
+          "packed_rho_0": 6,
+          "boundary_bits": 24576,
+          "x_type": "categorical measured record lengths; not equal-spaced continuous bits",
+          "series": [
+            {
+              "method": "P",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a4_ell24568_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24568",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24568,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 990020180.75,
+                  "CI95": [
+                    982861703.0,
+                    1010442195.0
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho06_c1_t4",
+                    "kind": "P",
+                    "rho_0": 6,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 1,
+                    "actual_L": 1,
+                    "planned_J": 4095,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 131072,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24568_included/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24576_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24576",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24576,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 985562574.0,
+                  "CI95": [
+                    981151635.0,
+                    1013544813.75
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho06_c1_t4",
+                    "kind": "P",
+                    "rho_0": 6,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 1,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 131072,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24576_included/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24584_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24584",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24584,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 1188167752.75,
+                  "CI95": [
+                    1168562655.0,
+                    1208113709.5
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho06_c1_t4",
+                    "kind": "P",
+                    "rho_0": 6,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 2,
+                    "planned_J": 4098,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24584_included/absolute/P/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell49152_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 49152,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "P",
+                  "metric": "task_latency_ns",
+                  "estimate": 1307980852.0,
+                  "CI95": [
+                    1290770290.0,
+                    1340909179.0
+                  ],
+                  "configuration": {
+                    "config_id": "P_rho06_c1_t4",
+                    "kind": "P",
+                    "rho_0": 6,
+                    "concurrency": 1,
+                    "threads": 4,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 1,
+                    "query_ciphertexts": 1024,
+                    "reply_ciphertexts": 2,
+                    "actual_L": 2,
+                    "planned_J": 8192,
+                    "query_buffer_bytes": 134217728,
+                    "reply_buffer_bytes": 262144,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell49152_included/absolute/P/task_latency_ns"
+                }
+              ]
+            },
+            {
+              "method": "R_matched",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a4_ell24568_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24568",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24568,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 1159406531.5,
+                  "CI95": [
+                    1153397644.0,
+                    1190536736.5
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho06_c4_t1",
+                    "kind": "R",
+                    "rho_0": 6,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 4095,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24568_included/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24576_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24576",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24576,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 1157816816.75,
+                  "CI95": [
+                    1142635551.5,
+                    1199335931.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho06_c4_t1",
+                    "kind": "R",
+                    "rho_0": 6,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 4096,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24576_included/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24584_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24584",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24584,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 1398186080.0,
+                  "CI95": [
+                    1370349931.0,
+                    1425852591.25
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho06_c4_t1",
+                    "kind": "R",
+                    "rho_0": 6,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 8,
+                    "actual_L": 2,
+                    "planned_J": 4098,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 1048576,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24584_included/absolute/R_matched/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell49152_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 49152,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "R_matched",
+                  "metric": "task_latency_ns",
+                  "estimate": 1536991303.25,
+                  "CI95": [
+                    1511927192.5,
+                    1552220518.5
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho06_c4_t1",
+                    "kind": "R",
+                    "rho_0": 6,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 8,
+                    "actual_L": 2,
+                    "planned_J": 8192,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 1048576,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell49152_included/absolute/R_matched/task_latency_ns"
+                }
+              ]
+            },
+            {
+              "method": "R_independent",
+              "points": [
+                {
+                  "condition_id": "capacity_N1024_a4_ell24568_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24568",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24568,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 1230324374.25,
+                  "CI95": [
+                    1216493417.0,
+                    1258217814.5
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c4_t1",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24568_included/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24576_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24576",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24576,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 1227282969.25,
+                  "CI95": [
+                    1212547812.5,
+                    1243629600.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c4_t1",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 1024,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24576_included/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell24584_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell24584",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 24584,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 1235256608.0,
+                  "CI95": [
+                    1218588262.0,
+                    1269469686.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c4_t1",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 1025,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell24584_included/absolute/R_independent/task_latency_ns"
+                },
+                {
+                  "condition_id": "capacity_N1024_a4_ell49152_included",
+                  "workload": {
+                    "workload_id": "capacity_N1024_a4_ell49152",
+                    "study": "capacity",
+                    "N": 1024,
+                    "alpha": 4,
+                    "ell_bits": 49152,
+                    "packed_rho": 6
+                  },
+                  "scope": "included",
+                  "method": "R_independent",
+                  "metric": "task_latency_ns",
+                  "estimate": 1354251792.0,
+                  "CI95": [
+                    1345492877.0,
+                    1369823052.0
+                  ],
+                  "configuration": {
+                    "config_id": "R_rho24_c4_t1",
+                    "kind": "R",
+                    "rho_0": 24,
+                    "concurrency": 4,
+                    "threads": 1,
+                    "w": 24,
+                    "n": 4096
+                  },
+                  "accounting": {
+                    "query_count": 4,
+                    "query_ciphertexts": 4096,
+                    "reply_ciphertexts": 4,
+                    "actual_L": 1,
+                    "planned_J": 2048,
+                    "query_buffer_bytes": 536870912,
+                    "reply_buffer_bytes": 524288,
+                    "ciphertext_buffer_bytes": 131072,
+                    "L_source": "raw reply_buffer_bytes / (131072 * validated query_count); verified equal to frozen L",
+                    "J_source": "frozen arithmetic screen; not asserted to be a new native readback",
+                    "buffer_source": "all complete physical observations, including warmups, have identical actual buffer bytes",
+                    "cpu_sources": [
+                      "coordinator_self_rusage_plus_native_G_to_D_rusage_including_exited_children"
+                    ],
+                    "physical_observations": 70
+                  },
+                  "shared_baseline_observations": false,
+                  "summary_pointer": "/conditions/capacity_N1024_a4_ell49152_included/absolute/R_independent/task_latency_ns"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "caption": "Absolute completion latency across the packed block boundary, with fixed N=1024, w=24 and execution policies. Packed fragment widths are 12 bits for alpha=2 and 6 bits for alpha=4; matched-layout and full-width (24-bit) repeated methods are capacity references. Record lengths are categorical actual measurement points, including the boundary minus 8 bits, the boundary, the boundary plus 8 bits, and twice the boundary. Tick parentheses give the three methods' actual L, verified from buffer readback; reply ciphertext counts and exact buffer bytes are retained per point in figure_data.json and configurations_and_buffers.csv. Points use the median of ten within-session medians; bars are pointwise 95% whole-session percentile intervals. These fixed policies are distinct from primary-study tuning. Segments guide the eye and do not estimate unmeasured crossover locations."
+    }
+  ],
+  "statistics": {
+    "ratio": "baseline/P per paired block; session median of six ratios; median of ten session medians",
+    "absolute": "session median then median across ten sessions",
+    "bootstrap_resamples": 10000,
+    "unit": "whole session, common index vectors across both contrasts and all metrics",
+    "interval": "pointwise 95% percentile, linear interpolation at (B-1)*p; approximate resampling summary, no coverage or cross-host guarantee"
+  },
+  "common_joint_index_draws_sha256": "e579bffdbc13cb58f6368595e214cae57e5712f02a4e13c0bafbac8d2dce7ad9",
+  "source_inputs_modified": false,
+  "new_measurements": 0,
+  "new_bootstrap_resamples": 0
+}

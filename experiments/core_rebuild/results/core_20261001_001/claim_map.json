@@ -1,0 +1,1842 @@
+{
+  "schema": "CORE_CLAIM_MAP_V1",
+  "run_id": "core_20261001_001",
+  "status": "COMPLETE",
+  "figure_condition_map": {
+    "retrieval_performance": [
+      "primary_N1024_a2_ell4096_included",
+      "primary_N1024_a2_ell4096_excluded",
+      "primary_N1024_a2_ell32768_included",
+      "primary_N1024_a2_ell32768_excluded",
+      "primary_N1024_a3_ell4096_included",
+      "primary_N1024_a3_ell4096_excluded",
+      "primary_N1024_a3_ell32768_included",
+      "primary_N1024_a3_ell32768_excluded",
+      "primary_N1024_a4_ell4096_included",
+      "primary_N1024_a4_ell4096_excluded",
+      "primary_N1024_a4_ell32768_included",
+      "primary_N1024_a4_ell32768_excluded"
+    ],
+    "capacity_tradeoff": [
+      "capacity_N1024_a2_ell49144_included",
+      "capacity_N1024_a2_ell49144_excluded",
+      "capacity_N1024_a2_ell49152_included",
+      "capacity_N1024_a2_ell49152_excluded",
+      "capacity_N1024_a2_ell49160_included",
+      "capacity_N1024_a2_ell49160_excluded",
+      "capacity_N1024_a2_ell98304_included",
+      "capacity_N1024_a2_ell98304_excluded",
+      "capacity_N1024_a4_ell24568_included",
+      "capacity_N1024_a4_ell24568_excluded",
+      "capacity_N1024_a4_ell24576_included",
+      "capacity_N1024_a4_ell24576_excluded",
+      "capacity_N1024_a4_ell24584_included",
+      "capacity_N1024_a4_ell24584_excluded",
+      "capacity_N1024_a4_ell49152_included",
+      "capacity_N1024_a4_ell49152_excluded"
+    ],
+    "costs": [
+      "primary_N1024_a2_ell4096_included",
+      "primary_N1024_a2_ell4096_excluded",
+      "primary_N1024_a2_ell32768_included",
+      "primary_N1024_a2_ell32768_excluded",
+      "primary_N1024_a3_ell4096_included",
+      "primary_N1024_a3_ell4096_excluded",
+      "primary_N1024_a3_ell32768_included",
+      "primary_N1024_a3_ell32768_excluded",
+      "primary_N1024_a4_ell4096_included",
+      "primary_N1024_a4_ell4096_excluded",
+      "primary_N1024_a4_ell32768_included",
+      "primary_N1024_a4_ell32768_excluded",
+      "capacity_N1024_a2_ell49144_included",
+      "capacity_N1024_a2_ell49144_excluded",
+      "capacity_N1024_a2_ell49152_included",
+      "capacity_N1024_a2_ell49152_excluded",
+      "capacity_N1024_a2_ell49160_included",
+      "capacity_N1024_a2_ell49160_excluded",
+      "capacity_N1024_a2_ell98304_included",
+      "capacity_N1024_a2_ell98304_excluded",
+      "capacity_N1024_a4_ell24568_included",
+      "capacity_N1024_a4_ell24568_excluded",
+      "capacity_N1024_a4_ell24576_included",
+      "capacity_N1024_a4_ell24576_excluded",
+      "capacity_N1024_a4_ell24584_included",
+      "capacity_N1024_a4_ell24584_excluded",
+      "capacity_N1024_a4_ell49152_included",
+      "capacity_N1024_a4_ell49152_excluded"
+    ]
+  },
+  "condition_facts": [
+    {
+      "condition_id": "primary_N1024_a2_ell4096_included",
+      "workload": {
+        "workload_id": "primary_N1024_a2_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 4096
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.0545131635183707,
+      "CI95": [
+        1.0246577811235742,
+        1.082448795014163
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho04_c2_t2",
+        "R_matched": "R_rho04_c2_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a2_ell4096_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a2_ell4096_included",
+      "workload": {
+        "workload_id": "primary_N1024_a2_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 4096
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.053743119056867,
+      "CI95": [
+        1.0274113307497283,
+        1.0818682795833579
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho04_c2_t2",
+        "R_matched": "R_rho04_c2_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a2_ell4096_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a2_ell4096_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a2_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 4096
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.076813496602222,
+      "CI95": [
+        1.0386690763266793,
+        1.1115617698593265
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho04_c2_t2",
+        "R_matched": "R_rho04_c2_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a2_ell4096_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a2_ell4096_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a2_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 4096
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.0570487986833532,
+      "CI95": [
+        1.024120535894228,
+        1.0867151045776884
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho04_c2_t2",
+        "R_matched": "R_rho04_c2_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a2_ell4096_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a2_ell32768_included",
+      "workload": {
+        "workload_id": "primary_N1024_a2_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 32768
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.0567176144265227,
+      "CI95": [
+        1.0342354967479146,
+        1.0747293756260476
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t1",
+        "R_independent": "R_rho16_c2_t1",
+        "R_matched": "R_rho12_c2_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a2_ell32768_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a2_ell32768_included",
+      "workload": {
+        "workload_id": "primary_N1024_a2_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 32768
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.055642232773271,
+      "CI95": [
+        1.0369311022472723,
+        1.080630154040342
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t1",
+        "R_independent": "R_rho16_c2_t1",
+        "R_matched": "R_rho12_c2_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a2_ell32768_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a2_ell32768_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a2_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 32768
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.0845930620644673,
+      "CI95": [
+        1.0507892356220103,
+        1.1228642528098152
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t1",
+        "R_independent": "R_rho16_c2_t1",
+        "R_matched": "R_rho12_c2_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a2_ell32768_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a2_ell32768_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a2_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 32768
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.0963885920990784,
+      "CI95": [
+        1.059817223683216,
+        1.1161654540695403
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t1",
+        "R_independent": "R_rho16_c2_t1",
+        "R_matched": "R_rho12_c2_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a2_ell32768_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a3_ell4096_included",
+      "workload": {
+        "workload_id": "primary_N1024_a3_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 3,
+        "ell_bits": 4096
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.1021143478507032,
+      "CI95": [
+        1.0826473610815086,
+        1.1306814430651555
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho08_c1_t1",
+        "R_independent": "R_rho04_c3_t1",
+        "R_matched": "R_rho08_c3_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a3_ell4096_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a3_ell4096_included",
+      "workload": {
+        "workload_id": "primary_N1024_a3_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 3,
+        "ell_bits": 4096
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.1121915084213452,
+      "CI95": [
+        1.084536171349481,
+        1.1165722994650982
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho08_c1_t1",
+        "R_independent": "R_rho04_c3_t1",
+        "R_matched": "R_rho08_c3_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a3_ell4096_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a3_ell4096_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a3_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 3,
+        "ell_bits": 4096
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.1805581605057625,
+      "CI95": [
+        1.1584092818931582,
+        1.2117635189143912
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho08_c1_t1",
+        "R_independent": "R_rho04_c3_t1",
+        "R_matched": "R_rho08_c3_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a3_ell4096_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a3_ell4096_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a3_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 3,
+        "ell_bits": 4096
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.1814306015534788,
+      "CI95": [
+        1.1619760284299376,
+        1.2011422045381428
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho08_c1_t1",
+        "R_independent": "R_rho04_c3_t1",
+        "R_matched": "R_rho08_c3_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a3_ell4096_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a3_ell32768_included",
+      "workload": {
+        "workload_id": "primary_N1024_a3_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 3,
+        "ell_bits": 32768
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.112696062867749,
+      "CI95": [
+        1.0965028821569534,
+        1.1305434110414403
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho08_c1_t1",
+        "R_independent": "R_rho24_c3_t1",
+        "R_matched": "R_rho08_c3_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a3_ell32768_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a3_ell32768_included",
+      "workload": {
+        "workload_id": "primary_N1024_a3_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 3,
+        "ell_bits": 32768
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.1646575535041932,
+      "CI95": [
+        1.1365634545465015,
+        1.1902959505350146
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho08_c1_t1",
+        "R_independent": "R_rho24_c3_t1",
+        "R_matched": "R_rho08_c3_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a3_ell32768_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a3_ell32768_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a3_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 3,
+        "ell_bits": 32768
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.18839618229705,
+      "CI95": [
+        1.1551687009264868,
+        1.2038532144705876
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho08_c1_t1",
+        "R_independent": "R_rho24_c3_t1",
+        "R_matched": "R_rho08_c3_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a3_ell32768_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a3_ell32768_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a3_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 3,
+        "ell_bits": 32768
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.1734268958170835,
+      "CI95": [
+        1.1617908549828653,
+        1.2023249145118091
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho08_c1_t1",
+        "R_independent": "R_rho24_c3_t1",
+        "R_matched": "R_rho08_c3_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a3_ell32768_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a4_ell4096_included",
+      "workload": {
+        "workload_id": "primary_N1024_a4_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 4096
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.1579468166450737,
+      "CI95": [
+        1.1294217648010951,
+        1.1718051292802532
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho12_c4_t1",
+        "R_matched": "R_rho04_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a4_ell4096_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a4_ell4096_included",
+      "workload": {
+        "workload_id": "primary_N1024_a4_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 4096
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.2201570586626322,
+      "CI95": [
+        1.1779192730430543,
+        1.2579404550772688
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho12_c4_t1",
+        "R_matched": "R_rho04_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a4_ell4096_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a4_ell4096_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a4_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 4096
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.2017799089640326,
+      "CI95": [
+        1.1854402885574356,
+        1.215308173799051
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho12_c4_t1",
+        "R_matched": "R_rho04_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a4_ell4096_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a4_ell4096_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a4_ell4096",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 4096
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.2188009877093753,
+      "CI95": [
+        1.1916318862009578,
+        1.2484875979079555
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho12_c4_t1",
+        "R_matched": "R_rho04_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a4_ell4096_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a4_ell32768_included",
+      "workload": {
+        "workload_id": "primary_N1024_a4_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 32768
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.1657039713612791,
+      "CI95": [
+        1.1442374878597061,
+        1.1878771186370018
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho16_c4_t1",
+        "R_matched": "R_rho04_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a4_ell32768_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a4_ell32768_included",
+      "workload": {
+        "workload_id": "primary_N1024_a4_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 32768
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.0169148114181896,
+      "CI95": [
+        0.9833611136380069,
+        1.0366340383204173
+      ],
+      "pointwise_interval_relation_to_one": "contains",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho16_c4_t1",
+        "R_matched": "R_rho04_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a4_ell32768_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a4_ell32768_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a4_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 32768
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.2946014705835276,
+      "CI95": [
+        1.27835492493027,
+        1.308789992386989
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho16_c4_t1",
+        "R_matched": "R_rho04_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a4_ell32768_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "primary_N1024_a4_ell32768_excluded",
+      "workload": {
+        "workload_id": "primary_N1024_a4_ell32768",
+        "study": "primary",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 32768
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.2368366787461964,
+      "CI95": [
+        1.2178379035709552,
+        1.2656355798056553
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho04_c1_t4",
+        "R_independent": "R_rho16_c4_t1",
+        "R_matched": "R_rho04_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/primary_N1024_a4_ell32768_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49144_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49144",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49144,
+        "packed_rho": 12
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.0467984750725816,
+      "CI95": [
+        1.0244073000887541,
+        1.061632002801106
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49144_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49144_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49144",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49144,
+        "packed_rho": 12
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.0943730965526193,
+      "CI95": [
+        1.0606120918132396,
+        1.113172696954928
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49144_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49144_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49144",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49144,
+        "packed_rho": 12
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.055023500998621,
+      "CI95": [
+        1.0453298932054187,
+        1.089658577588977
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49144_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49144_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49144",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49144,
+        "packed_rho": 12
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.073705128110392,
+      "CI95": [
+        1.0407086229992923,
+        1.1026724455446153
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49144_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49152_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49152",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49152,
+        "packed_rho": 12
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.0496915498460277,
+      "CI95": [
+        1.0382333689743988,
+        1.0830694075415375
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49152_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49152_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49152",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49152,
+        "packed_rho": 12
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.087473546329679,
+      "CI95": [
+        1.036482458637868,
+        1.1100432794892119
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49152_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49152_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49152",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49152,
+        "packed_rho": 12
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.1001405749384572,
+      "CI95": [
+        1.016116336342132,
+        1.126959771847195
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49152_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49152_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49152",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49152,
+        "packed_rho": 12
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.0884567783054346,
+      "CI95": [
+        1.0551788155921726,
+        1.1247344950762743
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49152_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49160_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49160",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49160,
+        "packed_rho": 12
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.0594215702889795,
+      "CI95": [
+        1.0281298666909835,
+        1.0864276107299795
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49160_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49160_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49160",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49160,
+        "packed_rho": 12
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 0.9173868569839574,
+      "CI95": [
+        0.9119812415969668,
+        0.9339344837847057
+      ],
+      "pointwise_interval_relation_to_one": "below",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49160_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49160_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49160",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49160,
+        "packed_rho": 12
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.110400693074829,
+      "CI95": [
+        1.0960280847957689,
+        1.1693741394457562
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49160_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell49160_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell49160",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 49160,
+        "packed_rho": 12
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.072064221142232,
+      "CI95": [
+        1.0604063946827118,
+        1.1060598383620541
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell49160_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell98304_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell98304",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 98304,
+        "packed_rho": 12
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.0656956111514606,
+      "CI95": [
+        1.0397363983785914,
+        1.0773318287000977
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell98304_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell98304_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell98304",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 98304,
+        "packed_rho": 12
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 0.9374868782272063,
+      "CI95": [
+        0.926150401298935,
+        0.9618362976793942
+      ],
+      "pointwise_interval_relation_to_one": "below",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell98304_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell98304_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell98304",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 98304,
+        "packed_rho": 12
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.1184665233195332,
+      "CI95": [
+        1.0849641427790213,
+        1.1958782000855974
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell98304_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a2_ell98304_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a2_ell98304",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 2,
+        "ell_bits": 98304,
+        "packed_rho": 12
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.1130690397014686,
+      "CI95": [
+        1.0865815463476225,
+        1.1613905165167056
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho12_c1_t4",
+        "R_matched": "R_rho12_c2_t2",
+        "R_independent": "R_rho24_c2_t2"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a2_ell98304_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24568_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24568",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24568,
+        "packed_rho": 6
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.1632203768992082,
+      "CI95": [
+        1.1455881576143876,
+        1.1920789183315699
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24568_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24568_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24568",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24568,
+        "packed_rho": 6
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.2336077726684147,
+      "CI95": [
+        1.2185779321193402,
+        1.2404533414556598
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24568_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24568_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24568",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24568,
+        "packed_rho": 6
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.232823074338349,
+      "CI95": [
+        1.218626223124539,
+        1.254761708380915
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24568_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24568_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24568",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24568,
+        "packed_rho": 6
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.2343295901338758,
+      "CI95": [
+        1.2147902794680197,
+        1.2741161475696532
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24568_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24576_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24576",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24576,
+        "packed_rho": 6
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.1645621842158325,
+      "CI95": [
+        1.1517935298737312,
+        1.187976312814754
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24576_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24576_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24576",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24576,
+        "packed_rho": 6
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.234283725900203,
+      "CI95": [
+        1.2130569214246265,
+        1.248695365870243
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24576_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24576_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24576",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24576,
+        "packed_rho": 6
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.2436940597368118,
+      "CI95": [
+        1.2039402619195327,
+        1.2514965205254545
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24576_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24576_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24576",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24576,
+        "packed_rho": 6
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.235203690038504,
+      "CI95": [
+        1.1769367903853742,
+        1.2604635254113012
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24576_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24584_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24584",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24584,
+        "packed_rho": 6
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.1710776276138117,
+      "CI95": [
+        1.1578223712970406,
+        1.2005394494049129
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24584_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24584_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24584",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24584,
+        "packed_rho": 6
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.0350578771870154,
+      "CI95": [
+        1.0167685683644123,
+        1.0498774713630095
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24584_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24584_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24584",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24584,
+        "packed_rho": 6
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.2970397303247192,
+      "CI95": [
+        1.276582422392345,
+        1.3201010651616802
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24584_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell24584_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell24584",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 24584,
+        "packed_rho": 6
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.2340023859044567,
+      "CI95": [
+        1.2072593159128546,
+        1.2630660864947147
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell24584_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell49152_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell49152",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 49152,
+        "packed_rho": 6
+      },
+      "scope": "included",
+      "contrast": "R_matched/P",
+      "estimate": 1.165951778950809,
+      "CI95": [
+        1.1508711822430129,
+        1.1873238092404785
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell49152_included/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell49152_included",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell49152",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 49152,
+        "packed_rho": 6
+      },
+      "scope": "included",
+      "contrast": "R_independent/P",
+      "estimate": 1.0322283106753702,
+      "CI95": [
+        1.0172040849423243,
+        1.048249526100762
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell49152_included/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell49152_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell49152",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 49152,
+        "packed_rho": 6
+      },
+      "scope": "excluded",
+      "contrast": "R_matched/P",
+      "estimate": 1.3370023641888498,
+      "CI95": [
+        1.2897545412097313,
+        1.3604937179590424
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell49152_excluded/ratios/R_matched",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    },
+    {
+      "condition_id": "capacity_N1024_a4_ell49152_excluded",
+      "workload": {
+        "workload_id": "capacity_N1024_a4_ell49152",
+        "study": "capacity",
+        "N": 1024,
+        "alpha": 4,
+        "ell_bits": 49152,
+        "packed_rho": 6
+      },
+      "scope": "excluded",
+      "contrast": "R_independent/P",
+      "estimate": 1.2385378998284389,
+      "CI95": [
+        1.2037659074535312,
+        1.2655582783128811
+      ],
+      "pointwise_interval_relation_to_one": "above",
+      "estimator": "median across sessions of within-session median paired baseline/packed ratios",
+      "method_roles": {
+        "P": "P_rho06_c1_t4",
+        "R_matched": "R_rho06_c4_t1",
+        "R_independent": "R_rho24_c4_t1"
+      },
+      "shared_baseline_observations": false,
+      "summary_pointer": "/conditions/capacity_N1024_a4_ell49152_excluded/ratios/R_independent",
+      "input_sha256": {
+        "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+        "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+        "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+      }
+    }
+  ],
+  "global_speedup": null,
+  "unmeasured_interpolation": null,
+  "claim_boundary": "Condition-specific descriptive comparisons only. Pointwise intervals are not simultaneous guarantees or causal identification."
+}

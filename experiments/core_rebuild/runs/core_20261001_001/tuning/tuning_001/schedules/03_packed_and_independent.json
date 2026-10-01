@@ -1,0 +1,1109 @@
+{
+  "workload": {
+    "workload_id": "primary_N256_a3_ell32768",
+    "study": "primary",
+    "N": 256,
+    "alpha": 3,
+    "ell_bits": 32768
+  },
+  "stage": "packed_and_independent",
+  "schedule_seed": 2026100413,
+  "candidate_table": [
+    {
+      "config_id": "P_rho04_c1_t1",
+      "kind": "P",
+      "rho_0": 4,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "P_rho04_c1_t4",
+      "kind": "P",
+      "rho_0": 4,
+      "concurrency": 1,
+      "threads": 4,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "P_rho06_c1_t1",
+      "kind": "P",
+      "rho_0": 6,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "P_rho06_c1_t4",
+      "kind": "P",
+      "rho_0": 6,
+      "concurrency": 1,
+      "threads": 4,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "P_rho08_c1_t1",
+      "kind": "P",
+      "rho_0": 8,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "P_rho08_c1_t4",
+      "kind": "P",
+      "rho_0": 8,
+      "concurrency": 1,
+      "threads": 4,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho04_c1_t1",
+      "kind": "R",
+      "rho_0": 4,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho04_c1_t4",
+      "kind": "R",
+      "rho_0": 4,
+      "concurrency": 1,
+      "threads": 4,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho04_c3_t1",
+      "kind": "R",
+      "rho_0": 4,
+      "concurrency": 3,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho06_c1_t1",
+      "kind": "R",
+      "rho_0": 6,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho06_c1_t4",
+      "kind": "R",
+      "rho_0": 6,
+      "concurrency": 1,
+      "threads": 4,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho06_c3_t1",
+      "kind": "R",
+      "rho_0": 6,
+      "concurrency": 3,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho08_c1_t1",
+      "kind": "R",
+      "rho_0": 8,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho08_c1_t4",
+      "kind": "R",
+      "rho_0": 8,
+      "concurrency": 1,
+      "threads": 4,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho08_c3_t1",
+      "kind": "R",
+      "rho_0": 8,
+      "concurrency": 3,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho12_c1_t1",
+      "kind": "R",
+      "rho_0": 12,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho12_c1_t4",
+      "kind": "R",
+      "rho_0": 12,
+      "concurrency": 1,
+      "threads": 4,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho12_c3_t1",
+      "kind": "R",
+      "rho_0": 12,
+      "concurrency": 3,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho16_c1_t1",
+      "kind": "R",
+      "rho_0": 16,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho16_c1_t4",
+      "kind": "R",
+      "rho_0": 16,
+      "concurrency": 1,
+      "threads": 4,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho16_c3_t1",
+      "kind": "R",
+      "rho_0": 16,
+      "concurrency": 3,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho24_c1_t1",
+      "kind": "R",
+      "rho_0": 24,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho24_c1_t4",
+      "kind": "R",
+      "rho_0": 24,
+      "concurrency": 1,
+      "threads": 4,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho24_c3_t1",
+      "kind": "R",
+      "rho_0": 24,
+      "concurrency": 3,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    }
+  ],
+  "round_orders": [
+    [
+      {
+        "config_id": "P_rho06_c1_t1",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c3_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c3_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c1_t4",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c1_t1",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t4",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c1_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c3_t1",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t4",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c3_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c1_t4",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c1_t1",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t1",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t4",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t4",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c3_t1",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c1_t4",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c3_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ],
+    [
+      {
+        "config_id": "P_rho08_c1_t1",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c1_t4",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t4",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c1_t1",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t4",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t4",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c3_t1",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c1_t4",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c1_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c1_t1",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c1_t4",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t4",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c3_t1",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t1",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c3_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c3_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c3_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c3_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ],
+    [
+      {
+        "config_id": "R_rho06_c3_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c3_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c1_t4",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c1_t1",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c1_t4",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t4",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t1",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t4",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c3_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c3_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t4",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c1_t4",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c1_t1",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c3_t1",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c3_t1",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t1",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c1_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t4",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      }
+    ],
+    [
+      {
+        "config_id": "R_rho08_c1_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c3_t1",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t4",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t4",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho08_c1_t1",
+        "kind": "P",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c3_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c3_t1",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c1_t4",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho06_c1_t1",
+        "kind": "P",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t4",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t4",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c1_t4",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c1_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho24_c3_t1",
+        "kind": "R",
+        "rho_0": 24,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho04_c3_t1",
+        "kind": "R",
+        "rho_0": 4,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho12_c1_t1",
+        "kind": "R",
+        "rho_0": 12,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho08_c1_t4",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c1_t1",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t1",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "P_rho04_c1_t4",
+        "kind": "P",
+        "rho_0": 4,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho16_c1_t4",
+        "kind": "R",
+        "rho_0": 16,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c3_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  ],
+  "warmup_round": 0,
+  "measured_rounds": [
+    1,
+    2,
+    3
+  ]
+}

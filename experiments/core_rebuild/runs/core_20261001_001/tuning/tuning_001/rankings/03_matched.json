@@ -1,0 +1,43 @@
+{
+  "R_matched": [
+    {
+      "configuration": {
+        "config_id": "R_rho08_c3_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 3,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 193676198,
+      "max_full_wall_ns": 726555141
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho08_c1_t1",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 485202381,
+      "max_full_wall_ns": 1152520881
+    },
+    {
+      "configuration": {
+        "config_id": "R_rho08_c1_t4",
+        "kind": "R",
+        "rho_0": 8,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      "median_task_latency_ns": 552066028,
+      "max_full_wall_ns": 1028403568
+    }
+  ]
+}

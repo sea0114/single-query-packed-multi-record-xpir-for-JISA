@@ -1,0 +1,27 @@
+{
+  "schema": "CORE_FAILURE_LEDGER_V1",
+  "run_id": "core_20261001_001",
+  "formal_status": "COMPLETE",
+  "input_sha256": {
+    "freeze": "ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217",
+    "observations": "d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652",
+    "formal_report": "822763d3f0294865f103d2c32e425135389259f81775950fd3f0f0cea82384f1"
+  },
+  "physical_status_counts": {
+    "COMPLETE": 5880
+  },
+  "phase_status_counts": {
+    "warmup": {
+      "COMPLETE": 840
+    },
+    "measured": {
+      "COMPLETE": 5040
+    }
+  },
+  "failure_entries": [],
+  "phase_errors": [],
+  "preservation_errors": [],
+  "not_started_tasks": 0,
+  "stopped_reason": null,
+  "note": "The formal raw ledger is authoritative. This complete-run summary does not incorporate pilot/tuning failures or replace their preserved ledgers."
+}

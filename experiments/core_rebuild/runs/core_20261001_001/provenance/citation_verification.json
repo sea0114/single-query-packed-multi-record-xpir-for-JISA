@@ -1,0 +1,77 @@
+{
+  "schema_version": "primary-citation-verification-1",
+  "run_id": "core_20261001_001",
+  "recorded_at_utc": "2026-10-01T13:17:22Z",
+  "access_date": "2026-10-01",
+  "scope": "Remote, read-only primary-source verification during the active pilot; no manuscript, bibliography, experimental evidence, or citation-style edits.",
+  "sources": [
+    {
+      "id": "XPIR_PETS_2016",
+      "status": "METADATA_VERIFIED",
+      "primary_urls": [
+        "https://petsymposium.org/popets/2016/popets-2016-0010.php",
+        "https://petsymposium.org/2016/files/papers/XPIR___Private_Information_Retrieval_for_Everyone.pdf"
+      ],
+      "access": "Official publication page and full paper were readable through the web tool.",
+      "metadata": {
+        "title": "XPIR: Private Information Retrieval for Everyone",
+        "authors": ["Carlos Aguilar-Melchor", "Joris Barrier", "Laurent Fousse", "Marc-Olivier Killijian"],
+        "publication": "Proceedings on Privacy Enhancing Technologies",
+        "year": 2016,
+        "volume": "2016",
+        "issue": "2",
+        "pages": "155-174",
+        "doi": "10.1515/popets-2016-0010"
+      },
+      "support_locations": {
+        "section_2_2": "Encryption-based computational PIR model and generic protocol.",
+        "sections_3_2_and_3_2_1": "Linear reply operations, NTT/CRT representation, and database preprocessing/import.",
+        "sections_4_2_and_4_4": "Configuration-dependent optimization, aggregation, and recursion."
+      },
+      "limits": "These locations do not establish the present ordered-tuple game, its concrete N-factor reduction, the safety of a new native implementation, or universal optimality of one XPIR configuration."
+    },
+    {
+      "id": "KALIBERA_JONES_KENT_2012_3233",
+      "status": "METADATA_VERIFIED",
+      "primary_urls": [
+        "https://www.cs.kent.ac.uk/pubs/2012/3233/",
+        "https://www.cs.kent.ac.uk/pubs/2012/3233/content.pdf"
+      ],
+      "access": "University of Kent report record and full report were readable through the web tool.",
+      "metadata": {
+        "title": "Quantifying Performance Changes with Effect Size Confidence Intervals",
+        "authors": ["Tomas Kalibera", "Richard Jones"],
+        "type": "Technical report",
+        "number": "4-12",
+        "institution": "University of Kent",
+        "year": 2012,
+        "month": "June",
+        "pages": 55,
+        "doi": null
+      },
+      "support_locations": {
+        "abstract_and_section_1": "Multiple levels of nondeterministic variation, effect-size uncertainty for ratios of means, and hierarchical resampling."
+      },
+      "limits": "The 2012 report is distinct from the 2013 ISMM paper Rigorous Benchmarking in Reasonable Time. No DOI for this report was confirmed. It provides general motivation for variation-aware inference; it does not certify this project's median-of-session-medians estimator, bootstrap coverage, ten sessions, or 10000 resamples."
+    },
+    {
+      "id": "JISA_CURRENT_OFFICIAL_GUIDE",
+      "status": "UNAVAILABLE_PENDING",
+      "primary_urls_attempted": [
+        "https://www.sciencedirect.com/journal/journal-of-information-security-and-applications/publish/guide-for-authors",
+        "https://www.sciencedirect.com/science/journal/22142126/publish/guide-for-authors",
+        "https://www.elsevier.com/journals/journal-of-information-security-and-applications/2214-2126/guide-for-authors"
+      ],
+      "access": "Each direct open returned the web tool's Internal Error. The tool supplied no readable guideline body and no HTTP status.",
+      "http_status": null,
+      "factual_format_recommendation": null,
+      "decision": "Keep existing citation style unchanged and retain official-format verification as pending; do not claim current JISA compliance.",
+      "historical_pending": "Earlier project records of inaccessible official guidance, including HTTP 403, remain unresolved. This attempt does not close them and does not establish a new HTTP 403 response.",
+      "excluded_evidence": "Third-party templates and guidance for other journals were not used to infer JISA requirements."
+    }
+  ],
+  "unchanged_pending_items": [
+    "Current official JISA reference-format requirements and compliance assessment",
+    "Other existing bibliography checks outside the two metadata records verified here"
+  ]
+}

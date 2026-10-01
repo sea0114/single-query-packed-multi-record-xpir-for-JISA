@@ -1,0 +1,61 @@
+{
+  "run_id": "core_20261001_001",
+  "captured_utc": "2026-10-01T12:21:12.720353+00:00",
+  "sources": {
+    "manuscript/main.tex": "39cbff2eb4051ca9a00ae258b021f0575e83f24e0149de3a695f57d3c04ecbd6",
+    "manuscript/preamble.tex": "b4ab340cc9a1d45402577f509a314a0374739903ea02e0955b9842f88423b1e4",
+    "manuscript/supplement.tex": "31a396a451a115c49ecdcf918eb73764b2e03e707ee80d1c6461892824a272ba",
+    "manuscript/references.bib": "c609c01ed54d319638e9015d0d763f631761d522c249043c0227c54e865eb622",
+    "manuscript/README.md": "d8d276db4676618559da0e5de75ed8c6d4b6c5eca16461608454818da6ba6633",
+    "manuscript/sections/analysis.tex": "990d95a80c2723c9a1a112ba2da1b3c9cf81d0c20fa583b81595470560cf2ee1",
+    "manuscript/sections/availability.tex": "a18ae1bf5cf4902df92e42ca97215abfe0f06eb0bf5a11b1b5b7c58f5e233fbe",
+    "manuscript/sections/conclusion.tex": "c0804e220579223e8b3577c324030ad3d036f1e973b1f0cc5aa909575a89eb13",
+    "manuscript/sections/construction.tex": "656dcddd8731a8e67986b39aa92bd48f3cfd8c306d09335faee51594bf0e1397",
+    "manuscript/sections/discussion.tex": "c1afd32445c1aa40d7716ca45e27fcbf88270c17d95be87ff3bca279463e9f28",
+    "manuscript/sections/evaluation.tex": "e16cc0289c0b0af7dc7a87d5c1c0408180f0a9ec0467e86c69fe4dc432e02193",
+    "manuscript/sections/evaluation_supplement.tex": "16d09aab463284c55fc8ebbb3b13db725c8a56594f0f418b0e98eda1da1cef10",
+    "manuscript/sections/introduction.tex": "f66c862bd9392820932f05b2ee76bd90aef9d19a5936442f2cd325522bd0b879",
+    "manuscript/sections/model.tex": "09cb08e09eb0f43569cc926e6bfd79d90acc11336fdb6be62fbd0759a5fe8ed0",
+    "manuscript/sections/related.tex": "ac9a72e615f76d7871eefdffe3f8bb1e5b49d6f98ebab3dc750680a0931fa552",
+    "AGENTS.md": "827e318a52e7141ee479403dc1fa1bba6b6da6de7a4881c279b4b74da5ac76a6",
+    "PAPER_SCOPE.md": "97977a39f673b0caa041d2a45e40cb83ff5209d9fc748d1f6aeafe2273387fda",
+    "WRITING_RULES.md": "4e29aa7515d17f9add2ca6e727ca450682f265d07a8544b1d4dc33cdcd377cad",
+    "CURRENT_WORK.md": "e11f96149776dd0c64963b90d6ba4ef283d2ab11fca3a48c1c38af6e91b5d692",
+    "manuscript/review/section6_core_rebuild/EXPERIMENT_PLAN.md": "79a5770fb6b6cb967ffd87f015deefc276f9274fc28136bd3f835e87ba9de686",
+    "manuscript/review/section6_core_rebuild/MANUSCRIPT_PLAN.md": "6defef47628b37dcc249d38d70cfd6008220a8a67731ad35fe0e9e152e8f13df",
+    "manuscript/review/section6_core_rebuild/START.md": "1d7e2bd96a6e879fd7439086afd21f6b1e12dc71433d46e3c264291384c39b0c",
+    "manuscript/assets/absolute.tex": "885093d440504112189b2cd7cf4f9afd805034db8c6c0e7671748e50f5365184",
+    "manuscript/assets/capacity.tex": "f9b5cff100a3ebda48f0275466ad3cab7091bfe0d098c54aa533cc1f83638b81",
+    "manuscript/assets/frontier.tex": "baba3124685f32c60d00b7f3671bb5d06cbfb77cd7890e41dd8433eeda6e4447",
+    "manuscript/assets/multiplicity.tex": "ad7c18bcf2034383acf46a21e0607cecc30709a54320d752b245c89882c0420f",
+    "manuscript/assets/overlap.tex": "27e151d5b7b94b29729cb1000a0614943e4c673ff6230aa56875dc3d32e6750f",
+    "manuscript/assets/parameter_support.tex": "aab00845d57d4f74da9b6eea3c549efef98895e7858e8e30b85944d1fa0d9150",
+    "manuscript/assets/payload.tex": "ad1a7c3a4d2b71e243e5d62488b23d6f94a1269d30798e05540461216ac8f9c9",
+    "manuscript/assets/primary32.tex": "e416f86e483a3b7bfad3e699ed0b223fd7dfeab1ee026fd7204543321beda091",
+    "manuscript/assets/primary96.tex": "9f051e09320e67b9c6d4c16cfd057045fba079037c4043dd7e509203ea2bda72",
+    "manuscript/assets/primary_table.tex": "a9857cfbd49e7cc87a8d24b7ba9e3ad6bb14ed65173c91e7ce4d34597708f5c6",
+    "manuscript/assets/retrieval_count.tex": "4a6f6f9577aa38284a1902c5d258100263b5291bb6c54bc3195340839a854118",
+    "manuscript/assets/sensitivity.tex": "165021cff6376da8068429c12f782da56ecaddfcde22368b07119fe93ee443dc",
+    "manuscript/assets/primary32.pdf": "c087552bc9f78667299f7f3b37afcf110c5d494ef89385c2df8bd9d4e79c7527",
+    "manuscript/assets/primary96.pdf": "ec4819f0900773d4a812e8f8ec1b8c8bec9d260702c4d718301101150efcc958",
+    "manuscript/assets/retrieval_count.pdf": "925c6ccd2bd7d1e6a2575af26a48d08298310191033eec0c4669884d4edf2170"
+  },
+  "budget_seconds": {
+    "pilot": 1800,
+    "tuning": 3600,
+    "formal": 16200
+  },
+  "old_evidence_locations": [
+    "artifact",
+    "revision_notes",
+    "revision_section6_20260926/evidence",
+    "reproduction_release"
+  ],
+  "old_data_not_modified": true,
+  "output_roots": [
+    "experiments/core_rebuild",
+    "manuscript/assets/core_rebuild",
+    "manuscript/build/section6_core_rebuild"
+  ],
+  "scope": "User-authorized finite core experiments and dependent rewrite; preserve sections3-5 formal sources and old evidence."
+}

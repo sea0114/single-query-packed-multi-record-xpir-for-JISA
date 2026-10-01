@@ -1,0 +1,116 @@
+{
+  "schema": "CORE_RUNNER_SOURCE_REVIEW_V1",
+  "reviewed_utc": "2026-10-01T12:50:35.078437+00:00",
+  "scope": "Read-only source review. No compilation, benchmark, statistical analysis, or manuscript changes.",
+  "status": "SOURCE_DESIGN_PASS_WITH_RUNTIME_RESOURCE_GATES_PENDING",
+  "source_sha256": {
+    "experiments/core_rebuild/scripts/runner.py": "7284412bc5fe14dba88bf9603b8b1ec3602be1a48d460c291b5e30a442078058",
+    "experiments/core_rebuild/scripts/resources.py": "da2e0dbaba9cbbb7113dbb2cd45f47f01ff994685287074b8abfc4ba06833240",
+    "experiments/core_rebuild/src/core_native.cpp": "a1df94dfa85f7097bbf3352c766c8420520c4902d55df7c29badb747ce038753",
+    "experiments/core_rebuild/src/core_native.hpp": "e6646abcae4cba7776fb74be589d7b04df743b49c5a70e1cefdabb185e88ae6e",
+    "experiments/core_rebuild/scripts/common.py": "873acdcdba4634404f880fd8c59438f60f9fb5d5b1b74b434348d5fb0ff92c91"
+  },
+  "passed_checks": [
+    {
+      "check": "Fresh exec and no query secret state before GO",
+      "evidence": [
+        "runner.py:73-83 subprocess taskset/native exec with pass_fds; no initialized crypto parent",
+        "core_native.cpp:169-176 public expected-record loading, RNG-zero assertion before G, configure_key only after G",
+        "core_native.hpp:126-139 native fresh KeyGen and actual parameter readback"
+      ]
+    },
+    {
+      "check": "Same complete-task endpoints for P and repeated queries",
+      "evidence": [
+        "runner.py:229-241 included begins before prepare G; excluded begins after prepare D and sealing",
+        "runner.py:245-261 waits for every query D and exact full record byte count, then stops clock",
+        "core_native.cpp:198-210 decrypt/decode/collection before D",
+        "runner.py:264-284 V release and full native/coordinator validation only after timer end"
+      ]
+    },
+    {
+      "check": "One owned preprocessing representation per task/layout",
+      "evidence": [
+        "runner.py:148-149 one fresh shared memfd",
+        "runner.py:219 one prepare process; all queries share db_fd",
+        "core_native.cpp:149-151 one native import, export then release owner/database/backend before D",
+        "core_native.hpp:174-188 malloc-compatible sole owner cleanup",
+        "core_native.hpp:226-268 PROT_READ MAP_SHARED plus private pointer tables, no private import",
+        "runner.py:268,324-326 all processes exit and mapping fd closes before return"
+      ]
+    },
+    {
+      "check": "Native unneeded import-backend key is included and disclosed",
+      "evidence": [
+        "core_native.cpp:142-157 ConfigureImportBackend occurs after prepare G and within preprocessing timer",
+        "core_native.cpp:156 import_backend_unused_key_generation_calls=1"
+      ]
+    },
+    {
+      "check": "CPU budget and scheduling",
+      "evidence": [
+        "runner.py:144-147 c*threads<=CPU pool; packed c=1",
+        "runner.py:248-258 dynamic occupied-slot selection and pre-G sched_setaffinity avoids collision",
+        "core_native.cpp:256 omp dynamic disabled and explicit thread count",
+        "resources.py:270-305 coordinator affinity, inherited children and optional explicit cgroup policy"
+      ]
+    },
+    {
+      "check": "CPU includes coordinator and completed native task work",
+      "evidence": [
+        "runner.py:229-241 and259-261 coordinator/cgroup before-after same outer task interval",
+        "runner.py:285-291 either cgroup CPU or SELF plus all native G-to-D deltas, prepare only when included",
+        "core_native.cpp:142,152-154 and171,210,225-226 native process user/system deltas"
+      ]
+    },
+    {
+      "check": "All coefficient/segment/padding and complete-record verification after timing",
+      "evidence": [
+        "core_native.cpp:213-221 checks all fields against intended packed sum, all segments, decode/padding and native fresh RNG call path",
+        "runner.py:271-284 validates concatenated target order and per-query acceptance"
+      ]
+    },
+    {
+      "check": "Memory interpretation and failure retention",
+      "evidence": [
+        "resources.py:204 and324-355 explicit sampled PSS policy, DB identity removed before unique-storage count",
+        "runner.py:171-184 monitor and competition check CPU inside outer span remains included when inside timing",
+        "runner.py:305-333 retains failure reason/status, commands, resource samples and observation; terminates only owned fresh processes"
+      ]
+    }
+  ],
+  "resolved_findings": [
+    {
+      "finding": "Original static index-mod-c affinity could reuse a busy CPU slot when a later query finished first. Root fixed occupied-slot allocation before this final review.",
+      "resolution_evidence": "runner.py:243-258"
+    }
+  ],
+  "conditional_findings": [
+    {
+      "severity": "required_if_cgroup_selected",
+      "finding": "A kernel cgroup OOM kill currently reaches generic child-exit RuntimeError and status FAILED rather than OOM. Current explicit monitor-threshold exceptions do classify OOM.",
+      "evidence": [
+        "runner.py:185-188",
+        "runner.py:309",
+        "resources.py:352"
+      ],
+      "minimal_fix": "If cgroup policy is frozen, save memory.events before/after and classify increased oom_kill count while retaining the raw exit code and events."
+    },
+    {
+      "severity": "runtime_gate",
+      "finding": "Source review does not quantify sampled monitoring overhead or establish hard-limit enforcement. The monitor policy explicitly is sampled abort, not a kernel hard limit or exact peak. Short tasks can end between samples.",
+      "evidence": [
+        "runner.py:126,171-178",
+        "resources.py:251-253,324-355"
+      ],
+      "required_acceptance": "Pilot must verify and freeze the actual resource policy and its overhead, retaining source terminology; do not claim a hard 8 GiB group cap from monitor mode."
+    }
+  ],
+  "remaining_gates": [
+    "Compiled native parameter/error/CRT/NTT and complete-record functional tests",
+    "Fresh-exec and independent ciphertext fingerprints in functional observations",
+    "Actual c*t affinity/thread readback and release ordering in runtime observations",
+    "Pilot overhead and selected memory policy verification",
+    "Formal scheduler separately validates whole paired-block failures and estimator acceptance"
+  ]
+}

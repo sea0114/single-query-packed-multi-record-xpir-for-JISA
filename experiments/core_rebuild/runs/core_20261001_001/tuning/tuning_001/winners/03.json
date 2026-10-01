@@ -1,0 +1,44 @@
+{
+  "workload": {
+    "workload_id": "primary_N256_a3_ell32768",
+    "study": "primary",
+    "N": 256,
+    "alpha": 3,
+    "ell_bits": 32768
+  },
+  "roles": {
+    "P": {
+      "config_id": "P_rho08_c1_t1",
+      "kind": "P",
+      "rho_0": 8,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    "R_independent": {
+      "config_id": "R_rho12_c3_t1",
+      "kind": "R",
+      "rho_0": 12,
+      "concurrency": 3,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    "R_matched": {
+      "config_id": "R_rho08_c3_t1",
+      "kind": "R",
+      "rho_0": 8,
+      "concurrency": 3,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    }
+  },
+  "full_wall_upper_ns": {
+    "P": 578076162,
+    "R_independent": 697689589,
+    "R_matched": 726555141
+  },
+  "baseline_alias": false
+}

@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "run_id": "core_20261001_001",
+  "created_utc": "2026-10-01T12:44:34.956074+00:00",
+  "status": "COMPLETE",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "kernel_release": "6.6.87.2-microsoft-standard-WSL2",
+  "wsl_guest": true,
+  "memory_limit_bytes": 8589934592,
+  "cgroup_write_authorized": true,
+  "script_sha256": {
+    "resource_probe.py": "c79b2e14cd83edcf5c84a02cc30e4e4720dd60fca88591e6b09b86e09b999d7d",
+    "resources.py": "da2e0dbaba9cbbb7113dbb2cd45f47f01ff994685287074b8abfc4ba06833240",
+    "common.py": "873acdcdba4634404f880fd8c59438f60f9fb5d5b1b74b434348d5fb0ff92c91"
+  },
+  "new_measurements": 0,
+  "native_executions": 0,
+  "compilation": false,
+  "host_isolation_note": "Guest affinity/topology does not establish exclusive Windows-host CPU or memory isolation",
+  "measurement_lock": {
+    "schema_version": 1,
+    "pid": 302,
+    "process_start_ticks": 362,
+    "boot_id": "3b803f6f-8937-4abc-83e0-955464a41098",
+    "run_id": "core_20261001_001-resource-probe",
+    "owner_token": "d4a6b99269fc47418f155e06752d2821",
+    "acquired_utc": "2026-10-01T12:44:34.980007+00:00"
+  },
+  "read_only_probe": {
+    "platform": "posix",
+    "linux_affinity": true,
+    "available_cpu_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "cgroup_v2": true,
+    "current_cgroup": "/sys/fs/cgroup/init.scope",
+    "controllers": [
+      "cpuset",
+      "cpu",
+      "io",
+      "memory",
+      "hugetlb",
+      "pids",
+      "rdma"
+    ],
+    "current_subtree_control": [],
+    "can_request_child_cgroup": true,
+    "memory_controller_present": true,
+    "hard_limit_verified": false,
+    "note": "A write/readback preflight is required before freezing a cgroup hard-limit policy"
+  },
+  "cpu_pool": [
+    0,
+    2,
+    4,
+    6
+  ],
+  "cpu_topology": [
+    {
+      "cpu_id": 0,
+      "physical_package_id": "0",
+      "core_id": "0",
+      "thread_siblings_list": "0-1",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 1,
+      "physical_package_id": "0",
+      "core_id": "0",
+      "thread_siblings_list": "0-1",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 2,
+      "physical_package_id": "0",
+      "core_id": "1",
+      "thread_siblings_list": "2-3",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 3,
+      "physical_package_id": "0",
+      "core_id": "1",
+      "thread_siblings_list": "2-3",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 4,
+      "physical_package_id": "0",
+      "core_id": "2",
+      "thread_siblings_list": "4-5",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 5,
+      "physical_package_id": "0",
+      "core_id": "2",
+      "thread_siblings_list": "4-5",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 6,
+      "physical_package_id": "0",
+      "core_id": "3",
+      "thread_siblings_list": "6-7",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 7,
+      "physical_package_id": "0",
+      "core_id": "3",
+      "thread_siblings_list": "6-7",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 8,
+      "physical_package_id": "0",
+      "core_id": "4",
+      "thread_siblings_list": "8-9",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 9,
+      "physical_package_id": "0",
+      "core_id": "4",
+      "thread_siblings_list": "8-9",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 10,
+      "physical_package_id": "0",
+      "core_id": "5",
+      "thread_siblings_list": "10-11",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 11,
+      "physical_package_id": "0",
+      "core_id": "5",
+      "thread_siblings_list": "10-11",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 12,
+      "physical_package_id": "0",
+      "core_id": "6",
+      "thread_siblings_list": "12-13",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 13,
+      "physical_package_id": "0",
+      "core_id": "6",
+      "thread_siblings_list": "12-13",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 14,
+      "physical_package_id": "0",
+      "core_id": "7",
+      "thread_siblings_list": "14-15",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    },
+    {
+      "cpu_id": 15,
+      "physical_package_id": "0",
+      "core_id": "7",
+      "thread_siblings_list": "14-15",
+      "scaling_governor": null,
+      "scaling_cur_freq_khz": null,
+      "scaling_max_freq_khz": null
+    }
+  ],
+  "cgroup_attempt": {
+    "policy": "cgroup",
+    "status": "FAILED",
+    "cleanup": "COMPLETE",
+    "error_type": "PermissionError",
+    "error": "[Errno 13] Permission denied: '/sys/fs/cgroup/init.scope/core-rebuild-core_20261001_001-resource-probe-302-eac7d1f5/memory.max'",
+    "affinity_restored": true,
+    "owned_cgroup_removed": true,
+    "over_limit_allocation_tested": false
+  },
+  "monitor_attempt": {
+    "policy": "monitor",
+    "status": "COMPLETE",
+    "cleanup": "COMPLETE",
+    "affinity_readback": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "cpu_snapshot": {
+      "source": "unavailable",
+      "note": "Use coordinator/child rusage deltas in the runner; do not infer exited-child CPU from /proc"
+    },
+    "monitor_snapshot": {
+      "monotonic_ns": 4648893613,
+      "policy": "monitor",
+      "limit_bytes": 8589934592,
+      "processes": [
+        {
+          "rss_bytes": 19804160,
+          "pss_bytes": 13251584,
+          "private_bytes": 9682944,
+          "private_non_db_bytes": 9682944,
+          "non_db_shared_pss_bytes": 3568640,
+          "database_pss_bytes": 0,
+          "mapping_count": 78,
+          "pid": 302,
+          "process_start_ticks": 362
+        }
+      ],
+      "unavailable_processes": [],
+      "private_non_db_bytes": 9682944,
+      "non_db_shared_pss_bytes": 3568640,
+      "unique_database_storage_bytes": 0,
+      "estimated_memory_bytes": 13251584,
+      "interpretation": "Sampled private resident memory plus proportional non-DB shared memory and unique DB storage; not exact group peak memory",
+      "above_threshold": false
+    },
+    "affinity_restored": true,
+    "owned_cgroup_removed": true,
+    "over_limit_allocation_tested": false
+  },
+  "memory_policy": "monitor",
+  "hard_limit_verified": false,
+  "monitoring_policy_note": "Pre-freeze fallback: sampled abort threshold, not an OS memory hard limit or exact peak-memory measurement",
+  "synthetic_threshold_boundary_check": "PASS",
+  "measurement_lock_released": true
+}

@@ -1,5 +1,15 @@
 # Scope and remaining limits
 
+## Current core evaluation
+
+The current implementation, resource policy and statistical definitions are in [core_rebuild/README.md](../experiments/core_rebuild/README.md). The new evidence is limited to 28 conditions at `N=1024` on one WSL2 host; it supplies no measured scaling in `N`, network transport, cross-host prediction or comparison with external PIR systems. Four guest CPU positions do not establish physical host exclusivity, and the 8 GiB sampled monitor policy is not a hard limit or an exact memory peak.
+
+Matched-layout and independently tuned repeated retrieval remain distinct contrasts. Packed retrieval is not uniformly faster: the independently configured primary comparison at `alpha=4, ell=32768` with preprocessing included has an interval spanning one, and the full-width repeated baseline is faster in the two included-scope `alpha=2` capacity conditions beyond the packed block boundary. Lower measured CPU cost does not imply lower preprocessing cost or lower latency. Actual layout-dependent reply counts, all ten session effects and pointwise uncertainty are public in the complete summary/CSV; ciphertext buffers are not wire traffic or peak memory. Successive sessions show time variation and do not establish independent-day replication, stationarity or interval coverage. Finite validation adds no security premise or native failure-probability guarantee.
+
+## Retained historical limitations
+
+The following statements refer to the earlier experiments, implementations and release. Their private-preprocessing comparator, resource treatments, sample counts and missing monitor traces are not descriptions of the new core runner. The formal/security, license and journal boundaries continue to apply where stated.
+
 - The current privacy theorem assumes IND-CPA security of the selected symmetric-key encryption for its fixed-length message space and gives a single-challenge, N-component hybrid bound. The native sampler, random sources and parameters have not been shown to satisfy that premise. Archived distribution-specific PLWE proofs and rounded-Gaussian analyses are historical research evidence, not the current security argument.
 - Integer no-wrap correctness is a per-execution implication. Algebraic capacity, deterministic sufficient screens and finite recovery tests do not establish an unconditional or negligible native failure probability. No SPIR, CCA, adaptive key-reuse, multi-query composition or decryption-oracle guarantee is added.
 - The comparator is concurrent same-profile repeated XPIR with private preprocessing/state. There is no optimized cross-profile XPIR or external-PIR timing comparison, persistent shared-preprocessing service, or transport measurement.

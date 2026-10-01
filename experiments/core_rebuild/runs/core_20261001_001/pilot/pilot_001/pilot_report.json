@@ -1,0 +1,91 @@
+{
+  "status": "COMPLETE",
+  "run_id": "core_20261001_001",
+  "pilot_id": "pilot_001",
+  "created_utc": "2026-10-01T13:09:01.147515+00:00",
+  "elapsed_seconds": 999.027580762,
+  "budget_seconds": 1800,
+  "stopped_reason": null,
+  "completed_tasks": 288,
+  "expected_tasks": 288,
+  "max_task_wall_seconds_by_N": {
+    "256": 1.327338222,
+    "4096": 18.070179765,
+    "1024": 4.619607602
+  },
+  "max_block_overhead_seconds": 0.8615647020000026,
+  "method": "Conservative maximum observed complete task cost per N, including validation/process/runtime/logging; same-N shorter untested cases bounded by maximum-length profile; 50% margin; assumes no baseline deduplication",
+  "tier_estimates": [
+    {
+      "tier": "full",
+      "conditions": 52,
+      "formal_base_seconds": 79190.13354228,
+      "formal_with_50pct_margin_seconds": 118785.20031342,
+      "tuning_base_seconds": 18727.68106528,
+      "tuning_with_50pct_margin_seconds": 28091.52159792,
+      "candidate_counts": {
+        "primary_N256_a2_ell4096": 36,
+        "primary_N256_a2_ell32768": 36,
+        "primary_N256_a3_ell4096": 27,
+        "primary_N256_a3_ell32768": 27,
+        "primary_N256_a4_ell4096": 25,
+        "primary_N256_a4_ell32768": 25,
+        "primary_N1024_a2_ell4096": 36,
+        "primary_N1024_a2_ell32768": 36,
+        "primary_N1024_a3_ell4096": 27,
+        "primary_N1024_a3_ell32768": 27,
+        "primary_N1024_a4_ell4096": 25,
+        "primary_N1024_a4_ell32768": 25,
+        "primary_N4096_a2_ell4096": 36,
+        "primary_N4096_a2_ell32768": 36,
+        "primary_N4096_a3_ell4096": 27,
+        "primary_N4096_a3_ell32768": 27,
+        "primary_N4096_a4_ell4096": 25,
+        "primary_N4096_a4_ell32768": 25
+      },
+      "fits": false
+    },
+    {
+      "tier": "compact",
+      "conditions": 40,
+      "formal_base_seconds": 32929.56618480001,
+      "formal_with_50pct_margin_seconds": 49394.34927720002,
+      "tuning_base_seconds": 5399.732960512004,
+      "tuning_with_50pct_margin_seconds": 8099.599440768006,
+      "candidate_counts": {
+        "primary_N256_a2_ell4096": 36,
+        "primary_N256_a2_ell32768": 36,
+        "primary_N256_a3_ell4096": 27,
+        "primary_N256_a3_ell32768": 27,
+        "primary_N256_a4_ell4096": 25,
+        "primary_N256_a4_ell32768": 25,
+        "primary_N1024_a2_ell4096": 36,
+        "primary_N1024_a2_ell32768": 36,
+        "primary_N1024_a3_ell4096": 27,
+        "primary_N1024_a3_ell32768": 27,
+        "primary_N1024_a4_ell4096": 25,
+        "primary_N1024_a4_ell32768": 25
+      },
+      "fits": false
+    },
+    {
+      "tier": "minimal",
+      "conditions": 28,
+      "formal_base_seconds": 28860.959515680006,
+      "formal_with_50pct_margin_seconds": 43291.43927352001,
+      "tuning_base_seconds": 3858.745302016002,
+      "tuning_with_50pct_margin_seconds": 5788.117953024002,
+      "candidate_counts": {
+        "primary_N1024_a2_ell4096": 36,
+        "primary_N1024_a2_ell32768": 36,
+        "primary_N1024_a3_ell4096": 27,
+        "primary_N1024_a3_ell32768": 27,
+        "primary_N1024_a4_ell4096": 25,
+        "primary_N1024_a4_ell32768": 25
+      },
+      "fits": false
+    }
+  ],
+  "selected_tier": null,
+  "author_decision_required": true
+}

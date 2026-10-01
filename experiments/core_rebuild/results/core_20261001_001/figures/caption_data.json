@@ -1,0 +1,14 @@
+{
+  "retrieval_performance.pdf": {
+    "caption": "Completion latency for the full ordered retrieval task at both timing scopes. Points summarize paired baseline/packed ratios by a median within each of ten sessions, followed by the median across sessions; bars are pointwise 95% whole-session percentile intervals from 10000 common resamples. Independently tuned repeated retrieval is the primary comparison; matched-layout repeated retrieval is secondary. Values above one favor packed retrieval. Only measured points are shown; connecting segments are visual guides. Complete absolute latency, CPU and preprocessing summaries, buffers, configurations and all ten session effects accompany the fixed results.",
+    "minimum_font_size_pt": 8.5,
+    "width_inches": 6.6,
+    "height_inches": 4.65
+  },
+  "capacity_tradeoff.pdf": {
+    "caption": "Absolute completion latency across the packed block boundary, with fixed N=1024, w=24 and execution policies. Packed fragment widths are 12 bits for alpha=2 and 6 bits for alpha=4; matched-layout and full-width (24-bit) repeated methods are capacity references. Record lengths are categorical actual measurement points, including the boundary minus 8 bits, the boundary, the boundary plus 8 bits, and twice the boundary. Tick parentheses give the three methods' actual L, verified from buffer readback; reply ciphertext counts and exact buffer bytes are retained per point in figure_data.json and configurations_and_buffers.csv. Points use the median of ten within-session medians; bars are pointwise 95% whole-session percentile intervals. These fixed policies are distinct from primary-study tuning. Segments guide the eye and do not estimate unmeasured crossover locations.",
+    "minimum_font_size_pt": 8.5,
+    "width_inches": 6.6,
+    "height_inches": 5.15
+  }
+}

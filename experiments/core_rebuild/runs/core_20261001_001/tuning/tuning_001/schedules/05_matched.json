@@ -1,0 +1,164 @@
+{
+  "workload": {
+    "workload_id": "primary_N256_a4_ell32768",
+    "study": "primary",
+    "N": 256,
+    "alpha": 4,
+    "ell_bits": 32768
+  },
+  "stage": "matched",
+  "schedule_seed": 2026100663,
+  "candidate_table": [
+    {
+      "config_id": "R_rho06_c1_t1",
+      "kind": "R",
+      "rho_0": 6,
+      "concurrency": 1,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho06_c1_t4",
+      "kind": "R",
+      "rho_0": 6,
+      "concurrency": 1,
+      "threads": 4,
+      "w": 24,
+      "n": 4096
+    },
+    {
+      "config_id": "R_rho06_c4_t1",
+      "kind": "R",
+      "rho_0": 6,
+      "concurrency": 4,
+      "threads": 1,
+      "w": 24,
+      "n": 4096
+    }
+  ],
+  "round_orders": [
+    [
+      {
+        "config_id": "R_rho06_c1_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c4_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t4",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      }
+    ],
+    [
+      {
+        "config_id": "R_rho06_c1_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t4",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c4_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ],
+    [
+      {
+        "config_id": "R_rho06_c1_t4",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c4_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ],
+    [
+      {
+        "config_id": "R_rho06_c4_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 4,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t4",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 4,
+        "w": 24,
+        "n": 4096
+      },
+      {
+        "config_id": "R_rho06_c1_t1",
+        "kind": "R",
+        "rho_0": 6,
+        "concurrency": 1,
+        "threads": 1,
+        "w": 24,
+        "n": 4096
+      }
+    ]
+  ],
+  "warmup_round": 0,
+  "measured_rounds": [
+    1,
+    2,
+    3
+  ]
+}

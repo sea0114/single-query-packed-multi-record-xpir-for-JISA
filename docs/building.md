@@ -1,5 +1,13 @@
 # Native build and functional validation
 
+## Current core runner
+
+Use [core_rebuild/README.md](../experiments/core_rebuild/README.md) for the new runner's exact build and functional commands, dependencies, writes and independent output identities. The only promoted historical dependency metadata is the unchanged `revision_notes/B0_logs/build_environment.json`, SHA256 `19acb1fe7b90ada0160b403c4fff0b52645b1ca2dd54db9c7cf0ab8e118128c1`, which pins 142 upstream files. Once present in a checkout, `scripts/fetch_upstream.py --root .` can verify/acquire the fixed official XPIR source without extracting the full old data archive. Source acquisition and native execution are separate actions; fetched upstream notices and file-specific rights gaps remain.
+
+The isolated `native_003` build and 130-task functional gate passed using separately staged official Ubuntu OpenSSL `3.0.13-0ubuntu3.16` development headers and runtime, without consuming the historical Sage header fallback. The official codeload retry was unavailable, so this check used a fresh source copy whose 142 hashes matched the B0 pins. This is a new binary/dependency identity and did not rerun formal performance collection. The staged package files, system headers/libraries and native executables are excluded from publication. Portable frozen analysis and redraw need no native build; their actual acceptance is recorded in the core README.
+
+## Retained historical build route
+
 Run in an independent clone, after `scripts/unpack_data.py`. The original frozen builder writes shared derived worker sources and `artifact/native/current_build.json` as well as the requested build directory. Never use it in an archival workspace. No old binary is bundled.
 
 Linux x86-64 requires AES and AVX2, GNU C++/OpenMP, Boost development headers and thread/system libraries, GMP/GMPXX, MPFR and OpenSSL 3 development files. The validated host was Ubuntu 24.04.1 under WSL2 with GNU C++ 13.3.0. Typical Ubuntu dependency packages are `build-essential libboost-thread-dev libboost-system-dev libgmp-dev libmpfr-dev libssl-dev`; package versions on other systems may differ and have not been validated here. No package installer is run by these scripts.

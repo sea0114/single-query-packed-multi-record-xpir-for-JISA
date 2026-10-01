@@ -1,6 +1,23 @@
-# Current result and evidence map
+# Current and historical result map
 
-This map describes the current result presentation. Files under `paper/` and `submission/` remain frozen historical editorial artifacts; their old figure/table numbers do not identify the current displays. Semantic names and manuscript labels below avoid that ambiguity.
+## Current core evaluation
+
+The current entry point is [core_rebuild/README.md](../experiments/core_rebuild/README.md). Its new run `core_20261001_001` is independent of the historical experiments below: 12 primary conditions and 16 fixed-capacity conditions, all at `N=1024`, with ten sessions, one warmup and six measured blocks per condition/session. All 5,880 physical tasks completed; warmups and tuning do not enter the estimates.
+
+| Evidence | Current path under `experiments/core_rebuild/` | Meaning |
+|---|---|---|
+| Frozen design | `runs/core_20261001_001/provenance/freeze.json` | Literal schedule, seeds, configurations, resource policy and source/build pins |
+| Formal collection | `runs/core_20261001_001/raw/formal_001/observations.jsonl`, `formal_report.json` | Physical observations and complete-condition gate |
+| Estimates and uncertainty | `results/core_20261001_001/summary.json`, `fullprecision.csv` | Absolute latency/CPU/preprocessing costs and paired latency contrasts; pointwise joint-session bootstrap intervals |
+| All ten session effects | `results/core_20261001_001/session_effects.csv` | Every condition/contrast/metric session median, without dropping time variation |
+| Configurations and actual buffers | `results/core_20261001_001/configurations_and_buffers.csv` | Selected layouts, concurrency, arithmetic threads and validated ciphertext counts/bytes |
+| Audit linkage | `results/core_20261001_001/claim_map.json`, `failure_ledger.json`, `analysis_provenance.json` | Exact condition pointers, failure gate and input/output hashes |
+
+The frozen `scripts/plots.py` generates `retrieval_performance.pdf` and `capacity_tradeoff.pdf` in a new reproduction output tree, with `figure_data.json`, `caption_data.json` and `figure_provenance.json`. A separate postmeasurement `reproduction/paper_plots.py` renderer retains those exact coordinates, fonts, limits and captions while increasing the capacity figure's bottom margin to separate the axis label from its note. `reproduction/paper_tables.py` generates four compact tables and `mapping.json`, with every numeric cell linked to its full-precision summary pointer. Neither presentation renderer bootstraps or runs native code. Generated PDFs and current manuscript materials are excluded from distribution. Follow the core README's separate `analyze`/`redraw` and paper-presentation routes; the old display numbers and old paired-trial estimator below do not describe the new evaluation.
+
+## Retained historical presentation
+
+The rest of this map describes the earlier presentation. Files under `paper/` and `submission/` remain frozen historical editorial artifacts; their old figure/table numbers do not identify the new displays. Semantic names and manuscript labels below retain the earlier lineage.
 
 ## Redraw without statistical recomputation
 
