@@ -1,4 +1,4 @@
-# Build and validate
+# Native build and functional validation
 
 Run in an independent clone, after `scripts/unpack_data.py`. The original frozen builder writes shared derived worker sources and `artifact/native/current_build.json` as well as the requested build directory. Never use it in an archival workspace. No old binary is bundled.
 
@@ -32,11 +32,19 @@ python3 -B -m unittest discover -s tests -p 'test_*.py' -v
 
 The first has 81 tests and requires Linux's process/resource facilities. The second has 26 tests and needs mpmath 1.3.0. Use discovery: the legacy correctness test's standalone main writes an old report path. Do not recursively execute every file with `test` in its name.
 
-To build the manuscript, use TeX Live 2026 with `elsarticle` v3.5, latexmk and BibTeX:
+## Native support and functional evidence
+
+The checked adapter requires `1 <= w <= 56` and exact radix weights `K_r=2^(rho_0*r)` no larger than `2^32-1`. `m1::encrypt_integer` verifies the integer fits the declared plaintext field and unsigned-integer API before one direct `client.encrypt(value,1)` call; it does not truncate a weight or create an encrypted one to scale afterward. The supported width is checked independently of algebraic radix capacity. All nine tested alpha=2/3/4, rho_0=8/12/16 combinations meet `t=B^alpha` and the zero-noise arithmetic screen `2*(t-1)<q`; six pass the current API. Profiles (3,16), (4,12), (4,16) exceed the direct-weight limit, and (4,16) also exceeds the width range. These are API restrictions, not security or reliability bounds.
+
+The [frontier summary](../revision_notes/B2_A_feasibility_frontier.json) records exact weights, width status, rejection reasons and evidence paths. The historical two-record profiles each passed 82 encrypted cases (246 total); each of the three supported additional profiles passed ten. The separate capacity-focused functional suite passed 208 tasks with 448 fresh-key processes, including ordered and reversed targets, equal contents at distinct indices, maximum digits, partial-segment and full-block padding, and lengths 32767/32768/32769 across J=n. [data-layout.md](data-layout.md) indexes those archived results. These finite checks are distinct from paired latency trials and do not estimate a native failure probability.
+
+## Historical editorial build
+
+The existing `paper/` and `submission/` trees are frozen historical artifacts. They contain an earlier security argument and display arrangement, not the current manuscript. For inspecting that historical snapshot only, use TeX Live 2026 with `elsarticle` v3.5, latexmk and BibTeX:
 
 ```bash
 cd paper
 latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build/local_01 main.tex supplement.tex
 ```
 
-The output directory is new and separate from sources. A flattened source bundle for Editorial Manager is supplied under `submission/` once verified; it is a packaging option, not proof of JISA's final journal-specific format requirements. Bibliography uses the provisional numerical Elsevier style. Funding, conflicts and CRediT remain unfilled by author instruction.
+The output directory must be new and separate from sources. The existing `submission/` tree is a historical flattened source bundle; it is not updated or offered as a current submission package. Its provisional numerical Elsevier bibliography and historical checks are not proof of current JISA format compliance or completed author declarations. No current manuscript/PDF is distributed by this update.

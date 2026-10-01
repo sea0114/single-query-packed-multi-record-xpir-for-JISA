@@ -1,0 +1,313 @@
+{
+  "classification": "REQUIRES_DISCLOSURE",
+  "material_methodological_inconsistency_found": false,
+  "compatible_with_distinct_stage_contracts": true,
+  "causal_explanation_established": false,
+  "pooled_samples": false,
+  "combined_estimator": false,
+  "rows": [
+    {
+      "alpha": 2,
+      "N": 1024,
+      "ell_bits": 512,
+      "view": "COLD",
+      "B1_pairs": 30,
+      "B2B_pairs": 10,
+      "B1_median_R": 1.139262162189516,
+      "B2B_median_R": 1.050424330018313,
+      "difference_B2B_minus_B1": -0.08883783217120311,
+      "B1_CI95": [
+        1.0858240122715486,
+        1.1915602820485667
+      ],
+      "B2B_CI95": [
+        1.005370057683606,
+        1.078139292252043
+      ],
+      "pointwise_intervals_disjoint": true,
+      "packed": {
+        "B1_TaskTotal_median_ns": 776224919.0,
+        "B2B_TaskTotal_median_ns": 997881100.5,
+        "B1_CPU_median_ns": 763672000.0,
+        "B2B_CPU_median_ns": 946592000.0
+      },
+      "repeated": {
+        "B1_TaskTotal_median_ns": 886442393.0,
+        "B2B_TaskTotal_median_ns": 1042730756.0,
+        "B1_CPU_median_ns": 1608335000.0,
+        "B2B_CPU_median_ns": 1924341000.0
+      }
+    },
+    {
+      "alpha": 2,
+      "N": 1024,
+      "ell_bits": 512,
+      "view": "ONLINE",
+      "B1_pairs": 30,
+      "B2B_pairs": 10,
+      "B1_median_R": 1.1501068563191295,
+      "B2B_median_R": 1.0551422690074317,
+      "difference_B2B_minus_B1": -0.09496458731169777,
+      "B1_CI95": [
+        1.1357532824292806,
+        1.17807118991825
+      ],
+      "B2B_CI95": [
+        1.0295257731806624,
+        1.082147833368397
+      ],
+      "pointwise_intervals_disjoint": true,
+      "packed": {
+        "B1_TaskTotal_median_ns": 646273703.5,
+        "B2B_TaskTotal_median_ns": 808263746.0,
+        "B1_CPU_median_ns": 626013000.0,
+        "B2B_CPU_median_ns": 766957000.0
+      },
+      "repeated": {
+        "B1_TaskTotal_median_ns": 744717259.5,
+        "B2B_TaskTotal_median_ns": 853518210.0,
+        "B1_CPU_median_ns": 1338903000.0,
+        "B2B_CPU_median_ns": 1573452500.0
+      }
+    },
+    {
+      "alpha": 2,
+      "N": 1024,
+      "ell_bits": 2048,
+      "view": "COLD",
+      "B1_pairs": 30,
+      "B2B_pairs": 10,
+      "B1_median_R": 1.1683161169469205,
+      "B2B_median_R": 1.035750818621553,
+      "difference_B2B_minus_B1": -0.13256529832536756,
+      "B1_CI95": [
+        1.1069260277956325,
+        1.2198775747258006
+      ],
+      "B2B_CI95": [
+        1.0059456178377564,
+        1.0562869959652224
+      ],
+      "pointwise_intervals_disjoint": true,
+      "packed": {
+        "B1_TaskTotal_median_ns": 791924458.5,
+        "B2B_TaskTotal_median_ns": 1014008554.0,
+        "B1_CPU_median_ns": 775037000.0,
+        "B2B_CPU_median_ns": 960068500.0
+      },
+      "repeated": {
+        "B1_TaskTotal_median_ns": 933262444.0,
+        "B2B_TaskTotal_median_ns": 1040060163.5,
+        "B1_CPU_median_ns": 1641247500.0,
+        "B2B_CPU_median_ns": 1921838000.0
+      }
+    },
+    {
+      "alpha": 2,
+      "N": 1024,
+      "ell_bits": 2048,
+      "view": "ONLINE",
+      "B1_pairs": 30,
+      "B2B_pairs": 10,
+      "B1_median_R": 1.1737083317911903,
+      "B2B_median_R": 1.0329936830889808,
+      "difference_B2B_minus_B1": -0.1407146487022095,
+      "B1_CI95": [
+        1.1439520920241621,
+        1.2065803877543182
+      ],
+      "B2B_CI95": [
+        0.9804687090383134,
+        1.0669623439364777
+      ],
+      "pointwise_intervals_disjoint": true,
+      "packed": {
+        "B1_TaskTotal_median_ns": 644294162.0,
+        "B2B_TaskTotal_median_ns": 807688643.5,
+        "B1_CPU_median_ns": 632122000.0,
+        "B2B_CPU_median_ns": 766038000.0
+      },
+      "repeated": {
+        "B1_TaskTotal_median_ns": 751217366.0,
+        "B2B_TaskTotal_median_ns": 834762688.5,
+        "B1_CPU_median_ns": 1350702000.0,
+        "B2B_CPU_median_ns": 1543696500.0
+      }
+    },
+    {
+      "alpha": 2,
+      "N": 4096,
+      "ell_bits": 512,
+      "view": "COLD",
+      "B1_pairs": 20,
+      "B2B_pairs": 10,
+      "B1_median_R": 1.151662120471296,
+      "B2B_median_R": 1.0247206278939798,
+      "difference_B2B_minus_B1": -0.12694149257731624,
+      "B1_CI95": [
+        1.1153229995181193,
+        1.2227979847902064
+      ],
+      "B2B_CI95": [
+        0.9998727354797512,
+        1.0524801418484049
+      ],
+      "pointwise_intervals_disjoint": true,
+      "packed": {
+        "B1_TaskTotal_median_ns": 3206029566.0,
+        "B2B_TaskTotal_median_ns": 3998719657.0,
+        "B1_CPU_median_ns": 3173681500.0,
+        "B2B_CPU_median_ns": 3788156000.0
+      },
+      "repeated": {
+        "B1_TaskTotal_median_ns": 3761337964.0,
+        "B2B_TaskTotal_median_ns": 4057046767.5,
+        "B1_CPU_median_ns": 6721003500.0,
+        "B2B_CPU_median_ns": 7527343000.0
+      }
+    },
+    {
+      "alpha": 2,
+      "N": 4096,
+      "ell_bits": 512,
+      "view": "ONLINE",
+      "B1_pairs": 20,
+      "B2B_pairs": 10,
+      "B1_median_R": 1.1529290234200018,
+      "B2B_median_R": 1.0241211191703756,
+      "difference_B2B_minus_B1": -0.12880790424962618,
+      "B1_CI95": [
+        1.1178152694984038,
+        1.1783956972708447
+      ],
+      "B2B_CI95": [
+        0.9983853009134929,
+        1.038568703927385
+      ],
+      "pointwise_intervals_disjoint": true,
+      "packed": {
+        "B1_TaskTotal_median_ns": 2693276493.0,
+        "B2B_TaskTotal_median_ns": 3259440578.0,
+        "B1_CPU_median_ns": 2655463000.0,
+        "B2B_CPU_median_ns": 3088945500.0
+      },
+      "repeated": {
+        "B1_TaskTotal_median_ns": 3148768326.5,
+        "B2B_TaskTotal_median_ns": 3342291599.0,
+        "B1_CPU_median_ns": 5659395500.0,
+        "B2B_CPU_median_ns": 6170014000.0
+      }
+    },
+    {
+      "alpha": 2,
+      "N": 4096,
+      "ell_bits": 2048,
+      "view": "COLD",
+      "B1_pairs": 20,
+      "B2B_pairs": 10,
+      "B1_median_R": 1.15605152785567,
+      "B2B_median_R": 1.0131796643165385,
+      "difference_B2B_minus_B1": -0.1428718635391315,
+      "B1_CI95": [
+        1.1197230611042486,
+        1.2016351923834612
+      ],
+      "B2B_CI95": [
+        0.9855576314654061,
+        1.0261047763383229
+      ],
+      "pointwise_intervals_disjoint": true,
+      "packed": {
+        "B1_TaskTotal_median_ns": 3264344301.0,
+        "B2B_TaskTotal_median_ns": 4099095290.0,
+        "B1_CPU_median_ns": 3236353000.0,
+        "B2B_CPU_median_ns": 3876519000.0
+      },
+      "repeated": {
+        "B1_TaskTotal_median_ns": 3880650518.5,
+        "B2B_TaskTotal_median_ns": 4157609304.0,
+        "B1_CPU_median_ns": 6908466000.0,
+        "B2B_CPU_median_ns": 7704023000.0
+      }
+    },
+    {
+      "alpha": 2,
+      "N": 4096,
+      "ell_bits": 2048,
+      "view": "ONLINE",
+      "B1_pairs": 20,
+      "B2B_pairs": 10,
+      "B1_median_R": 1.170338279015117,
+      "B2B_median_R": 1.0147405830636145,
+      "difference_B2B_minus_B1": -0.1555976959515024,
+      "B1_CI95": [
+        1.124527329121342,
+        1.1982644505609101
+      ],
+      "B2B_CI95": [
+        0.9933173572324363,
+        1.033899045235136
+      ],
+      "pointwise_intervals_disjoint": true,
+      "packed": {
+        "B1_TaskTotal_median_ns": 2676420507.5,
+        "B2B_TaskTotal_median_ns": 3307141070.0,
+        "B1_CPU_median_ns": 2651759000.0,
+        "B2B_CPU_median_ns": 3128950000.0
+      },
+      "repeated": {
+        "B1_TaskTotal_median_ns": 3146918335.5,
+        "B2B_TaskTotal_median_ns": 3325093624.0,
+        "B1_CPU_median_ns": 5637528000.0,
+        "B2B_CPU_median_ns": 6171049500.0
+      }
+    }
+  ],
+  "disjoint_pointwise_interval_rows": 8,
+  "B1_binary": "bb650809753603bb942e4b2a792333a5eefefdd8b4517ac174f02b6e48fcaaba",
+  "B2B_binary": "c4e4bb0113f2e74b46882e8d680b797369c8b27a259d34f93fc8330537c03c30",
+  "same_backend_commit": true,
+  "same_compiler_flags": true,
+  "same_link_flags": true,
+  "core_contract": {
+    "B1_packed": [
+      0,
+      2
+    ],
+    "B2B_packed": [
+      0
+    ],
+    "B1_parent": [
+      0,
+      2
+    ],
+    "B2B_parent": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "alpha2_repeated_both": [
+      [
+        0
+      ],
+      [
+        2
+      ]
+    ],
+    "threads_per_worker": 1
+  },
+  "repetitions": {
+    "B1_N1024": 30,
+    "B1_N4096": 20,
+    "B2B_all": 10,
+    "warmup_each_stage": 3
+  },
+  "limits": {
+    "B1_packed_AS_GiB": 16,
+    "B2B_packed_AS_GiB": 8,
+    "repeated_per_worker_AS_GiB_both": 8,
+    "aggregate_RSS_GiB_both": 16
+  },
+  "interpretation": "Every overlapping B2-B alpha=2 median is smaller than B1; separate pointwise intervals are descriptive, not a cross-stage significance test. Different harness/binary, affinity/parent allocation, fixture, schedule and repetitions prevent a same-contract replication claim. Differences are compatible with stage dependence but existing evidence does not identify their cause; disclose both results and do not attribute the gap to any single change."
+}
