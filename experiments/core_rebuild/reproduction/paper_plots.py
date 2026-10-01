@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Redraw frozen scientific coordinates with a separate paper layout correction.
+"""Present frozen scientific coordinates with explicit readability corrections.
 
 SPDX-License-Identifier: GPL-3.0-or-later
 This postmeasurement renderer does not modify frozen sources, estimate,
-bootstrap, launch native code or read manuscript files. Only the capacity
-figure's bottom subplot margin changes, from .145 to .21.
+bootstrap, launch native code or read manuscript files. Focused primary axes,
+capacity region labels and captions are presentation metadata; estimates,
+intervals, categories and actual buffer/block counts remain unchanged.
 """
 from __future__ import annotations
 
@@ -13,6 +14,7 @@ import datetime
 import hashlib
 import importlib.util
 import json
+import math
 import os
 from pathlib import Path
 import platform
@@ -71,10 +73,36 @@ def artist_coordinates(figure):
                        "markersize": line.get_markersize()} for line in axis.lines],
             "interval_segments": [[segment.tolist() for segment in collection.get_segments()]
                                   for collection in axis.collections if hasattr(collection, "get_segments")],
+            "annotations": [{"text": t.get_text(), "position": list(t.get_position()),
+                             "fontsize": t.get_fontsize()} for t in axis.texts],
         })
     return {"axes": axes,
             "figure_text": [{"text": t.get_text(), "position": list(t.get_position()),
                               "fontsize": t.get_fontsize()} for t in figure.texts]}
+
+
+def scientific_artist_coordinates(artists):
+    """Separate plotted data from allowed limits, ticks, labels and page layout."""
+    return [{key: axis[key] for key in ("xlim", "xticks", "lines", "interval_segments")}
+            for axis in artists["axes"]]
+
+
+def scientific_figure_fields(figures):
+    """The complete condition/method/point fields must match the frozen figure."""
+    return [{"filename": figure["filename"], "panels": figure["panels"]}
+            for figure in figures]
+
+
+def primary_axis_limits(summary):
+    values = [value for cid in summary["figure_condition_map"]["retrieval_performance"]
+              for role in ("R_independent", "R_matched")
+              for value in (summary["conditions"][cid]["ratios"][role]["estimate"],
+                            *summary["conditions"][cid]["ratios"][role]["CI95"])]
+    require(all(math.isfinite(v) for v in values), "Nonfinite primary point/interval")
+    lower = min(.95, math.floor(min(values) * 20) / 20)
+    upper = max(1.35, math.ceil(max(values) * 20) / 20)
+    require(lower <= min(values) and max(values) <= upper, "Focused axes would clip a scientific value")
+    return [lower, upper]
 
 
 def main():
@@ -139,6 +167,9 @@ def main():
     baseline_data = read_json(baseline / "figure_data.json")
     require(baseline_data["summary_sha256"] == summary_digest and
             baseline_data["source_sha256"] == FROZEN_SHA256, "Frozen coordinate identity differs")
+    require(summary["tier"] == "minimal" and summary["condition_count"] == 28,
+            "This presentation requires all 28 complete minimal-tier conditions")
+    focused_limits = primary_axis_limits(summary)
     out.mkdir(exist_ok=False)
     runtime = out / "runtime"
     runtime.mkdir()
@@ -169,54 +200,129 @@ def main():
     def save_with_paper_margin(figure, path):
         before = artist_coordinates(figure)
         old_bottom = figure.subplotpars.bottom
+        if path.name == "retrieval_performance.pdf":
+            for index, axis in enumerate(figure.axes):
+                axis.set_ylim(*focused_limits)
+                ticks = [round(i / 10, 1) for i in range(math.ceil(focused_limits[0] * 10),
+                                                        math.floor(focused_limits[1] * 10) + 1)]
+                require(1.0 in ticks, "Equal-latency tick is missing")
+                axis.set_yticks(ticks, [f"{value:.1f}" for value in ticks])
+                if index % 3 == 0:
+                    scope = "excluded" if index < 3 else "included"
+                    axis.set_ylabel(frozen.SCOPE_LABELS[scope] + "\nBaseline / packed latency ratio")
+            for text in figure.texts:
+                if "no database-size scaling evaluated" in text.get_text():
+                    text.set_text(r"$N=1,024$")
         if path.name == "capacity_tradeoff.pdf":
             require(old_bottom == .145, "Unexpected frozen capacity margin")
-            figure.subplots_adjust(bottom=.21)
-        require(artist_coordinates(figure) == before, "Margin correction changed scientific coordinates or fonts")
+            figure.subplots_adjust(left=.14, right=.97, bottom=.21, top=.78, wspace=.24, hspace=1.0)
+            panels = [(scope, alpha) for scope in frozen.SCOPES for alpha in (2, 4)]
+            for axis, (scope, alpha) in zip(figure.axes, panels, strict=True):
+                selected = frozen.subset(summary, "capacity", scope, alpha)
+                require(len(selected) == 4, "Capacity region lacks an actual measured category")
+                require(all([c["accounting"][role]["actual_L"] for c in selected] == [1, 1, 2, 2]
+                            for role in ("P", "R_matched")), "Packed/matched actual block regions differ")
+                require(all(c["accounting"]["R_independent"]["actual_L"] == 1 for c in selected),
+                        "Full-width actual block count differs")
+                axis.set_xticks(range(4), [f"{c['workload']['ell_bits']:,}" for c in selected])
+                for position, blocks in ((.5, 1), (2.5, 2)):
+                    axis.text(position, 1.015, "Packed + matched\n" + rf"$L={blocks}$",
+                              transform=axis.get_xaxis_transform(), ha="center", va="bottom", fontsize=8.5)
+                axis.set_title(axis.get_title(), pad=32)
+            for text in figure.texts:
+                if text.get_text().startswith("Tick parentheses:"):
+                    text.set_text(r"Full-width repeated: $L=1$ at all measured lengths.")
+                elif text.get_text().startswith("Dotted separators"):
+                    text.set_text(r"Dotted lines separate packed/matched $L=1$ and $L=2$ categories.")
+        after = artist_coordinates(figure)
+        require(scientific_artist_coordinates(after) == scientific_artist_coordinates(before),
+                "Presentation correction changed point/interval/category coordinates")
         layout_records.append({"filename": path.name, "old_bottom_margin": old_bottom,
                                "new_bottom_margin": figure.subplotpars.bottom,
-                               "coordinates_and_fonts_unchanged": True, "artists": before})
+                               "scientific_artist_coordinates_unchanged": True, "artists": after})
         original_save(figure, path)
 
     frozen.save_vector = save_with_paper_margin
     figures = [frozen.primary_figure(summary, out, plt, Line2D, MaxNLocator),
                frozen.capacity_figure(summary, out, plt, Line2D, MaxNLocator)]
-    require(figures == baseline_data["figures"], "Figure series, captions or scientific metadata changed")
+    require(scientific_figure_fields(figures) == scientific_figure_fields(baseline_data["figures"]),
+            "Condition/method/point/interval/buffer fields changed")
+    require(len(figures[0]["panels"]) == 6 and len(figures[1]["panels"]) == 4,
+            "A primary/capacity panel is missing")
+    figures[0]["common_y_limits"] = focused_limits
+    figures[0]["minimal_tier_note"] = "N=1024"
+    figures[0]["primary_y_ticks"] = [round(i / 10, 1) for i in range(math.ceil(focused_limits[0] * 10),
+                                                                  math.floor(focused_limits[1] * 10) + 1)]
+    figures[0]["caption"] = ("Completion latency for the full ordered task at N=1024 and w=24. "
+        "Points summarize paired baseline/packed ratios by a median within each of ten sessions, followed by "
+        "the median across sessions; bars are approximate pointwise 95% whole-session percentile intervals. "
+        "All six panels use the same focused ratio scale, with equal latency at 1.0. Independently tuned "
+        "repeated retrieval is primary; matched-layout repeated retrieval is secondary. Values above one favor "
+        "packed retrieval. Complete absolute costs, configurations, buffers and all session effects accompany the fixed data.")
+    figures[1]["block_region_labels"] = {"packed_and_matched": [1, 1, 2, 2], "full_width": [1, 1, 1, 1]}
+    figures[1]["categorical_group_separator"] = {"between_category_indices": [1, 2],
+                                                "position": 1.5, "measured_x_coordinate": False}
+    figures[1]["caption"] = ("Absolute completion latency at four categorical measured record lengths around "
+        "each packed block boundary, with fixed N=1024, w=24 and execution policies. The boundaries are "
+        "49152 bits for two records and 24576 bits for four records. Region labels give actual blocks per query "
+        "for packed and matched-layout retrieval; full-width repeated retrieval uses L=1 throughout. Dotted "
+        "lines separate the one-block and two-block groups, rather than marking another measured length. "
+        "Points are medians of ten within-session medians; bars are approximate pointwise 95% whole-session "
+        "percentile intervals. Connecting segments guide the eye between measured categories. Complete paired "
+        "contrasts and actual buffer counts accompany the fixed data.")
     expected_captions = {figure["filename"]: {"caption": figure["caption"],
                          "minimum_font_size_pt": figure["minimum_font_size_pt"],
                          "width_inches": figure["width_inches"], "height_inches": figure["height_inches"]}
                          for figure in figures}
-    require(expected_captions == read_json(baseline / "caption_data.json"), "Caption data changed")
-    # Retain the exact frozen coordinate/caption files; correction provenance is
-    # separate, so a formatting fix cannot masquerade as new scientific data.
-    for name in ("figure_data.json", "caption_data.json"):
-        with (out / name).open("xb") as stream:
-            stream.write((baseline / name).read_bytes())
-        require(sha(out / name) == inputs["figures/" + name], "Scientific JSON byte parity failed")
-    write_new(out / "layout_mapping.json", {"schema": "CORE_PAPER_LAYOUT_MAPPING_V1",
+    data = dict(baseline_data)
+    data.update(schema="CORE_PAPER_FIGURE_DATA_V2", figures=figures,
+                presentation_source_sha256=sha(__file__), scientific_fields_equal_to_frozen=True)
+    write_new(out / "figure_data.json", data)
+    write_new(out / "caption_data.json", expected_captions)
+    write_new(out / "layout_mapping.json", {"schema": "CORE_PAPER_LAYOUT_MAPPING_V2",
               "run_id": summary["run_id"], "summary_sha256": summary_digest,
               "frozen_figure_data_sha256": inputs["figures/figure_data.json"],
-              "figures": layout_records, "series_and_caption_parity": True})
+              "figures": layout_records, "scientific_series_parity": True,
+              "allowed_visual_changes": ["primary y limits/ticks", "axis labels", "figure notes",
+                  "capacity block-region labels", "categorical group separator interpretation", "captions", "subplot spacing"]})
+    point_counts = {"primary": sum(len(s["points"]) for p in figures[0]["panels"] for s in p["series"]),
+                    "capacity": sum(len(s["points"]) for p in figures[1]["panels"] for s in p["series"])}
+    require(point_counts == {"primary": 24, "capacity": 48}, "A method/contrast point is missing")
+    write_new(out / "numeric_preservation.json", {"schema": "CORE_FIGURE_NUMERIC_PRESERVATION_V1", "status": "PASS",
+              "summary_sha256": summary_digest, "reference_figure_data_sha256": inputs["figures/figure_data.json"],
+              "primary_conditions": 12, "capacity_conditions": 16, "displayed_point_counts": point_counts,
+              "exact_fields_checked": ["condition_id", "workload", "scope", "method", "estimate", "CI95",
+                  "configuration", "accounting", "summary_pointer", "shared_baseline_observations"],
+              "scientific_figure_projection_sha256": hashlib.sha256(json.dumps(scientific_figure_fields(figures),
+                  sort_keys=True, separators=(",", ":"), allow_nan=False).encode()).hexdigest(),
+              "focused_primary_limits": focused_limits, "all_primary_estimates_and_endpoints_visible": True,
+              "bootstrap_rerun": False, "native_executions": 0, "source_inputs_modified": False})
     require(sha(frozen_path) == FROZEN_SHA256, "Frozen source changed during rendering")
     for relative, digest in inputs.items():
         require(sha(results / relative) == digest, "Source input changed during rendering: " + relative)
     outputs = {path.name: sha(path) for path in out.iterdir() if path.is_file()}
-    receipt = {"schema": "CORE_PAPER_FIGURE_PROVENANCE_V1", "status": "COMPLETE",
+    receipt = {"schema": "CORE_PAPER_FIGURE_PROVENANCE_V2", "status": "COMPLETE",
                "run_id": summary["run_id"], "generated_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
                "renderer_sha256": sha(__file__), "frozen_plot_source_sha256": FROZEN_SHA256,
                "summary_sha256": summary_digest, "input_sha256": inputs, "output_sha256": outputs,
                "python_version": platform.python_version(), "matplotlib_version": matplotlib.__version__,
-               "layout_change": {"capacity_bottom_margin": {"before": .145, "after": .21}},
-               "series_coordinates_fonts_limits_captions_unchanged": True,
+               "visual_changes": {"capacity_bottom_margin": {"before": .145, "after": .21},
+                                  "capacity_left_margin": {"before": .105, "after": .14},
+                                  "capacity_right_margin": {"before": .985, "after": .97},
+                                  "capacity_top_margin": {"before": .865, "after": .78},
+                                  "capacity_column_spacing": {"before": .15, "after": .24},
+                                  "capacity_row_spacing": {"before": .52, "after": 1.0},
+                                  "primary_y_limits": focused_limits, "explicit_equal_latency_tick": 1.0,
+                                  "primary_note": "N=1024", "capacity_labels": "actual block regions",
+                                  "captions_updated": True},
+               "scientific_point_interval_category_buffer_fields_unchanged": True,
                "source_inputs_modified": False, "native_executions": 0, "new_bootstrap_resamples": 0,
                "baseline_pdf_checks": baseline_pdf_checks,
-               "primary_pdf_byte_identical_to_recorded_hash": outputs["retrieval_performance.pdf"] ==
-                    baseline_provenance["output_sha256"]["retrieval_performance.pdf"],
+               "pdf_hashes_are_new_presentation_outputs": True,
                "minimum_font_size_pt": 8.5, "final_width_inches": 6.6, "vector_pdf": True}
     write_new(out / "paper_figure_provenance.json", receipt)
     print(json.dumps({"status": "COMPLETE", "out": str(out), "summary_sha256": summary_digest,
-                      "primary_pdf_byte_identical_to_recorded_hash":
-                          receipt["primary_pdf_byte_identical_to_recorded_hash"]}))
+                      "scientific_fields_equal_to_frozen": True}))
     return 0
 
 

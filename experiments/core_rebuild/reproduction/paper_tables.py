@@ -134,12 +134,14 @@ class Cells:
                            display_unit="s" if seconds else "ratio", divisor=divisor, interval_shown=interval)
 
 
-def table(caption: str, label: str, columns: str, header: str, rows: list[str], note: str = "") -> str:
+def table(caption: str, label: str, columns: str, header: str, rows: list[str], note: str = "", *,
+          font_size=8.5, line_height=10.2, column_gap=3, array_stretch=1.08) -> str:
     return "\n".join([r"\begin{table}[!htbp]", r"\centering", r"\caption{" + caption + "}", r"\label{" + label + "}",
-                       r"\begingroup", r"\fontsize{8.5}{10.2}\selectfont", r"\setlength{\tabcolsep}{3pt}",
-                       r"\renewcommand{\arraystretch}{1.08}", r"\begin{tabular}{@{}" + columns + "@{}}", r"\toprule",
+                       r"\begingroup", rf"\fontsize{{{font_size}}}{{{line_height}}}\selectfont",
+                       rf"\setlength{{\tabcolsep}}{{{column_gap}pt}}",
+                       rf"\renewcommand{{\arraystretch}}{{{array_stretch}}}", r"\begin{tabular}{@{}" + columns + "@{}}", r"\toprule",
                        header + r" \\", r"\midrule", *rows, r"\bottomrule", r"\end{tabular}", r"\endgroup",
-                       (r"\par\smallskip{\fontsize{8.5}{10.2}\selectfont " + note + "}") if note else "", r"\end{table}", ""])
+                       (rf"\par\smallskip{{\fontsize{{{font_size}}}{{{line_height}}}\selectfont " + note + "}") if note else "", r"\end{table}", ""])
 
 
 def build_tables(summary: dict, cells: Cells) -> dict[str, str]:
@@ -183,12 +185,15 @@ def build_tables(summary: dict, cells: Cells) -> dict[str, str]:
                       cells.statistic(filename, index, "direct_preprocessing_s", p + "/absolute/" + role + "/preprocessing_ns", interval=True, seconds=True)]
             rows.append(" & ".join(values) + r" \\")
         rows.append(r"\addlinespace[3pt]")
-    caption = (r"Whole-group CPU work and directly measured preprocessing for the primary slice $N=1024$, $\ell=32768$ bits. "
+    caption = (r"Whole-group CPU time and directly measured preprocessing wall time for the primary slice $N=1024$, $\ell=32768$ bits. "
                "Packed retrieval ($P$) and independently tuned repeated retrieval ($R_i$) use the same total resource allowance. "
                "Values are seconds; brackets are approximate pointwise 95\\% whole-session percentile intervals for the median across ten within-session medians.")
-    note = ("CPU time is user plus system time for the coordinator, owner and retrieval processes within the stated timing scope. "
-            "Preprocessing is measured directly even when excluded from task latency; it is not obtained by subtracting scope medians.")
-    assets[filename] = table(caption, "tab:core-costs", "rllcc", r"$\alpha$ & Scope & Method & CPU work (s) & Preprocessing (s)", rows, note)
+    note = ("CPU time sums user plus system time for the coordinator and retrieval processes within the task interval, "
+            "adding the preparation owner when preprocessing is included. Preprocessing wall time is measured directly "
+            "in each task; it lies inside the included task interval and outside the excluded task interval.")
+    assets[filename] = table(caption, "tab:core-costs", "rllcc",
+                            r"$\alpha$ & Scope & Method & CPU time (s) & \shortstack{Preprocessing\\wall time (s)}",
+                            rows, note, font_size=10, line_height=12, column_gap=5, array_stretch=1.12)
     filename = "selected_configurations.tex"
     selected = sorted((c for c in summary["conditions"].values() if c["workload"]["study"] == "primary" and c["scope"] == "excluded"),
                       key=lambda c: (c["workload"]["alpha"], c["workload"]["ell_bits"]))
@@ -207,7 +212,7 @@ def build_tables(summary: dict, cells: Cells) -> dict[str, str]:
             values.append(cells.record(filename, index, role + "_configuration", "/".join(str(resolve(summary, ptr)) for ptr in pointers), pointers,
                                        type="exact_tuple", order=["rho_0", "concurrency", "threads_per_query", "actual_L"]))
         rows.append(" & ".join(values) + r" \\")
-    caption = r"Selected primary configurations at $N=1024$, shared by both timing scopes. Each entry is $\rho_0/c/u/L$: fragment width, concurrent query processes, reply threads per query and actual blocks per query."
+    caption = r"Selected primary configurations at $N=1024$, shared by both timing scopes. Each entry is $\rho_0/c/u/L$: segment width, concurrent query processes, reply threads per query and actual blocks per query."
     note = "Selection uses separate preprocessing-excluded tuning trials. $P$ is packed, $R_m$ has matched layout, and $R_i$ is independently tuned. Actual $L$ is verified from ciphertext-buffer readback."
     assets[filename] = table(caption, "tab:core-selected-configurations", "rrccc", r"$\alpha$ & $\ell$ (bits) & $P$: $\rho_0/c/u/L$ & $R_m$: $\rho_0/c/u/L$ & $R_i$: $\rho_0/c/u/L$", rows, note)
     return assets
@@ -249,6 +254,8 @@ def main() -> int:
     cells = Cells(summary)
     assets = build_tables(summary, cells)
     require(len(cells.records) == len({(r["file"], r["row"], r["column"]) for r in cells.records}), "Duplicate display-cell map")
+    require(len(cells.records) == 314 and sum(len(r["sources"]) for r in cells.records) == 528,
+            "A displayed numeric cell/source pointer is missing or added")
     for record in cells.records:
         for source in record["sources"]:
             require(resolve(summary, source["summary_pointer"]) == source["full_value"], "Display cell has a stale source pointer")
@@ -260,7 +267,13 @@ def main() -> int:
     checks.update(display_cells_checked=len(cells.records), mapping_sources_checked=sum(len(r["sources"]) for r in cells.records))
     mapping = {"schema": "CORE_PAPER_CELL_MAPPING_V1", "run_id": summary["run_id"], "status": "PASS_NUMERIC_SOURCE_CHECKS",
                "input_sha256": before, "source_sha256": digest(Path(__file__)), "checks": checks,
-               "font_size_pt": 8.5, "layout_status": "Requires final manuscript compile and page inspection; no automatic shrink below 8pt",
+               "font_size_pt_by_file": {filename: (10 if filename == "costs.tex" else 8.5) for filename in assets},
+               "column_gap_pt_by_file": {filename: (5 if filename == "costs.tex" else 3) for filename in assets},
+               "array_stretch_by_file": {filename: (1.12 if filename == "costs.tex" else 1.08) for filename in assets},
+               "visual_changes": {"costs.tex": ["10pt table and note fonts", "5pt column spacing", "1.12 array stretch",
+                                                  "CPU/preprocessing time headers and caption/note"],
+                                  "selected_configurations.tex": ["segment terminology in caption"]},
+               "layout_status": "Requires final manuscript compile and page inspection; no automatic shrinking",
                "predeclared_cost_slice": {"study": "primary", "N": 1024, "ell_bits": 32768, "alpha": [2, 3, 4], "scopes": ["excluded", "included"]},
                "output_sha256": {filename: digest(output / filename) for filename in assets},
                "cells": cells.records, "session_diagnostics": session_diagnostics(summary)}

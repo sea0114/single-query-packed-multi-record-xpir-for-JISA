@@ -9,7 +9,7 @@ level or a native decryption-failure probability.
 
 ## Current execution status
 
-Run `core_20261001_001` has completed formal collection:
+Run `core_20261001_001` has completed measurement collection:
 
 - 130 complete native functional tasks with no failures, plus the standalone
   readonly-mapping unit gate and nine invalid-domain rejection checks. See
@@ -21,25 +21,27 @@ Run `core_20261001_001` has completed formal collection:
 - 1,408 complete tuning tasks across all 12 provisional workloads, in
   2,220.658 seconds. See
   [`tuning_report.json`](runs/core_20261001_001/tuning/tuning_001/tuning_report.json).
-- The frozen minimal formal matrix: `N=1024`, 28 conditions, ten complete
+- The frozen minimal measurement matrix: `N=1024`, 28 conditions, ten complete
   sessions and 5,880 complete physical tasks, with no failed or unstarted tasks.
-  Formal collection took 8,605.428 seconds within the 16,200-second budget; its
+  Collection took 8,605.428 seconds within the 16,200-second budget; its
   measurement lock was released. See
   [`formal_report.json`](runs/core_20261001_001/raw/formal_001/formal_report.json).
 
 The exact freeze SHA256 is
 `ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217`;
-the formal ledger SHA256 is
+the measurement ledger SHA256 is
 `d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652`.
 The complete frozen summary and vector figures have been generated. Separate
 isolated native rebuilding and portable analyze/redraw acceptance have also
-passed; their evidence is described below. Manuscript page acceptance and the
-new fixed GitHub version remain separate steps. The public version for this new
-experiment is pending.
+passed; their evidence is described below. The completed core data and original
+presentation are published at
+[fixed version b7185589](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/b7185589ba16d8374b9744ae39f9fd4a360ffa85).
+The current readability revision changes presentation only; its new fixed public
+version and paper page acceptance are separate steps.
 
 The functional gate's diagnostic timestamps do not enter performance analysis.
 Pilots estimate complete execution cost; tuning chooses configurations. Neither
-is pooled with later formal observations or with historical measurements.
+is pooled with later measurement observations or with historical measurements.
 
 ## Files and dependencies
 
@@ -53,12 +55,12 @@ is pooled with later formal observations or with historical measurements.
 | `scripts/runner.py` | Fresh processes, shared preprocessing, task endpoints, collection and validation |
 | `scripts/functional.py` | Finite native correctness gate |
 | `scripts/pilot.py`, `scripts/pilot_refine.py`, `scripts/tune.py` | Separate cost and configuration-selection stages |
-| `scripts/freeze.py`, `scripts/formal.py` | Literal schedule freeze and formal execution |
+| `scripts/freeze.py`, `scripts/formal.py` | Literal schedule freeze and measurement execution |
 | `scripts/analyze.py` | Read-only session-level estimation API; it does not launch native code |
-| `scripts/summarize.py`, `scripts/plots.py` | Frozen formal-summary CLI and summary-only vector figure CLI |
+| `scripts/summarize.py`, `scripts/plots.py` | Frozen measurement-summary CLI and summary-only vector figure CLI |
 | `reproduction/reproduce.py` | Accepted separate analyze/frozen-redraw wrapper that copies an exact closure to an explicitly new root |
 | `reproduction/paper_plots.py`, `reproduction/paper_tables.py` | Accepted current paper presentation from verified fixed results; numeric and cell mappings are retained |
-| `runs/<run-id>/` | New build, provenance, functional, pilot, tuning and formal evidence |
+| `runs/<run-id>/` | Build, provenance, functional, pilot, tuning and measurement evidence |
 
 The source checkout must retain this directory at `experiments/core_rebuild/`.
 `common.ROOT` resolves the checkout root from that layout. The builder reads
@@ -105,7 +107,7 @@ Its SHA256 is
 `7fd6d2d0a8e4baf3e339b1cce32cc1e79ee239b9ed9410d810d8deb91f3e286a`.
 It has a distinct identity from measured `build_002`, whose SHA256 remains
 `02418781d12e1b1641c4f0072d54492a02a4aacb8795db24800241bae4476724`.
-No formal performance tasks were rerun. This acceptance covers a fresh source
+No performance tasks were rerun. This acceptance covers a fresh source
 closure on the recorded host with official workspace-staged dependencies, not a
 new operating-system installation or binary identity across machines.
 
@@ -144,7 +146,12 @@ Packed candidates use `rho_0` in `{4,6,8,12,16,24}` subject to
 `rho_0 <= 24`. The functional gate includes the `alpha=1` case. The selected native
 `Berr=200` path has an actual coefficient bound of 398. The exact per-block
 integer screen uses this bound and includes all database records' error
-contributions. Source inspection, finite error checks and this arithmetic screen
+contributions. The recorded checks are in
+[`source_gate.json`](runs/core_20261001_001/functional/source_gate.json) and each
+selected condition's `arithmetic_screens` in `freeze.json`; repeated queries use
+the single-record condition with multiplicity one. The source gate's
+runtime-pending status is historical: the later native functional report supplies
+the execution result. Source inspection, finite error checks and this arithmetic screen
 do not establish the sampler's formal distribution, joint independence,
 IND-CPA security or a probabilistic reliability guarantee.
 
@@ -194,7 +201,7 @@ public-fixture generation/loading, post-`V` validation, audits, hashing and disk
 result writing are outside these task intervals. `wall_elapsed_ns` separately
 records complete execution overhead used for budget planning.
 
-All methods use one total pool of four selected guest CPU positions. Query
+All methods use one total pool of four logical CPUs visible to the WSL2 guest. Query
 concurrency `c` and per-process arithmetic threads `t_threads` satisfy
 `c*t_threads <= 4`; queries are assigned nonoverlapping subsets while active.
 The current pool is `0,2,4,6`. This affinity assignment does not establish
@@ -218,6 +225,12 @@ its group counters over the task span. CPU accounting differs from wall latency
 and does not count post-task validation. Monitoring and pipe/log collection costs
 inside the coordinator's timed work remain part of the recorded task cost.
 
+Preprocessing wall time is recorded directly from the native preparation span
+(`preprocess_total_ns`) in both scopes. It is elapsed time, whereas CPU time sums
+user and system work across the timed process group. Preprocessing is included in
+task latency only in included scope; its cost is not estimated by subtracting
+the two scope summaries.
+
 Each native ciphertext buffer is `2*4096*2*8 = 131072` bytes. Query and reply
 accounting sums the actual processes' `N` selector buffers and `L` reply buffers.
 These are cumulative ciphertext-buffer bytes, not serialized messages, network
@@ -234,16 +247,17 @@ matched stage holds the chosen packed layout fixed. If the two repeated roles
 select the same configuration, one physical observation supplies both contrasts;
 it is not treated as two independent samples. The separate capacity study uses
 its predeclared fixed layouts and lengths.
+Both timing scopes use the same selected primary configurations.
 
-Formal execution is permitted only after functional, pilot, tuning, source,
+Measurement execution is permitted only after functional, pilot, tuning, source,
 resource and budget gates pass. `freeze.json` records the actual workload tier,
 winning configurations, arithmetic screens, seeds, literal schedule, binary and
 source hashes. That immutable design snapshot retains its original
 `FROZEN_NOT_FORMALLY_MEASURED` status; the separate formal report now records
-`COMPLETE`. The formal budget check uses actual complete configuration costs plus block
+`COMPLETE`. The measurement budget check uses actual complete configuration costs plus block
 overhead and a 50% margin; the margin is not a runtime guarantee.
 
-The completed frozen formal protocol has ten sessions, one warmup block and six
+The completed frozen measurement protocol has ten sessions, one warmup block and six
 measured paired blocks per condition/session. Within each block every method
 shares public records and ordered targets. Condition order is randomized; all
 six permutations of three physical methods are balanced within a session. If
@@ -255,7 +269,7 @@ target tuple. The native standalone seed-based fallback is a different public
 fixture generator; campaign workers receive the coordinator's actual sealed
 fixture bytes.
 
-The formal estimator is the median across sessions of each session's median
+The measurement estimator is the median across sessions of each session's median
 paired `baseline/P` latency ratio. Absolute costs use within-session method
 medians followed by a median across sessions. The analysis API jointly resamples
 whole sessions 10,000 times with the same draw indices for both contrasts and all
@@ -319,11 +333,11 @@ python3 -B "$core/scripts/formal.py" --freeze "$core/runs/$run_id/provenance/fre
 
 The resource and source review records required by `freeze.py` must also be
 present and verified; command success in earlier stages does not substitute for
-those reviews. Pilot/tuning/formal budgets are 1,800/3,600/16,200 seconds. If the
+those reviews. Pilot/tuning/measurement budgets are 1,800/3,600/16,200 seconds. If the
 minimum permitted matrix cannot fit, freezing records that author decision is
-required and formal collection must not start. `scripts/analyze.py` exposes the
+required and measurement collection must not start. `scripts/analyze.py` exposes the
 estimation API; `scripts/summarize.py --run-id RUN --freeze-sha256 SHA` is the
-complete-formal summary CLI, and `scripts/plots.py --run-id RUN
+complete-measurement summary CLI, and `scripts/plots.py --run-id RUN
 --summary-sha256 SHA` draws the verified summary without bootstrapping. Both
 require unused output locations through their preserved directory layout. The
 new `reproduction/reproduce.py` wrapper provides separately accepted `analyze`
@@ -341,39 +355,56 @@ Choose new output directories:
 ```bash
 core=experiments/core_rebuild
 results="$core/results/core_20261001_001"
-mkdir -p "$core/portability"
+output_parent="$core/portability" # Or another existing writable directory you choose.
 python3 -B "$core/reproduction/paper_plots.py" --results "$results" \
   --summary-sha256 fa4f02c7ea2657c5740d531b42d15ebcbeedcc162de367a834639cb1ce6db863 \
-  --out "$core/portability/paper_figures_local_001"
+  --out "$output_parent/paper_figures_local_001"
 python3 -B "$core/reproduction/paper_tables.py" --results "$results" \
   --summary-sha256 fa4f02c7ea2657c5740d531b42d15ebcbeedcc162de367a834639cb1ce6db863 \
-  --out "$core/portability/paper_tables_local_001"
+  --out "$output_parent/paper_tables_local_001"
 ```
 
-The independent minimum-closure check is recorded in
-[`paper_reproduction_acceptance.json`](portability/paper_acceptance_001/paper_reproduction_acceptance.json).
-Figures ran from 13 files: the new renderer, frozen `plots.py`/`common.py`, six
-analysis outputs, analysis provenance and three frozen figure JSON files. No
-reference PDF was copied or required. Tables ran from six files: the new table
-renderer, summary, three analytical CSV files and analysis provenance. The two
-figure PDFs, exact coordinate/caption JSON, layout mapping, four table snippets
-and table cell mapping are byte-identical to the installed paper assets.
+The figure closure contains 13 files: the presentation renderer, frozen
+`plots.py`/`common.py`, six analysis outputs, analysis provenance and three frozen
+figure JSON files. Reference PDFs are optional integrity references, not inputs
+required for plotting. Tables need six files: their renderer, summary, three
+analytical CSV files and analysis provenance. Current program SHA256 values are
+`6fda38d6a6812f8f82585b552d7f0408e5b95918afabaa228b544b9c46cc1cf3`
+for `paper_plots.py` and
+`ae0c2b96362595448d3212cd9d8f70aa760960f2cb25a3eff82fd9edc06f04d1`
+for `paper_tables.py`.
 
-The separate paper renderer changes only the capacity figure's bottom subplot
-margin, from `0.145` to `0.21`, to clear the xlabel and note. Scientific series,
-intervals, limits, ticks, fonts and captions are checked unchanged. The primary
-PDF remains byte-identical to the frozen version; the corrected capacity PDF has
-SHA256 `186444b92ea41554971ecefccdbd7d4d48161aee78a999fc63718bf232efdca6`.
-Both renderers preserve full-precision input and display mappings; they do not
-change the frozen sources or estimator. Figure temporary files and Matplotlib
-caches are confined to the new figure output directory. Table snippets are for
-embedding in a document using `booktabs`; standalone document compilation and
-final paper page acceptance are separate steps.
+The retrieval figure uses a common `0.95`–`1.35` baseline/packed ratio scale,
+covering every saved estimate and interval endpoint, with an explicit `1.0`
+equal-latency tick. The capacity figure labels packed/matched `L=1` and `L=2`
+regions and full-width `L=1`, with a separator between the second and third
+measured categories. This separator is a grouping aid, not another measurement.
+Only the cost table uses the larger 10 pt font and wider spacing. Its headers
+distinguish cumulative CPU time from preprocessing wall time; the other tables
+retain their earlier font and spacing, with segment terminology used consistently.
+
+Condition/method/scope identities, estimates, interval endpoints, configurations,
+block/buffer counts and all 314 table cells with 528 source pointers remain fixed.
+Axis limits/ticks, labels, captions, spacing and output PDF hashes are presentation
+metadata and may change. `numeric_preservation.json`, updated `figure_data.json`,
+`layout_mapping.json` and `paper_figure_provenance.json` record that distinction;
+the figure provenance uses schema V2. The current incremental receipt is
+[section6-readability.json](../../manifests/section6-readability.json).
+Figure temporary files and Matplotlib caches stay in the new output directory.
+Table snippets use `booktabs`; final document compilation and page acceptance
+remain separate from numeric preservation.
+
+The earlier
+[`paper_reproduction_acceptance.json`](portability/paper_acceptance_001/paper_reproduction_acceptance.json)
+is historical acceptance of the margin-only renderer published in b7185589.
+Its unchanged-limit/caption and byte-identical-PDF checks apply to that version;
+it is retained alongside the frozen scientific references rather than rewritten
+to describe the current display.
 
 ## Reproduce the frozen analysis or figures
 
 These commands read the fixed completed run and do not execute native code or
-repeat measurements. Both first verify the published freeze, formal report and
+repeat measurements. Both first verify the published freeze, measurement report and
 complete raw ledger. `analyze` copies four frozen scripts and those three inputs,
 then repeats the frozen session-level resampling. `redraw` copies two plotting
 scripts and seven verified result files; it performs no bootstrap and needs no
@@ -417,37 +448,36 @@ above is separate from this historical frozen redraw.
 
 ## Incremental publication and portability
 
-The existing public reproduction repository supplies the unchanged B0 manifest
-inside its versioned data archive, plus GPL text, dependency notices and
-hash-verifying `scripts/fetch_upstream.py`. The authorized minimal incremental
-route promotes only the original manifest bytes directly to
+The public reproduction repository supplies GPL text, dependency notices and
+hash-verifying `scripts/fetch_upstream.py`. Fixed version b7185589 preserves the
+unchanged B0 manifest inside the existing data archive and also promotes its
+original bytes directly to
 `revision_notes/B0_logs/build_environment.json`, SHA256
 `19acb1fe7b90ada0160b403c4fff0b52645b1ca2dd54db9c7cf0ab8e118128c1`.
 The file is necessary dependency-pin metadata, not a new copy of B0 raw
 observations or manuscript materials. Its existing non-program license scope is
 retained and the distributed-file list records the exact bytes.
 
-After that promotion is published and verified, a fresh checkout can run
+A checkout of that fixed version can run
 `python3 -B scripts/fetch_upstream.py --root .` directly, without extracting the
 full old archive. This creates `native_xpir/upstream/` from the fixed official
-source; it must not overwrite the archival workspace's existing tree. Until the
-incremental version is available, the older checkout still needs
-`python3 -B scripts/unpack_data.py` first. Direct promotion and fresh-checkout
-verification are pending in this draft. Preserve the pins and the
+source; it must not overwrite an existing upstream tree. Earlier historical
+versions still need `python3 -B scripts/unpack_data.py` first. Preserve the pins and the
 `experiments/core_rebuild/` nesting. No new archive or package is created, and
 existing archives and release history remain intact.
 
 The local source/analysis dependency closure, actual staged compiler/header
 environment, fresh-root finite functional gate and native-free analysis/redraw
-routes have passed the acceptance described above. Fixed-version publication and
-public fresh-checkout availability still require separate verification.
+routes have passed the recorded core acceptance and are published in b7185589.
+New presentation changes require their own numeric-preservation and public-version
+verification; the completed native and analysis gates are not rerun for this revision.
 Frozen run manifests include original absolute commands and environment paths;
 they are provenance, not executable instructions for another checkout. A release
 needs an explicit portable path map and public metadata review, while retaining
 original local evidence unchanged. Include schedules, seeds, raw observations,
 failed/unstarted statuses, accepted resource policy, source/binary identity and
 full-precision verified summaries needed by the final figures. Do not infer
-completion from this README draft.
+completion of a later revision from an older receipt.
 
 Project-owned programs use the author's existing GPL-3.0-or-later grant. The
 unchanged upstream tree is acquired separately; its original notices and known
