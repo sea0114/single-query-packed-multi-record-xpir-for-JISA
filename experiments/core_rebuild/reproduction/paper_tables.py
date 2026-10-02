@@ -173,27 +173,43 @@ def build_tables(summary: dict, cells: Cells) -> dict[str, str]:
     selected = sorted((c for c in summary["conditions"].values() if c["workload"]["study"] == "primary" and c["workload"]["ell_bits"] == 32768),
                       key=lambda c: (c["scope"] == "included", c["workload"]["alpha"]))
     require(len(selected) == 6, "Predeclared cost slice incomplete")
-    rows, index = [], 0
-    for c in selected:
+    rows = []
+    for index, c in enumerate(selected, 1):
         p = "/conditions/" + c["condition_id"]
-        for role in ("P", "R_independent"):
-            index += 1
-            values = [cells.value(filename, index, "alpha", p + "/workload/alpha"),
-                      cells.value(filename, index, "scope", p + "/scope", "Incl." if c["scope"] == "included" else "Excl."),
-                      cells.value(filename, index, "method", p + "/method_roles/" + role, ROLE_TEX[role]),
-                      cells.statistic(filename, index, "whole_group_cpu_s", p + "/absolute/" + role + "/cpu_time_ns", interval=True, seconds=True),
-                      cells.statistic(filename, index, "direct_preprocessing_s", p + "/absolute/" + role + "/preprocessing_ns", interval=True, seconds=True)]
-            rows.append(" & ".join(values) + r" \\")
-        rows.append(r"\addlinespace[3pt]")
-    caption = (r"Whole-group CPU time and directly measured preprocessing wall time for the primary slice $N=1024$, $\ell=32768$ bits. "
-               "Packed retrieval ($P$) and independently tuned repeated retrieval ($R_i$) use the same total resource allowance. "
-               "Values are seconds; brackets are approximate pointwise 95\\% whole-session percentile intervals for the median across ten within-session medians.")
-    note = ("CPU time sums user plus system time for the coordinator and retrieval processes within the task interval, "
-            "adding the preparation owner when preprocessing is included. Preprocessing wall time is measured directly "
-            "in each task; it lies inside the included task interval and outside the excluded task interval.")
-    assets[filename] = table(caption, "tab:core-costs", "rllcc",
-                            r"$\alpha$ & Scope & Method & CPU time (s) & \shortstack{Preprocessing\\wall time (s)}",
-                            rows, note, font_size=10, line_height=12, column_gap=5, array_stretch=1.12)
+        if index in (1, 4):
+            if index == 4:
+                rows.append(r"\addlinespace[6pt]")
+            rows.append(r"\multicolumn{5}{@{}l}{Preprocessing " + c["scope"] + r"} \\")
+            rows.append(r"\addlinespace[3pt]")
+        values = [cells.value(filename, index, "alpha", p + "/workload/alpha")]
+        for metric in ("cpu_time_ns", "preprocessing_ns"):
+            for role in ("P", "R_independent"):
+                pointer = p + "/absolute/" + role + "/" + metric
+                stat = resolve(summary, pointer)
+                point, low, high = [f"{v / 1e9:.3f}" for v in (stat["estimate"], *stat["CI95"])]
+                rendered = (r"\shortstack{\makebox[3em][r]{" + point
+                            + r"}\\{\fontsize{9}{10.8}\selectfont [" + low + ", " + high + "]}}")
+                values.append(cells.record(filename, index, role + "_" + metric, rendered,
+                    [pointer + "/estimate", pointer + "/CI95/0", pointer + "/CI95/1"],
+                    type="fixed_decimal", decimal_places=3, input_unit="ns", display_unit="s", divisor=1e9,
+                    interval_shown=True, scope=c["scope"], method=role, config_id=c["method_roles"][role],
+                    physical_column=len(values) + 1, point_font_pt=10, interval_font_pt=9))
+        rows.append(" & ".join(values) + r" \\")
+        if index not in (3, 6):
+            rows.append(r"\addlinespace[3pt]")
+    caption = r"CPU time and preprocessing wall time for retrieving $\alpha$ records at $N=1024$ and $\ell=32768$ bits."
+    note = (r"Entries show median estimates with approximate pointwise 95\% intervals; "
+            "Repeated denotes independently tuned repeated retrieval.")
+    assets[filename] = "\n".join([
+        r"\begin{table}[!htbp]", r"\centering", r"\caption{" + caption + "}", r"\label{tab:core-costs}",
+        r"\begingroup", r"\fontsize{10}{12}\selectfont", r"\setlength{\tabcolsep}{5pt}",
+        r"\renewcommand{\arraystretch}{1.12}",
+        r"\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}rcccc@{}}", r"\toprule",
+        r"$\alpha$ & \multicolumn{2}{c}{CPU time (s)} & \multicolumn{2}{c}{Preprocessing wall time (s)} \\",
+        r"\cmidrule(lr){2-3}\cmidrule(l){4-5}",
+        r"& Packed & Repeated & Packed & Repeated \\", r"\midrule", *rows, r"\bottomrule",
+        r"\end{tabular*}", r"\par\smallskip\noindent\parbox{\linewidth}{\raggedright " + note + "}",
+        r"\endgroup", r"\end{table}", ""])
     filename = "selected_configurations.tex"
     selected = sorted((c for c in summary["conditions"].values() if c["workload"]["study"] == "primary" and c["scope"] == "excluded"),
                       key=lambda c: (c["workload"]["alpha"], c["workload"]["ell_bits"]))
@@ -254,7 +270,7 @@ def main() -> int:
     cells = Cells(summary)
     assets = build_tables(summary, cells)
     require(len(cells.records) == len({(r["file"], r["row"], r["column"]) for r in cells.records}), "Duplicate display-cell map")
-    require(len(cells.records) == 314 and sum(len(r["sources"]) for r in cells.records) == 528,
+    require(len(cells.records) == 284 and sum(len(r["sources"]) for r in cells.records) == 498,
             "A displayed numeric cell/source pointer is missing or added")
     for record in cells.records:
         for source in record["sources"]:
@@ -271,8 +287,10 @@ def main() -> int:
                "column_gap_pt_by_file": {filename: (5 if filename == "costs.tex" else 3) for filename in assets},
                "array_stretch_by_file": {filename: (1.12 if filename == "costs.tex" else 1.08) for filename in assets},
                "visual_changes": {"costs.tex": ["10pt table and note fonts", "5pt column spacing", "1.12 array stretch",
-                                                  "CPU/preprocessing time headers and caption/note"],
+                                                  "full linewidth; metric groups with adjacent Packed/Repeated columns",
+                                                  "six data rows grouped by scope; 9pt intervals; short caption and left-aligned note"],
                                   "selected_configurations.tex": ["segment terminology in caption"]},
+               "cost_layout": {"width": "linewidth", "data_rows": 6, "columns": ["alpha", "P_cpu_time_ns", "R_independent_cpu_time_ns", "P_preprocessing_ns", "R_independent_preprocessing_ns"], "row_scopes": ["excluded"] * 3 + ["included"] * 3, "row_alpha": [2, 3, 4] * 2},
                "layout_status": "Requires final manuscript compile and page inspection; no automatic shrinking",
                "predeclared_cost_slice": {"study": "primary", "N": 1024, "ell_bits": 32768, "alpha": [2, 3, 4], "scopes": ["excluded", "included"]},
                "output_sha256": {filename: digest(output / filename) for filename in assets},

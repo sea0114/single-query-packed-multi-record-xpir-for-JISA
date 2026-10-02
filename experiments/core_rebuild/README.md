@@ -22,7 +22,8 @@ Run `core_20261001_001` has completed measurement collection:
   2,220.658 seconds. See
   [`tuning_report.json`](runs/core_20261001_001/tuning/tuning_001/tuning_report.json).
 - The frozen minimal measurement matrix: `N=1024`, 28 conditions, ten complete
-  sessions and 5,880 complete physical tasks, with no failed or unstarted tasks.
+  sessions and 5,880 complete physical tasks (5,040 measured tasks in 1,680
+  paired blocks plus 840 warmup tasks), with no failed or unstarted tasks.
   Collection took 8,605.428 seconds within the 16,200-second budget; its
   measurement lock was released. See
   [`formal_report.json`](runs/core_20261001_001/raw/formal_001/formal_report.json).
@@ -369,30 +370,44 @@ The figure closure contains 13 files: the presentation renderer, frozen
 figure JSON files. Reference PDFs are optional integrity references, not inputs
 required for plotting. Tables need six files: their renderer, summary, three
 analytical CSV files and analysis provenance. Current program SHA256 values are
-`6fda38d6a6812f8f82585b552d7f0408e5b95918afabaa228b544b9c46cc1cf3`
+`c362183d5772ca6878af53469df7a94fbcff553ee8166cb752e6368236c8814f`
 for `paper_plots.py` and
-`ae0c2b96362595448d3212cd9d8f70aa760960f2cb25a3eff82fd9edc06f04d1`
+`c01b16a370cdbd3e36d16bd47d086cd2b7e4e7fc985986a2a52aa13b02162e19`
 for `paper_tables.py`.
 
-The retrieval figure uses a common `0.95`–`1.35` baseline/packed ratio scale,
-covering every saved estimate and interval endpoint, with an explicit `1.0`
-equal-latency tick. The capacity figure labels packed/matched `L=1` and `L=2`
-regions and full-width `L=1`, with a separator between the second and third
-measured categories. This separator is a grouping aid, not another measurement.
-Only the cost table uses the larger 10 pt font and wider spacing. Its headers
-distinguish cumulative CPU time from preprocessing wall time; the other tables
-retain their earlier font and spacing, with segment terminology used consistently.
+The retrieval figure uses two horizontal panels (preprocessing excluded/included)
+with the same six workload rows and a common `0.95`-`1.35` repeated/packed ratio
+axis. It contains all 12 independently tuned repeated/packed estimates and CIs.
+The capacity figure retains four panels and all four categorical lengths per
+panel, showing packed and full-width repeated latency with CIs (32 points).
+Packed `L=1`/`L=2` regions and full-width `L=1` remain explicit. The capacity
+full-width role still reads the saved `R_independent` key; it is a fixed policy,
+not a tuned capacity result. Connecting lines do not model unmeasured lengths.
 
-Condition/method/scope identities, estimates, interval endpoints, configurations,
-block/buffer counts and all 314 table cells with 528 source pointers remain fixed.
-Axis limits/ticks, labels, captions, spacing and output PDF hashes are presentation
-metadata and may change. `numeric_preservation.json`, updated `figure_data.json`,
-`layout_mapping.json` and `paper_figure_provenance.json` record that distinction;
-the figure provenance uses schema V2. The current incremental receipt is
-[section6-readability.json](../../manifests/section6-readability.json).
-Figure temporary files and Matplotlib caches stay in the new output directory.
-Table snippets use `booktabs`; final document compilation and page acceptance
-remain separate from numeric preservation.
+The source figure matrix still has 72 points. The new role whitelist selects
+44 main-figure points without changing any estimate, interval, workload,
+configuration or scope. The coverage map accounts for the other 28 points:
+12 primary matched paired ratios and their CIs remain in the complete primary
+table; 16 capacity matched medians and paired contrasts remain in the complete
+capacity table, with their absolute-time CIs retained in the fixed summary.
+Both complete tables belong to Supplement S1; capacity absolute CIs are not
+all printed in the table. Selection is by role, never by effect size.
+
+The full-width cost table retains 24 estimates and 48 CI endpoints in six
+scope/alpha rows, with adjacent Packed/Repeated columns for each cost.
+Its 10 pt points, 9 pt intervals, two-level headings and short note are
+presentation choices. Removing repeated scope/method cells changes the table
+mapping total to 284 cells and 498 source pointers; no statistical value is
+removed. The three other tables remain unchanged.
+
+`numeric_preservation.json`, `figure_data.json`, `layout_mapping.json`, the
+`coverage_mapping.json` and `paper_figure_provenance.json` distinguish subset selection
+from the frozen full-series reference. Existing receipts describing all 72
+points in the main figures or 314/528 table mapping are historical, not current
+acceptance. Figure temporary files and Matplotlib caches stay in the new output
+directory. Table snippets use `booktabs`; final document compilation and page
+acceptance remain separate from numeric preservation. The incremental
+implementation receipt is [section6-focus-and-discussion.json](../../manifests/section6-focus-and-discussion.json).
 
 The earlier
 [`paper_reproduction_acceptance.json`](portability/paper_acceptance_001/paper_reproduction_acceptance.json)
