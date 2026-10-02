@@ -1,0 +1,51 @@
+{
+  "scope": "Cost-table medians only; full intervals retained in immutable summary",
+  "previous_public_commit": "1a68c4eb0a2040a762ce21d53d394fe78abd64d8",
+  "acceptance": {
+    "status": "PASS",
+    "medians_unchanged": 24,
+    "archived_endpoints_unchanged": 48,
+    "other_tables_byte_identical": 3,
+    "portable_input_files": 6,
+    "portable_output_parity": true,
+    "numeric_checks": {
+      "status": "PASS",
+      "conditions": 28,
+      "fullprecision_statistics_checked": 476,
+      "session_statistics_checked": 4760,
+      "configuration_buffer_rows_checked": 84,
+      "session_median_estimates_checked": 476,
+      "paired_session_ratio_medians_checked": 560,
+      "bootstrap_rerun": false,
+      "native_executions": 0,
+      "display_cells_checked": 284,
+      "mapping_sources_checked": 450,
+      "archived_interval_sources_checked": 48
+    },
+    "new_experiments": 0,
+    "bootstrap_rerun": false
+  },
+  "files": {
+    "experiments/core_rebuild/reproduction/paper_tables.py": "ce8a57e9b743c4484faa0d33fd576e4896e55f8afd05faac1c681fa3648f4311",
+    "experiments/core_rebuild/README.md": "aee3e1898d7349a92a77a2ae22ad6cd87c243a17f3f9c6c187f4b43a7a746204",
+    "README.md": "dd176610e64ba50a534a06e823726b9e46d479867916c47345e96f328b4815f4",
+    "docs/experiment-map.md": "8e03b72d6e60a9bcda3001ef96c6a1c2291bb42d60e951043f03bf7c75f4dc86"
+  },
+  "summary_sha256": "fa4f02c7ea2657c5740d531b42d15ebcbeedcc162de367a834639cb1ce6db863",
+  "table_output_sha256": {
+    "primary_results.tex": "2482898f2459bca07681ebb360bcdedb7b7ee05366445bf84aa4687061ae29c1",
+    "capacity_results.tex": "c2956672106c9c248065d009ed73866bc1ce7733209dc642a55fa598a5be1d2c",
+    "costs.tex": "210f6671a53150251b8ad39291a9377a2522947350586b9ef7e4c4590fb8dcca",
+    "selected_configurations.tex": "6169f644103880c5106e7ba33b7856a5db30096bd47a327223ac66c29388fc8f"
+  },
+  "mapping_sha256": "07b2188dbfc46c6868c4f21a2a39be5c2d47ae1e36e0010e0c2b6e81e72398b4",
+  "visible_source_pointers": 450,
+  "archived_interval_pointers": 48,
+  "publication_excludes": [
+    "manuscript",
+    "PDF",
+    "raw",
+    "results",
+    "archives"
+  ]
+}

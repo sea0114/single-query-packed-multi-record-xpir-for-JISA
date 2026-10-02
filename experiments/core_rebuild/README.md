@@ -393,12 +393,14 @@ capacity table, with their absolute-time CIs retained in the fixed summary.
 Both complete tables belong to Supplement S1; capacity absolute CIs are not
 all printed in the table. Selection is by role, never by effect size.
 
-The full-width cost table retains 24 estimates and 48 CI endpoints in six
-scope/alpha rows, with adjacent Packed/Repeated columns for each cost.
-Its 10 pt points, 9 pt intervals, two-level headings and short note are
-presentation choices. Removing repeated scope/method cells changes the table
-mapping total to 284 cells and 498 source pointers; no statistical value is
-removed. The three other tables remain unchanged.
+The full-width cost table displays 24 median estimates in six scope/alpha
+rows, with adjacent Packed/Repeated columns, two-level headings and 10 pt type.
+All 48 interval endpoints remain in `results/core_20261001_001/summary.json`,
+under `conditions/<condition_id>/absolute/{P,R_independent}/{cpu_time_ns,preprocessing_ns}/CI95`
+(in nanoseconds); select primary workloads with `ell_bits=32768`, both scopes
+and alpha 2, 3, 4. The table mapping separates 450 visible-value source pointers
+for 284 cells from 48 `archived_interval_sources`; archived endpoints are not
+claimed as displayed values. The three other tables remain unchanged.
 
 `numeric_preservation.json`, `figure_data.json`, `layout_mapping.json`, the
 `coverage_mapping.json` and `paper_figure_provenance.json` distinguish subset selection

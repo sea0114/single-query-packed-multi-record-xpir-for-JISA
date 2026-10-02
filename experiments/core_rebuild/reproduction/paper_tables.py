@@ -186,19 +186,21 @@ def build_tables(summary: dict, cells: Cells) -> dict[str, str]:
             for role in ("P", "R_independent"):
                 pointer = p + "/absolute/" + role + "/" + metric
                 stat = resolve(summary, pointer)
-                point, low, high = [f"{v / 1e9:.3f}" for v in (stat["estimate"], *stat["CI95"])]
-                rendered = (r"\shortstack{\makebox[3em][r]{" + point
-                            + r"}\\{\fontsize{9}{10.8}\selectfont [" + low + ", " + high + "]}}")
+                rendered = f"{stat['estimate'] / 1e9:.3f}"
                 values.append(cells.record(filename, index, role + "_" + metric, rendered,
-                    [pointer + "/estimate", pointer + "/CI95/0", pointer + "/CI95/1"],
+                    [pointer + "/estimate"],
                     type="fixed_decimal", decimal_places=3, input_unit="ns", display_unit="s", divisor=1e9,
-                    interval_shown=True, scope=c["scope"], method=role, config_id=c["method_roles"][role],
-                    physical_column=len(values) + 1, point_font_pt=10, interval_font_pt=9))
+                    interval_shown=False, scope=c["scope"], method=role, config_id=c["method_roles"][role],
+                    physical_column=len(values) + 1, point_font_pt=10))
+                cells.records[-1]["archived_interval_sources"] = [
+                    {"summary_pointer": pointer + "/CI95/" + str(i), "full_value": v}
+                    for i, v in enumerate(stat["CI95"])]
         rows.append(" & ".join(values) + r" \\")
         if index not in (3, 6):
             rows.append(r"\addlinespace[3pt]")
     caption = r"CPU time and preprocessing wall time for retrieving $\alpha$ records at $N=1024$ and $\ell=32768$ bits."
-    note = (r"Entries show median estimates with approximate pointwise 95\% intervals; "
+    note = (r"Entries report median estimates; complete pointwise 95\% intervals are available "
+            r"in the archived results~\cite{packed_artifact}. "
             "Repeated denotes independently tuned repeated retrieval.")
     assets[filename] = "\n".join([
         r"\begin{table}[!htbp]", r"\centering", r"\caption{" + caption + "}", r"\label{tab:core-costs}",
@@ -270,17 +272,20 @@ def main() -> int:
     cells = Cells(summary)
     assets = build_tables(summary, cells)
     require(len(cells.records) == len({(r["file"], r["row"], r["column"]) for r in cells.records}), "Duplicate display-cell map")
-    require(len(cells.records) == 284 and sum(len(r["sources"]) for r in cells.records) == 498,
+    require(len(cells.records) == 284 and sum(len(r["sources"]) for r in cells.records) == 450,
             "A displayed numeric cell/source pointer is missing or added")
     for record in cells.records:
-        for source in record["sources"]:
+        for source in record["sources"] + record.get("archived_interval_sources", []):
             require(resolve(summary, source["summary_pointer"]) == source["full_value"], "Display cell has a stale source pointer")
     require(all(not (output / filename).exists() for filename in [*assets, "mapping.json"]), "An existing display would be overwritten")
     output.mkdir(parents=True, exist_ok=True)
     for filename, contents in assets.items():
         with (output / filename).open("x", encoding="utf-8", newline="\n") as stream:
             stream.write(contents)
-    checks.update(display_cells_checked=len(cells.records), mapping_sources_checked=sum(len(r["sources"]) for r in cells.records))
+    archived = [s for r in cells.records for s in r.get("archived_interval_sources", [])]
+    require(len(archived) == 48, "An archived cost interval endpoint is missing")
+    checks.update(display_cells_checked=len(cells.records), mapping_sources_checked=sum(len(r["sources"]) for r in cells.records),
+                  archived_interval_sources_checked=len(archived))
     mapping = {"schema": "CORE_PAPER_CELL_MAPPING_V1", "run_id": summary["run_id"], "status": "PASS_NUMERIC_SOURCE_CHECKS",
                "input_sha256": before, "source_sha256": digest(Path(__file__)), "checks": checks,
                "font_size_pt_by_file": {filename: (10 if filename == "costs.tex" else 8.5) for filename in assets},
@@ -288,7 +293,7 @@ def main() -> int:
                "array_stretch_by_file": {filename: (1.12 if filename == "costs.tex" else 1.08) for filename in assets},
                "visual_changes": {"costs.tex": ["10pt table and note fonts", "5pt column spacing", "1.12 array stretch",
                                                   "full linewidth; metric groups with adjacent Packed/Repeated columns",
-                                                  "six data rows grouped by scope; 9pt intervals; short caption and left-aligned note"],
+                                                  "six data rows grouped by scope; medians only; archived interval citation in note"],
                                   "selected_configurations.tex": ["segment terminology in caption"]},
                "cost_layout": {"width": "linewidth", "data_rows": 6, "columns": ["alpha", "P_cpu_time_ns", "R_independent_cpu_time_ns", "P_preprocessing_ns", "R_independent_preprocessing_ns"], "row_scopes": ["excluded"] * 3 + ["included"] * 3, "row_alpha": [2, 3, 4] * 2},
                "layout_status": "Requires final manuscript compile and page inspection; no automatic shrinking",
