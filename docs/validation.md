@@ -1,38 +1,14 @@
-# Current and historical validation
+# Validation evidence
 
-## Current checkout and retained core acceptance
+The published experiment includes 130 complete native functional tasks, nine invalid-domain checks, and complete validation of 5,880 physical method tasks including warmups. The [functional report](../experiments/core_rebuild/runs/core_20261001_001/functional/functional_001/functional_report.json) and [formal report](../experiments/core_rebuild/runs/core_20261001_001/raw/formal_001/formal_report.json) record these outcomes.
 
-[implementation-cleanup.json](../manifests/implementation-cleanup.json) records the implementation cleanup, presentation synchronization and checks for this revision. Consult its explicit check statuses and source identities; the earlier receipts below apply only to their recorded versions. The cleanup does not itself rerun native validation, performance collection or bootstrap analysis.
+Two separate checks support reproduction:
 
-The new `core_20261001_001` formal report records 28 complete conditions and 5,880 complete physical tasks across ten sessions. Frozen analysis completed separately. The isolated `native_003` build passed the 130-task functional gate using official Ubuntu OpenSSL `3.0.13-0ubuntu3.16` headers/runtime and a fresh upstream copy verified against all 142 original B0 source pins; that new binary did not replace the measured one or repeat formal performance collection.
+- [Native portability report](../experiments/core_rebuild/portability/native_003/portability_report.json): a separately built executable passed the unit gate and all 130 functional tasks using official Ubuntu OpenSSL development/runtime packages. The 142 upstream sources matched their pins. This check used a verified source copy on the recorded host; it was not a new operating-system installation or a rerun of formal performance measurements.
+- [Analysis and redraw report](../experiments/core_rebuild/portability/acceptance_002/reproduction_acceptance.json): all six analysis outputs matched semantically and numerically; the three CSV files were byte-identical. JSON differences were limited to line endings. Frozen redraw matched its original reference outputs. Use `paper_plots.py` for the current figure presentation, and `reproduce.py redraw` for that frozen layout.
 
-Portable `analyze` and `redraw` wrappers both completed in new output roots without native execution. Redraw used no bootstrap; both generated figure PDFs and both figure/caption data files were byte-identical to the original core outputs. All six analysis outputs matched their exact parsed/numeric references: CSV bytes matched, and the three JSON files differed only in CRLF/LF line endings, with exact equality after that normalization. Existing-output and wrong-SHA refusals passed. The receipt is [reproduction_acceptance.json](../experiments/core_rebuild/portability/acceptance_002/reproduction_acceptance.json); consult [core_rebuild/README.md](../experiments/core_rebuild/README.md) for hashes and commands. These completed core checks were published with [b7185589](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/b7185589ba16d8374b9744ae39f9fd4a360ffa85); a later checkout requires its own integrity/publication verification. These checks do not certify resampling coverage, IND-CPA security, native failure probability or JISA compliance.
+Each report identifies the source and dependency version actually tested. The original source/build hashes remain in the measurement evidence. New builds record their own identities.
 
-The original postmeasurement paper-layout renderer passed from an isolated 13-file source/data closure containing no PDFs, raw observations, native code, B0 metadata or manuscript files. That version changed only the capacity subplot bottom margin from the frozen figures. Its table renderer passed from a six-file closure, and generated assets/mappings matched the then-installed assets. Neither command resampled or ran native code. [paper_reproduction_acceptance.json](../experiments/core_rebuild/portability/paper_acceptance_001/paper_reproduction_acceptance.json) is historical acceptance of that b7185589 presentation, not the current 44-point figures or 18-row configuration table.
+Run `python3 -B scripts/verify_release.py` to verify this checkout's distributed files. Current figure/table generators verify their input hashes and write numeric-preservation or source-mapping records with their outputs. The [quick start](../README.md#quick-start-reproduce-the-current-figures-and-tables) performs no native execution or resampling.
 
-Later [readability](../manifests/section6-readability.json), [focus](../manifests/section6-focus-and-discussion.json) and [interval](../manifests/section6-interval-concision.json) receipts preserve their own display lineage. The current generators retain all fixed estimates and intervals while showing 44 main-figure points and mapping the other 28 points to supporting tables/data. Current tables have 380 cells, 492 visible-value source pointers and 48 archived interval pointers. The current revision's acceptance is recorded separately in the cleanup receipt above; no old receipt is rewritten to certify these later files.
-
-## Retained historical release checks
-
-The following table and environment records describe the earlier release's isolated checks, not transcriptions of its research PASS flags. Native performance was not rerun during that earlier release validation. Its paper/page counts are historical and do not describe the current manuscript.
-
-| Check | Actual result |
-|---|---|
-| Fixed source acquisition | Official download; all 142 upstream SHA256 pins matched |
-| Arithmetic replay | 68 rows and all exact screens matched; frozen TeX byte check reported DIFFERENCE on Linux, fully explained by CRLF/LF; new content-only classifier passed without altering either file/report |
-| Historical replay | 120 cells, 360 median/CI values, six exact targets, 960,000 stored bootstrap samples; zero differences |
-| Sensitivity/capacity replay | 18 cells, 540 measured pairs, 1,404 complete tasks; entire cell CSV byte-identical |
-| Frozen display compatibility | Numerical/table checks passed; original primary PDF bytes matched on Windows |
-| New presentation | Independently regenerated semantic displays byte-matched the paper outputs |
-| Source/analysis/runner tests | 81 passed on Ubuntu/WSL2 |
-| Encoding/correctness tests | 16 + 10 passed; mpmath 1.3.0 was installed locally after an initial missing-dependency error |
-| Fresh native build | Passed; new binary/compiler/library manifest; no historical binary identity claimed |
-| Native functional-only suite | 208 tasks, 448 successful fresh-key workers, zero failures; timing fields suppressed |
-| Adapter rejection checker | Six invalid public domains rejected, one supported profile accepted |
-| Paper build and QA | Final 23-page main paper and 5-page supplement compiled in authoring and clean release trees; the earlier published core build had 24 main pages; no undefined refs/cites, duplicate labels or overfull boxes; all pages visually reviewed |
-
-`manifests/local-validation.json` records those historical results and supporting identities. Their raw native validation/build outputs remain in the local staging workspace and are not shipped as executable dependencies. Compact build and functional receipts from that release are supplied separately; the archive retains the original empirical/functional evidence.
-
-Numerical replay and native checks used Python 3.12.3 on Ubuntu 24.04.1/WSL2. WSL's base environment lacked Matplotlib and mpmath: plotting was validated with Windows Python 3.14.4 / Matplotlib 3.10.9, and pure-Python mpmath 1.3.0 was installed into a local validation directory for the ten correctness tests. No system Python was modified. These platform distinctions are retained rather than claiming an untested all-Linux plotting setup. A subsequent anonymous fresh clone of that earlier published research package passed archive extraction, checksums, all result/figure replay commands and both historical manuscript builds; see [remote-validation.json](../manifests/remote-validation.json). Those manuscript checks predate the current core evaluation and do not describe this implementation-only checkout.
-
-Pointwise interval replay validates the estimator implementation, not its coverage under dependence. Functional passes do not establish sampler equivalence or a native negligible-failure/security guarantee. Journal-specific formatting and author declarations remain unresolved.
+Finite functional checks do not establish IND-CPA security or a native failure probability. Statistical replay checks the implemented estimator, not coverage under temporal dependence. See [limitations](limitations.md).

@@ -1,7 +1,7 @@
 # License scope
 
-The author authorized project-owned program contributions in the public package under GPL-3.0-or-later. `LICENSE_SCOPE.csv` identifies each exact file, including restored archive members, with its hash and scope. Frozen program headers remain byte-identical; the path map supplies the grant without changing historical pins.
+Project-owned program contributions are distributed under GPL-3.0-or-later. [LICENSE_SCOPE.csv](../LICENSE_SCOPE.csv) identifies the exact distributed files, hashes and authorization scope. The GPL text is in [LICENSE](../LICENSE).
 
-The XPIR-derived reply overlay keeps its existing third-party notices and compatible GPL terms. Upstream XPIR source is fetched separately with notices intact; it is not relabeled. No third-party binary, compiler, system library, wheel, estimator archive, photograph or full-text paper is redistributed.
+Upstream XPIR is acquired separately with its original notices intact. It is not relabeled as project-owned code; [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) records its dependency and file-specific license boundaries. No dependency binaries, system libraries or package environments are redistributed.
 
-Manuscript, figure, documentation and dataset entries are outside the program grant, with no new blanket license. Public availability does not itself imply a permissive reuse license. The GPL text in the root LICENSE describes the granted program terms; THIRD_PARTY_NOTICES.md and the exact path table delimit its application.
+Documentation, figures, datasets and logs are outside the program grant, with no new blanket license. Public availability does not itself supply a permissive reuse license.

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite this software with the listed authors and title, recording the exact checkout Git commit. Earlier paper and submission files remain in historical Git versions, not the current implementation tree."
+message: "Please cite this software with the listed authors and title, recording the exact checkout Git commit."
 type: software
 title: "Radix-Packed Multi-Record Retrieval over an XPIR-Style RLWE Interface: Research Artifact"
 authors:
@@ -14,8 +14,3 @@ authors:
 repository-code: "https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA"
 license: GPL-3.0-or-later
 abstract: "Program license applies only to project-owned code listed in LICENSE_SCOPE.csv. Text, figures, documentation and data have separate, unspecified terms."
-
-identifiers:
-  - type: other
-    value: "bc13e9b67a5f9a8229664362be280cf81fbe43a8"
-    description: "Historical validated research package; not the version identifier of the current checkout"

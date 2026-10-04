@@ -1,11 +1,9 @@
-# Core experiment rebuild
+# Core retrieval implementation and evaluation
 
-This directory contains the new native runner and experiment pipeline for the
-2026-10-01 core evaluation. It keeps new observations separate from the older
-`artifact/`, `native_xpir/` validation campaigns and published canonical summaries.
-Its measured results apply to the recorded backend, host, workloads and resource
-policy. The experiment does not certify IND-CPA security, a concrete security
-level or a native decryption-failure probability.
+This directory contains the native runner, experiment pipeline and recorded data
+for the paper's core evaluation. Results apply to the recorded backend, host,
+workloads and resource policy. Functional tests do not certify IND-CPA security,
+a concrete security level or a native decryption-failure probability.
 
 ## Current execution status
 
@@ -32,14 +30,8 @@ The exact freeze SHA256 is
 `ad85f163d6d9a93edc2780815fdeba40e2f4495be9ea0fd275203ad65622b217`;
 the measurement ledger SHA256 is
 `d0585c402b78fa0f89f40f1b8a4cd3f8d2eb9fc8ee62593dceba235a035f6652`.
-The complete frozen summary and vector figures have been generated. Separate
-isolated native rebuilding and portable analyze/redraw acceptance have also
-passed; their evidence is described below. The completed core data and original
-presentation are published at
-[fixed version b7185589](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/b7185589ba16d8374b9744ae39f9fd4a360ffa85).
-The current checkout includes the later presentation revisions. Its reproduction
-receipt is [implementation-cleanup.json](../../manifests/implementation-cleanup.json);
-the original native and statistical acceptance remains attached to its fixed version.
+Full-precision results and figure/table generators are included. Separate native
+and analysis validation records are linked in [validation](../../docs/validation.md).
 
 The functional gate's diagnostic timestamps do not enter performance analysis.
 Pilots estimate complete execution cost; tuning chooses configurations. Neither
@@ -64,64 +56,21 @@ is pooled with later measurement observations or with historical measurements.
 | `reproduction/paper_plots.py`, `reproduction/paper_tables.py` | Accepted current paper presentation from verified fixed results; numeric and cell mappings are retained |
 | `runs/<run-id>/` | Build, provenance, functional, pilot, tuning and measurement evidence |
 
-The source checkout must retain this directory at `experiments/core_rebuild/`.
-`common.ROOT` resolves the checkout root from that layout. The builder reads
-`native_xpir/upstream/` and the unchanged
-`revision_notes/B0_logs/build_environment.json`; the latter pins all 142 upstream
-files. No old measurement overlay is substituted for the original reply source.
-The new build uses the upstream block-parallel path with `-DMULTI_THREAD`.
+Keep this directory at `experiments/core_rebuild/`: scripts resolve the checkout
+root from that nesting. The builder reads `native_xpir/upstream/` and
+`manifests/upstream-build-environment.json`, whose original bytes pin all 142
+upstream files. Run `python3 -B scripts/fetch_upstream.py --root .` from the
+checkout root to acquire them. The native runner uses the original upstream
+block-parallel reply path with `-DMULTI_THREAD`.
 
-The executable requires Linux x86-64, AES/AVX2, GNU C++/OpenMP, Boost development
-headers and thread/system libraries, GMP/GMPXX, MPFR and OpenSSL 3 development
-files. The coordinator uses `random.randbytes`, Linux `memfd`, seals, `/proc`,
-affinity and `CLOCK_MONOTONIC_RAW`; the current execution uses Python 3.12 and
-GNU C++ 13.3.0 under Ubuntu/WSL2. Other Python versions have not been validated.
-Native builds and measurement coordination use the Python standard library.
-Plotting dependencies are separate: the accepted redraw used Python 3.12.14 and
-Matplotlib 3.10.9. The local verification loaded the existing dependency directory
-read-only; it did not copy manuscript material into the portable closure.
-
-Typical Ubuntu package names are `build-essential`, `libboost-thread-dev`,
-`libboost-system-dev`, `libgmp-dev`, `libmpfr-dev` and `libssl-dev`. These are
-dependency names, not a promise that an untested package combination reproduces
-the recorded binary. The build manifest records actual flags, commands, source,
-compiler, headers and linked-library hashes.
-
-The successful current `build_002` also used
-`/var/tmp/s4f-sage/include/openssl/{sha.h,macros.h,opensslconf.h,configuration.h,opensslv.h,e_os2.h}`.
-`build.py` adds that directory only if it exists. Their six hashes match the
-preserved B0 build manifest. The historical Sage conda lock records an OpenSSL
-package, but its version/license metadata has not yet been checked against these
-installed header bytes. The present Ubuntu installation has OpenSSL runtime
-`libssl3t64:amd64 3.0.13-0ubuntu3.4`, but no `libssl-dev` or system OpenSSL header
-directories. A separate isolated build used the official Ubuntu noble-security
-`libssl-dev` and `libssl3t64` packages, both version `3.0.13-0ubuntu3.16`, extracted
-inside the workspace without system installation. The Ubuntu archive-keyring
-signature, signed index hash and both package hashes were verified before use.
-`CPLUS_INCLUDE_PATH`, `LIBRARY_PATH` and `LD_LIBRARY_PATH` selected this matching
-development/runtime pair. Actual dependency and loader readback confirmed six
-official OpenSSL headers, the staged `libcrypto.so.3`, and no consumed Sage header.
-The frozen builder's conditional fallback flag remains unchanged.
-
-The new build passed the unit gate and all 130 finite native functional tasks;
-see [`portability_report.json`](portability/native_003/portability_report.json).
-Its SHA256 is
-`7fd6d2d0a8e4baf3e339b1cce32cc1e79ee239b9ed9410d810d8deb91f3e286a`.
-It has a distinct identity from measured `build_002`, whose SHA256 remains
-`02418781d12e1b1641c4f0072d54492a02a4aacb8795db24800241bae4476724`.
-No performance tasks were rerun. This acceptance covers a fresh source
-closure on the recorded host with official workspace-staged dependencies, not a
-new operating-system installation or binary identity across machines.
-
-The isolated checkout contains nine frozen native code files, the unchanged B0
-manifest and exactly 142 original upstream files verified against its pins. The
-official XPIR codeload connection was unavailable for this check, so those 142
-files were copied from the existing original tree only after exact verification.
-Native execution in the new root did not need manuscript files, old raw data or
-the measured executable. Failed WSL download and stale-package 404 attempts were
-retained in `portability/native_001/` and `native_002/`. Dependency packages,
-headers, libraries and executables are local acceptance artifacts and are not
-publicly vendored or included in the project-owned GPL grant.
+The native environment requires Linux x86-64 with AES/AVX2, GNU C++/OpenMP,
+Boost thread/system, GMP/GMPXX, MPFR and OpenSSL 3 development files. The coordinator
+uses Python's `random.randbytes`, Linux `memfd`, seals, `/proc`, affinity and
+`CLOCK_MONOTONIC_RAW`. The recorded environment used Python 3.12 and GNU C++ 13.3.0
+under Ubuntu/WSL2. Builds and coordination use Python's standard library;
+plotting additionally uses Matplotlib 3.10.9. See [building](../../docs/building.md)
+for acquisition and dependency setup, including the measured OpenSSL fallback
+and the separately validated official Ubuntu header/runtime pair.
 
 ## Native parameters and layout
 
@@ -355,8 +304,8 @@ dependencies and confined temporary/cache paths.
 ## Redraw the current paper figures and tables
 
 This is the shortest accepted presentation route. It reads the fixed results,
-does not launch native code or bootstrap, and does not need manuscript sources,
-the B0 archive, old raw data or the measured executable. Install the plotting
+does not launch native code or bootstrap, and does not need manuscript sources or
+the measured executable. Install the plotting
 dependency before drawing figures; tables use the Python standard library only.
 Choose new output directories:
 
@@ -413,31 +362,12 @@ and actual reply-block columns, preserving all 72 configuration values.
 The complete primary/capacity tables use "same-width repeated retrieval", 10 pt
 type at full text width, inline ratios/intervals and short captions with table notes.
 Their values and intervals are unchanged, as are the cost-table bytes.
-This checkout includes the terminology, configuration-table and Supplement
-readability revisions. Isolated presentation checks also passed with Windows
-Python 3.14.4 and Matplotlib 3.10.9: both figure rasters matched at 160 dpi,
-all four table sources matched after newline normalization, and all numeric
-mapping sources matched. PDF byte identity across platforms is not required.
-The scientific data are unchanged; the earlier fixed 552da1aa version retains
-its previous presentation. The implementation-only cleanup and reproduction
-receipt is distributed at `manifests/implementation-cleanup.json`.
-
 `numeric_preservation.json`, `figure_data.json`, `layout_mapping.json`, the
 `coverage_mapping.json` and `paper_figure_provenance.json` distinguish subset selection
-from the frozen full-series reference. Existing receipts describing all 72
-points in the main figures or 314/528 table mapping are historical, not current
-acceptance. Figure temporary files and Matplotlib caches stay in the new output
-directory. Table snippets use `booktabs`, and `costs.tex` needs a bibliography
-entry with the key `packed_artifact`; final document compilation and page
-acceptance remain separate from numeric preservation. The incremental
-implementation receipt is [section6-focus-and-discussion.json](../../manifests/section6-focus-and-discussion.json).
-
-The earlier
-[`paper_reproduction_acceptance.json`](portability/paper_acceptance_001/paper_reproduction_acceptance.json)
-is historical acceptance of the margin-only renderer published in b7185589.
-Its unchanged-limit/caption and byte-identical-PDF checks apply to that version;
-it is retained alongside the frozen scientific references rather than rewritten
-to describe the current display.
+from the frozen full-series reference. Figure temporary files and Matplotlib caches stay in the new output directory.
+Table snippets use `booktabs`; `costs.tex` requires a bibliography entry with key
+`packed_artifact`. These generated snippets are outputs, not manuscript sources
+needed to run the implementation.
 
 ## Reproduce the frozen analysis or figures
 
@@ -446,7 +376,7 @@ repeat measurements. Both first verify the published freeze, measurement report 
 complete raw ledger. `analyze` copies four frozen scripts and those three inputs,
 then repeats the frozen session-level resampling. `redraw` copies two plotting
 scripts and seven verified result files; it performs no bootstrap and needs no
-native executable, B0 archive or upstream source. The verified raw ledger remains
+native executable or upstream source. The verified raw ledger remains
 necessary for the wrapper's input-integrity check, even on the redraw route.
 
 From the checkout root, choose output leaf names that do not already exist:
@@ -483,50 +413,3 @@ and incorrect freeze hashes were rejected before writes; original inputs and
 existing outputs remained unchanged. Temporary files and Matplotlib caches stayed
 inside the explicit output root. The accepted corrected paper presentation route
 above is separate from this historical frozen redraw.
-
-## Incremental publication and portability
-
-The public reproduction repository supplies GPL text, dependency notices and
-hash-verifying `scripts/fetch_upstream.py`. Fixed version b7185589 preserves the
-unchanged B0 manifest inside the existing data archive and also promotes its
-original bytes directly to
-`revision_notes/B0_logs/build_environment.json`, SHA256
-`19acb1fe7b90ada0160b403c4fff0b52645b1ca2dd54db9c7cf0ab8e118128c1`.
-The file is necessary dependency-pin metadata, not a new copy of B0 raw
-observations or manuscript materials. Its existing non-program license scope is
-retained and the distributed-file list records the exact bytes.
-
-A checkout of that fixed version can run
-`python3 -B scripts/fetch_upstream.py --root .` directly, without extracting the
-full old archive. This creates `native_xpir/upstream/` from the fixed official
-source; it must not overwrite an existing upstream tree. Earlier historical
-versions still need `python3 -B scripts/unpack_data.py` first. Preserve the pins and the
-`experiments/core_rebuild/` nesting. No new archive or package is created, and
-existing archives and release history remain intact.
-
-The local source/analysis dependency closure, actual staged compiler/header
-environment, fresh-root finite functional gate and native-free analysis/redraw
-routes have passed the recorded core acceptance and are published in b7185589.
-New presentation changes require their own numeric-preservation and public-version
-verification; the completed native and analysis gates are not rerun for this revision.
-Frozen run manifests include original absolute commands and environment paths;
-they are provenance, not executable instructions for another checkout. A release
-needs an explicit portable path map and public metadata review, while retaining
-original local evidence unchanged. Include schedules, seeds, raw observations,
-failed/unstarted statuses, accepted resource policy, source/binary identity and
-full-precision verified summaries needed by the final figures. Do not infer
-completion of a later revision from an older receipt.
-
-Project-owned programs use the author's existing GPL-3.0-or-later grant. The
-unchanged upstream tree is acquired separately; its original notices and known
-file-specific rights gaps remain. See the public repository's
-`THIRD_PARTY_NOTICES.md` and `LICENSE_SCOPE.csv`. Documentation,
-data, logs and figures are not automatically granted the program license.
-Update the release's explicit allowlist, license map and file checksums for the
-actual additions without changing scientific pins. Do not distribute system
-libraries, native executables, current manuscript/PDF or submission materials.
-
-This directory does not package, publish or remove historical materials. A later
-authorized incremental implementation update must preserve repository history,
-verify the remote fixed commit, and report publication separately from native
-validation and manuscript completion.

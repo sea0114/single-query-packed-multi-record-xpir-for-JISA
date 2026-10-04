@@ -34,7 +34,7 @@ def main():
         if not re.fullmatch(r'[A-Za-z0-9_-]+', name):
             raise ValueError('run/build identifiers must be simple leaf names')
     upstream = ROOT / 'native_xpir/upstream'
-    pin = json.loads((ROOT / 'revision_notes/B0_logs/build_environment.json').read_text())
+    pin = json.loads((ROOT / 'manifests/upstream-build-environment.json').read_text())
     pinned = pin['upstream_files']
     for name, digest in pinned.items():
         if sha(ROOT / name) != digest:

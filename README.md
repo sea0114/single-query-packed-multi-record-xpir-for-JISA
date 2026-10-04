@@ -2,7 +2,7 @@
 
 Implementation and reproducibility materials for this paper: the XPIR-based native runner, frozen experiment design and observations, full-precision results, and figure/table generators. One packed query is a selector vector containing `N` ciphertexts; radix packing recovers an ordered tuple of complete records. Correctness is conditional on integer no-wrap, and single-challenge index privacy assumes IND-CPA security of the selected symmetric-key encryption. Native tests do not establish that security premise or a native failure probability.
 
-The current evaluation is [experiments/core_rebuild/](experiments/core_rebuild/README.md). Manuscript sources, paper PDFs and submission bundles are outside the current repository tree. Earlier editorial files remain accessible in [historical commit 552da1aa](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/552da1aa2902a2a0497a60cc93537665644047ef), whose paper is an older scientific/editorial snapshot.
+The implementation and complete evaluation are in [experiments/core_rebuild/](experiments/core_rebuild/README.md). The repository contains source code, required dependency metadata, measurement data and reproduction tools.
 
 ## Quick start: reproduce the current figures and tables
 
@@ -53,15 +53,11 @@ Latency is the time for a complete retrieval task, reported separately with prep
 | Full-precision estimates and intervals | [summary.json](experiments/core_rebuild/results/core_20261001_001/summary.json), [fullprecision.csv](experiments/core_rebuild/results/core_20261001_001/fullprecision.csv) |
 | All session effects and actual layouts/buffers | [session_effects.csv](experiments/core_rebuild/results/core_20261001_001/session_effects.csv), [configurations_and_buffers.csv](experiments/core_rebuild/results/core_20261001_001/configurations_and_buffers.csv) |
 | Complete result and dependency map | [experiment-map.md](docs/experiment-map.md), [data-layout.md](docs/data-layout.md) |
-| Validation lineage and this cleanup | [validation.md](docs/validation.md), [implementation-cleanup.json](manifests/implementation-cleanup.json) |
+| Native and analysis validation | [validation.md](docs/validation.md) |
 
 The two current figures contain 44 of the 72 source points; the other 28 same-width comparison points remain in the complete supporting tables and fixed data. Selection is by method role, never effect size. The four table mappings contain 380 cells, 492 visible-value source pointers and 48 archived interval pointers. The selected-configuration table shows 18 method rows and all 72 configuration values.
 
 The weaker results remain visible: four 32,768-bit records with preprocessing included have a primary paired ratio of 1.017 and interval `[0.983, 1.037]`; in the fixed-capacity study, two-record packing is slower than full-width repetition at the two tested lengths beyond its one-block boundary when preprocessing is included. Results apply to the measured backend, host, workloads and resources. Ciphertext-buffer bytes are neither network traffic nor peak memory. See [limitations.md](docs/limitations.md).
-
-## Historical evidence
-
-Earlier measurements remain separate from the core run. Their raw observations, schedules, failure records, summaries and required replay sources are retained, including the existing [data archive](data/research-data-20260926.tar.gz) and its [member manifest](manifests/data-archives.json). [Historical redraw and replay instructions](docs/data-layout.md#retained-historical-data-and-replay-routes) describe archive extraction and optional recomputation. Historical validation receipts describe their original versions; they do not certify a later checkout or the current manuscript.
 
 ## Citation and licenses
 
