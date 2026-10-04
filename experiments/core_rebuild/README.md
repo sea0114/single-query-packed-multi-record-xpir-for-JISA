@@ -37,8 +37,9 @@ isolated native rebuilding and portable analyze/redraw acceptance have also
 passed; their evidence is described below. The completed core data and original
 presentation are published at
 [fixed version b7185589](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/b7185589ba16d8374b9744ae39f9fd4a360ffa85).
-The current readability revision changes presentation only; its new fixed public
-version and paper page acceptance are separate steps.
+The current checkout includes the later presentation revisions. Its reproduction
+receipt is [implementation-cleanup.json](../../manifests/implementation-cleanup.json);
+the original native and statistical acceptance remains attached to its fixed version.
 
 The functional gate's diagnostic timestamps do not enter performance analysis.
 Pilots estimate complete execution cost; tuning chooses configurations. Neither
@@ -296,7 +297,7 @@ stages are:
 
 ```bash
 run_id=core_local_001
-core=experiments/core_rebuild
+core="$(pwd)/experiments/core_rebuild"
 python3 -B "$core/scripts/preflight.py" --out "$core/runs/$run_id/provenance/preflight.json"
 python3 -B "$core/scripts/resource_probe.py" --run-dir "$core/runs/$run_id"
 python3 -B "$core/scripts/build.py" --run-id "$run_id" --build-id build_001
@@ -334,7 +335,13 @@ python3 -B "$core/scripts/formal.py" --freeze "$core/runs/$run_id/provenance/fre
 
 The resource and source review records required by `freeze.py` must also be
 present and verified; command success in earlier stages does not substitute for
-those reviews. Pilot/tuning/measurement budgets are 1,800/3,600/16,200 seconds. If the
+those reviews. In the new run, a reviewer must create
+`functional/source_gate.json`, `functional/runner_source_review.json` and
+`provenance/citation_verification.json` from that run's actual source and evidence.
+The frozen run supplies schema/examples, not reusable PASS decisions. This is
+a gated research campaign, not an unattended one-command benchmark. Keep
+`manifest` absolute as above because the frozen script records it relative to
+the checkout root. Pilot/tuning/measurement budgets are 1,800/3,600/16,200 seconds. If the
 minimum permitted matrix cannot fit, freezing records that author decision is
 required and measurement collection must not start. `scripts/analyze.py` exposes the
 estimation API; `scripts/summarize.py --run-id RUN --freeze-sha256 SHA` is the
@@ -372,7 +379,7 @@ required for plotting. Tables need six files: their renderer, summary, three
 analytical CSV files and analysis provenance. Current program SHA256 values are
 `c362183d5772ca6878af53469df7a94fbcff553ee8166cb752e6368236c8814f`
 for `paper_plots.py` and
-`c01b16a370cdbd3e36d16bd47d086cd2b7e4e7fc985986a2a52aa13b02162e19`
+`56ed35ae18935951a9f0c09513c4242f0b77e955666ef07018bbc28b4e459d83`
 for `paper_tables.py`.
 
 The retrieval figure uses two horizontal panels (preprocessing excluded/included)
@@ -398,16 +405,30 @@ rows, with adjacent Packed/Repeated columns, two-level headings and 10 pt type.
 All 48 interval endpoints remain in `results/core_20261001_001/summary.json`,
 under `conditions/<condition_id>/absolute/{P,R_independent}/{cpu_time_ns,preprocessing_ns}/CI95`
 (in nanoseconds); select primary workloads with `ell_bits=32768`, both scopes
-and alpha 2, 3, 4. The table mapping separates 450 visible-value source pointers
-for 284 cells from 48 `archived_interval_sources`; archived endpoints are not
-claimed as displayed values. The three other tables remain unchanged.
+and alpha 2, 3, 4. The current table mapping separates 492 visible-value source
+pointers for 380 cells from 48 `archived_interval_sources`; archived endpoints
+are not claimed as displayed values. The selected-configuration table now has
+18 method rows with separate segment-width, concurrency, configured reply-thread
+and actual reply-block columns, preserving all 72 configuration values.
+The complete primary/capacity tables use "same-width repeated retrieval", 10 pt
+type at full text width, inline ratios/intervals and short captions with table notes.
+Their values and intervals are unchanged, as are the cost-table bytes.
+This checkout includes the terminology, configuration-table and Supplement
+readability revisions. Isolated presentation checks also passed with Windows
+Python 3.14.4 and Matplotlib 3.10.9: both figure rasters matched at 160 dpi,
+all four table sources matched after newline normalization, and all numeric
+mapping sources matched. PDF byte identity across platforms is not required.
+The scientific data are unchanged; the earlier fixed 552da1aa version retains
+its previous presentation. The implementation-only cleanup and reproduction
+receipt is distributed at `manifests/implementation-cleanup.json`.
 
 `numeric_preservation.json`, `figure_data.json`, `layout_mapping.json`, the
 `coverage_mapping.json` and `paper_figure_provenance.json` distinguish subset selection
 from the frozen full-series reference. Existing receipts describing all 72
 points in the main figures or 314/528 table mapping are historical, not current
 acceptance. Figure temporary files and Matplotlib caches stay in the new output
-directory. Table snippets use `booktabs`; final document compilation and page
+directory. Table snippets use `booktabs`, and `costs.tex` needs a bibliography
+entry with the key `packed_artifact`; final document compilation and page
 acceptance remain separate from numeric preservation. The incremental
 implementation receipt is [section6-focus-and-discussion.json](../../manifests/section6-focus-and-discussion.json).
 

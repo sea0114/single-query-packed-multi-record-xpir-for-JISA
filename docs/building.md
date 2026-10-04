@@ -46,13 +46,6 @@ The checked adapter requires `1 <= w <= 56` and exact radix weights `K_r=2^(rho_
 
 The [frontier summary](../revision_notes/B2_A_feasibility_frontier.json) records exact weights, width status, rejection reasons and evidence paths. The historical two-record profiles each passed 82 encrypted cases (246 total); each of the three supported additional profiles passed ten. The separate capacity-focused functional suite passed 208 tasks with 448 fresh-key processes, including ordered and reversed targets, equal contents at distinct indices, maximum digits, partial-segment and full-block padding, and lengths 32767/32768/32769 across J=n. [data-layout.md](data-layout.md) indexes those archived results. These finite checks are distinct from paired latency trials and do not estimate a native failure probability.
 
-## Historical editorial build
+## Historical editorial snapshot
 
-The existing `paper/` and `submission/` trees are frozen historical artifacts. They contain an earlier security argument and display arrangement, not the current manuscript. For inspecting that historical snapshot only, use TeX Live 2026 with `elsarticle` v3.5, latexmk and BibTeX:
-
-```bash
-cd paper
-latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build/local_01 main.tex supplement.tex
-```
-
-The output directory must be new and separate from sources. The existing `submission/` tree is a historical flattened source bundle; it is not updated or offered as a current submission package. Its provisional numerical Elsevier bibliography and historical checks are not proof of current JISA format compliance or completed author declarations. No current manuscript/PDF is distributed by this update.
+The current checkout contains implementation and reproduction materials. Earlier [paper sources](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/552da1aa2902a2a0497a60cc93537665644047ef/paper) and [submission materials](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/552da1aa2902a2a0497a60cc93537665644047ef/submission) remain in historical commit 552da1aa. They contain an older security argument and display arrangement, and are not the current manuscript. Historical build records do not establish current JISA compliance or completed author declarations. No manuscript build is needed for the current native, analysis or figure/table reproduction routes.

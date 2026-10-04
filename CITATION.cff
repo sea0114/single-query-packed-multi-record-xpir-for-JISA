@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite this software with the listed authors and title, recording the exact checkout Git commit. Historical paper files are not the current manuscript."
+message: "Please cite this software with the listed authors and title, recording the exact checkout Git commit. Earlier paper and submission files remain in historical Git versions, not the current implementation tree."
 type: software
 title: "Radix-Packed Multi-Record Retrieval over an XPIR-Style RLWE Interface: Research Artifact"
 authors:

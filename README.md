@@ -1,56 +1,72 @@
-# Radix-packed multi-record retrieval
+# Single-Query Multi-Record Private Information Retrieval via Radix Packing
 
-This repository provides the implementation and evidence for **Radix-Packed Multi-Record Retrieval over an XPIR-Style RLWE Interface**. The manuscript specifies radix-packed ordered recovery, conditional integer no-wrap correctness, and single-challenge index privacy assuming IND-CPA security of the selected symmetric-key encryption. Native tests do not establish that security premise or a native failure probability.
+Implementation and reproducibility materials for this paper: the XPIR-based native runner, frozen experiment design and observations, full-precision results, and figure/table generators. One packed query is a selector vector containing `N` ciphertexts; radix packing recovers an ordered tuple of complete records. Correctness is conditional on integer no-wrap, and single-challenge index privacy assumes IND-CPA security of the selected symmetric-key encryption. Native tests do not establish that security premise or a native failure probability.
 
-Start with the [result and evidence map](docs/experiment-map.md), [measurement definitions](docs/methodology.md), and [limits](docs/limitations.md). Files under [paper/](paper/) and [submission/](submission/) are **frozen historical editorial artifacts**: they predate the current IND-CPA revision and result presentation. They are retained for provenance; this update does not distribute the current manuscript or submission materials.
+The current evaluation is [experiments/core_rebuild/](experiments/core_rebuild/README.md). Manuscript sources, paper PDFs and submission bundles are outside the current repository tree. Earlier editorial files remain accessible in [historical commit 552da1aa](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/552da1aa2902a2a0497a60cc93537665644047ef), whose paper is an older scientific/editorial snapshot.
 
-## Current evaluation: core rebuild
+## Quick start: reproduce the current figures and tables
 
-Start with [experiments/core_rebuild/README.md](experiments/core_rebuild/README.md) for the current implementation, exact reproduction commands and acceptance records. Run `core_20261001_001` contains 28 complete conditions at `N=1024`, ten sessions and 5,880 complete physical tasks. It compares packed retrieval with matched-layout and independently configured concurrent repeated retrieval, using shared preprocessing and a common four-CPU guest affinity pool. The [full-precision summary](experiments/core_rebuild/results/core_20261001_001/summary.json), [all session effects](experiments/core_rebuild/results/core_20261001_001/session_effects.csv) and [configuration/buffer data](experiments/core_rebuild/results/core_20261001_001/configurations_and_buffers.csv) preserve the complete matrix, including weaker results. Historical measurements are kept separate.
-
-The portable `analyze` route recomputes the frozen session estimator in an explicitly new output root; `redraw` retains the frozen presentation. For the current paper displays, use the core README's summary-only `paper_plots.py` and `paper_tables.py` commands with unused output directories. The current retrieval figure shows all 12 independently tuned repeated/packed ratios with intervals; the capacity figure shows packed and full-width repeated retrieval in all 16 conditions (32 points). A complete coverage map accounts for all 72 original points as 44 main-figure points and 28 matched-layout points retained in the complete supporting tables and fixed data. Selection is by method role, never effect size. The full-width cost table displays all 24 median estimates; its 48 interval endpoints remain in the fixed summary, with exact CPU/preprocessing field paths in the core README. Its mapping separates 284 cells and 450 visible-value pointers from 48 archived interval pointers. Neither paper renderer bootstraps or runs native code.
-
-The core README records isolated checks and dependency identities; [section6-focus-and-discussion.json](manifests/section6-focus-and-discussion.json) records this incremental presentation revision. The earlier [readability receipt](manifests/section6-readability.json) describes its historical full-series presentation. Current manuscript/PDF/submission materials are excluded from this update; remote publication acceptance is a separate step.
-
-## Historical quick start: redraw earlier results
-
-Native code and archive extraction are unnecessary for this route. Use Python with the pinned analysis dependencies in a virtual environment of your choice:
+This route reads published results and performs consistency checks; it does not run native code, collect measurements or bootstrap. Use Python 3.12 and the pinned plotting dependencies. The commands below use a Linux/WSL shell and a virtual environment; tables alone need only the Python standard library.
 
 ```bash
 git clone https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA.git
 cd single-query-packed-multi-record-xpir-for-JISA
+python3 -m venv .venv
+. .venv/bin/activate
 python3 -m pip install -r requirements-analysis.txt
 python3 -B scripts/verify_release.py
-python3 -B scripts/present_results.py --root . --out results_redraw_01
+
+core=experiments/core_rebuild
+results="$core/results/core_20261001_001"
+mkdir -p "$core/portability"
+python3 -B "$core/reproduction/paper_plots.py" --results "$results" \
+  --summary-sha256 fa4f02c7ea2657c5740d531b42d15ebcbeedcc162de367a834639cb1ce6db863 \
+  --out "$core/portability/paper_figures_local_001"
+python3 -B "$core/reproduction/paper_tables.py" --results "$results" \
+  --summary-sha256 fa4f02c7ea2657c5740d531b42d15ebcbeedcc162de367a834639cb1ce6db863 \
+  --out "$core/portability/paper_tables_local_001"
 ```
 
-Choose an unused output directory. The presentation command reads included canonical summaries and CSV; it does not resample, run native code, combine experiments, or change estimators. It creates the earlier 32-condition primary figure, 24-condition retrieval-count figure, complete 96-condition primary figure, supporting tables, full-precision display data, and an input/output hash manifest. All plot caches remain in the output directory. The [experiment map](docs/experiment-map.md) lists inputs and outputs; historical `paper/generated/` is not the comparison target for that earlier presentation revision.
+Choose unused output leaf directories. Figure outputs include `retrieval_performance.pdf`, `capacity_tradeoff.pdf`, exact plot data and preservation/coverage receipts. Table outputs include `primary_results.tex`, `capacity_results.tex`, `costs.tex`, `selected_configurations.tex` and `mapping.json`. Plotting needs no LaTeX; embedding the table snippets requires `booktabs`, plus a `packed_artifact` bibliography entry for `costs.tex`. Figure caches and temporary files stay under the requested output directory. PDF bytes can vary across rendering environments even when numeric data agree.
 
-That earlier presentation was checked against unchanged canonical summaries, separately from historical exact statistical replay and native functional validation. Matplotlib 3.10.9 and mpmath 1.3.0 are pinned in `requirements-analysis.txt`; historical exact replay used Python 3.12.3. Other interpreter/rendering environments may produce different PDF bytes without changing coordinates.
+## Choose a reproduction route
 
-## Historical archive: inspect or replay earlier observations
+| Goal | Entry point | Work performed |
+|---|---|---|
+| Redraw the current paper displays | Quick start above; [core presentation instructions](experiments/core_rebuild/README.md#redraw-the-current-paper-figures-and-tables) | Read fixed results and verify numeric sources; no bootstrap or native execution |
+| Recompute the frozen analysis | [core analysis instructions](experiments/core_rebuild/README.md#reproduce-the-frozen-analysis-or-figures), `reproduce.py analyze` | Verify/copy the frozen design and raw ledger, then repeat the original session estimator and 10,000 bootstrap draws in a new output root |
+| Build and collect new measurements | [core build and campaign instructions](experiments/core_rebuild/README.md#commands-for-a-new-independent-run), [dependencies](docs/building.md) | Acquire pinned upstream source, compile, validate, probe resources, pilot, tune and freeze a new independent campaign before measurement |
 
-The existing [versioned data archive](data/research-data-20260926.tar.gz) is 28,726,108 bytes, SHA256 `056cbacbf6c622d42c76aae8951ac9003792c4c4c07699dec3560e9c89373a05`. It restores 230,566,247 bytes of exact data/reference evidence. [data-archives.json](manifests/data-archives.json) records every member. Extraction validates paths and bytes before writing and refuses different existing files:
+The separate `reproduce.py redraw` route reproduces the original frozen figure layout; use `paper_plots.py` for the current presentation. New measurements require their own run/build identities, reviewed gates, idle-host/resource policies and raw/results directories. They must not overwrite or pool with the published observations. No native executable or system library is bundled.
 
-```bash
-python3 -B scripts/unpack_data.py
-python3 -B scripts/verify_release.py --data
-```
+## What supports the paper
 
-Use the separate [historical replay instructions](docs/data-layout.md#historical-statistical-replay) only when statistical recomputation is wanted. That route includes the original bootstrap calculation and is not part of the shortest redraw route or this update's verification. Raw observations, schedules/seeds, failed-attempt rules and scientific hash pins remain unchanged. A checksum verifies integrity, not scientific validity.
+Run `core_20261001_001` contains 12 primary and 16 fixed-capacity conditions at `N=1024`, ten successive sessions, and 5,880 complete physical tasks including warmups. Packed retrieval is compared primarily with independently tuned repeated retrieval; same-width repeated retrieval is an auxiliary comparison. The capacity study uses fixed policies and a full-width 24-bit repeated baseline. All methods share one four-CPU guest affinity pool and the sampled 8 GiB monitoring/abort policy, with one prepared database shared by each method's queries.
 
-## Historical native build and functional validation
+Latency is the time for a complete retrieval task, reported separately with preprocessing included and excluded. The latency contrast is the median across ten sessions of each session's median of six paired `baseline/packed` ratios. Pointwise intervals resample whole sessions. [Measurement definitions](docs/methodology.md) and the [core README](experiments/core_rebuild/README.md) specify timing boundaries, configuration selection, seeds, failure rules and CPU/buffer accounting.
 
-[building.md](docs/building.md) documents pinned upstream acquisition, Linux dependencies, build writes, API limits and functional-only commands. Source is distributed without old native executables or system libraries. The upstream fetcher verifies all 142 original file hashes. Building writes shared derived sources and a current-build selector, so use an independent checkout. Rebuilt binaries have new identities and do not inherit historical benchmark pins.
+| Evidence | Location |
+|---|---|
+| Native implementation and pipeline | [core source, scripts and tests](experiments/core_rebuild/README.md#files-and-dependencies) |
+| Frozen design, schedule, seeds and source/build pins | [freeze.json](experiments/core_rebuild/runs/core_20261001_001/provenance/freeze.json) |
+| Physical observations and completeness report | [observations.jsonl](experiments/core_rebuild/runs/core_20261001_001/raw/formal_001/observations.jsonl), [formal_report.json](experiments/core_rebuild/runs/core_20261001_001/raw/formal_001/formal_report.json) |
+| Full-precision estimates and intervals | [summary.json](experiments/core_rebuild/results/core_20261001_001/summary.json), [fullprecision.csv](experiments/core_rebuild/results/core_20261001_001/fullprecision.csv) |
+| All session effects and actual layouts/buffers | [session_effects.csv](experiments/core_rebuild/results/core_20261001_001/session_effects.csv), [configurations_and_buffers.csv](experiments/core_rebuild/results/core_20261001_001/configurations_and_buffers.csv) |
+| Complete result and dependency map | [experiment-map.md](docs/experiment-map.md), [data-layout.md](docs/data-layout.md) |
+| Validation lineage and this cleanup | [validation.md](docs/validation.md), [implementation-cleanup.json](manifests/implementation-cleanup.json) |
 
-The earlier release validation used Ubuntu 24.04.1 under WSL2, GNU C++ 13.3.0 and one arithmetic thread per retrieval process. It passed 208 functional tasks / 448 fresh-key processes, six rejection checks, 81 source/analysis/runner tests and 26 encoding/correctness tests. These are **historical results**, documented in [validation.md](docs/validation.md); none was rerun for this presentation update. Functional validation collects no performance observations.
+The two current figures contain 44 of the 72 source points; the other 28 same-width comparison points remain in the complete supporting tables and fixed data. Selection is by method role, never effect size. The four table mappings contain 380 cells, 492 visible-value source pointers and 48 archived interval pointers. The selected-configuration table shows 18 method rows and all 72 configuration values.
 
-New measurements are separate. They require an idle host checked for competing workloads, explicit CPU/memory policies, new build/configuration/run identities, a frozen schedule and failure/stopping rules, and independent raw/results directories. Do not disable old pins, overwrite observations, pool new samples with these experiments, or choose sample counts from observed effects. The earlier presentation update collected no new measurements; the separately identified core rebuild above does.
+The weaker results remain visible: four 32,768-bit records with preprocessing included have a primary paired ratio of 1.017 and interval `[0.983, 1.037]`; in the fixed-capacity study, two-record packing is slower than full-width repetition at the two tested lengths beyond its one-block boundary when preprocessing is included. Results apply to the measured backend, host, workloads and resources. Ciphertext-buffer bytes are neither network traffic nor peak memory. See [limitations.md](docs/limitations.md).
 
-## Citation, availability and licenses
+## Historical evidence
 
-Use the authors and software title in [CITATION.cff](CITATION.cff), and record the exact checkout with `git rev-parse HEAD`. A fixed URL has the form `https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/<actual-commit>`; substitute the commit used. The earlier [validated research package](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/bc13e9b67a5f9a8229664362be280cf81fbe43a8) remains a historical version, not a claim that it contains this update. Repository history, visibility and archived evidence are preserved.
+Earlier measurements remain separate from the core run. Their raw observations, schedules, failure records, summaries and required replay sources are retained, including the existing [data archive](data/research-data-20260926.tar.gz) and its [member manifest](manifests/data-archives.json). [Historical redraw and replay instructions](docs/data-layout.md#retained-historical-data-and-replay-routes) describe archive extraction and optional recomputation. Historical validation receipts describe their original versions; they do not certify a later checkout or the current manuscript.
 
-Project-owned programs listed in [LICENSE_SCOPE.csv](LICENSE_SCOPE.csv) use **GPL-3.0-or-later**, with the GPLv3 text in [LICENSE](LICENSE). Third-party terms and original notices remain intact; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Text, figures, documentation and data are **not automatically covered by the code license**, and no separate blanket license is granted here. Rights-uncertain upstream files are obtained separately from the official source and are not redistributed as project-owned code.
+## Citation and licenses
+
+Use the authors and software title in [CITATION.cff](CITATION.cff), and record the exact checkout with `git rev-parse HEAD`. The software retains its established artifact title; the paper's current title is shown above. Cite a fixed commit URL for the version actually used.
+
+Project-owned programs listed in [LICENSE_SCOPE.csv](LICENSE_SCOPE.csv) use **GPL-3.0-or-later**, with the GPLv3 text in [LICENSE](LICENSE). Third-party notices remain intact; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Text, figures, documentation and data are **not automatically covered by the code license**, and no separate blanket license is granted here. Rights-uncertain upstream files are acquired separately from the official source.
 
 Report reproducibility problems through Issues with the commit, platform, command, output path and error summary. Do not attach credentials, secret keys or confidential datasets.

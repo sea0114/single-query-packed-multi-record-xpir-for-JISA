@@ -127,7 +127,7 @@ class Cells:
         stat = resolve(self.summary, pointer)
         divisor = 1e9 if seconds else 1
         point = f"{stat['estimate'] / divisor:.3f}"
-        rendered = (r"\shortstack{" + point + r"\\{[" + f"{stat['CI95'][0] / divisor:.3f},{stat['CI95'][1] / divisor:.3f}" + "]}}") if interval else point
+        rendered = (point + "~[" + f"{stat['CI95'][0] / divisor:.3f},{stat['CI95'][1] / divisor:.3f}" + "]") if interval else point
         return self.record(filename, row, column, rendered,
                            [pointer + "/estimate"] + ([pointer + "/CI95/0", pointer + "/CI95/1"] if interval else []),
                            type="fixed_decimal", decimal_places=3, input_unit="ns" if seconds else "ratio",
@@ -135,13 +135,13 @@ class Cells:
 
 
 def table(caption: str, label: str, columns: str, header: str, rows: list[str], note: str = "", *,
-          font_size=8.5, line_height=10.2, column_gap=3, array_stretch=1.08) -> str:
+          font_size=10, line_height=12, column_gap=3, array_stretch=1.08) -> str:
     return "\n".join([r"\begin{table}[!htbp]", r"\centering", r"\caption{" + caption + "}", r"\label{" + label + "}",
                        r"\begingroup", rf"\fontsize{{{font_size}}}{{{line_height}}}\selectfont",
                        rf"\setlength{{\tabcolsep}}{{{column_gap}pt}}",
-                       rf"\renewcommand{{\arraystretch}}{{{array_stretch}}}", r"\begin{tabular}{@{}" + columns + "@{}}", r"\toprule",
-                       header + r" \\", r"\midrule", *rows, r"\bottomrule", r"\end{tabular}", r"\endgroup",
-                       (rf"\par\smallskip{{\fontsize{{{font_size}}}{{{line_height}}}\selectfont " + note + "}") if note else "", r"\end{table}", ""])
+                       rf"\renewcommand{{\arraystretch}}{{{array_stretch}}}", r"\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}" + columns + "@{}}", r"\toprule",
+                       header + r" \\", r"\midrule", *rows, r"\bottomrule", r"\end{tabular*}",
+                       (r"\par\smallskip\noindent\parbox{\linewidth}{\raggedright " + note + "}") if note else "", r"\endgroup", r"\end{table}", ""])
 
 
 def build_tables(summary: dict, cells: Cells) -> dict[str, str]:
@@ -163,10 +163,12 @@ def build_tables(summary: dict, cells: Cells) -> dict[str, str]:
             if index < len(selected) and selected[index - 1]["scope"] != selected[index]["scope"]:
                 rows.append(r"\addlinespace[4pt]")
         last_role = "$R_i$" if study == "primary" else "$R_f$"
-        caption = ("Complete primary retrieval results at $N=1024$: independently tuned repeated retrieval ($R_i$) and matched-layout repeated retrieval ($R_m$) versus packed retrieval ($P$)."
-                   if study == "primary" else "Complete fixed-policy capacity results at $N=1024$: matched-layout repeated retrieval ($R_m$) and full-width repeated retrieval ($R_f$) versus packed retrieval ($P$).")
-        caption += " Absolute task latencies are in seconds. Brackets are pointwise 95\\% whole-session percentile intervals for paired latency ratios; values above one favor packed retrieval."
-        note = "Each estimate is the median across ten within-session medians. Complete absolute-time intervals and all ten session effects accompany the fixed data."
+        caption = ("Complete primary retrieval results at $N=1024$." if study == "primary"
+                   else "Complete fixed-policy capacity results at $N=1024$.")
+        note = (r"$P$: packed; $R_m$: same-width repeated; "
+                + (r"$R_i$: independently tuned repeated. " if study == "primary"
+                   else r"$R_f$: full-width repeated (24-bit segments). ")
+                + r"Excl./Incl.: preprocessing excluded/included. Brackets give approximate pointwise 95\% whole-session percentile intervals for paired latency ratios; ratios above one favor packing.")
         ratio_header = "$R_i/P$" if study == "primary" else "$R_f/P$"
         assets[filename] = table(caption, label, "rrlrrrcc", r"$\alpha$ & $\ell$ (bits) & Scope & $P$ (s) & $R_m$ (s) & " + last_role + " (s) & $R_m/P$ & " + ratio_header, rows, note)
     filename = "costs.tex"
@@ -221,18 +223,35 @@ def build_tables(summary: dict, cells: Cells) -> dict[str, str]:
         cid, p = c["condition_id"], "/conditions/" + c["condition_id"]
         other = summary["conditions"][cid.removesuffix("_excluded") + "_included"]
         require(c["method_roles"] == other["method_roles"] and c["configurations"] == other["configurations"], "Configuration changed between timing scopes")
-        values = [cells.value(filename, index, "alpha", p + "/workload/alpha"),
-                  cells.value(filename, index, "ell_bits", p + "/workload/ell_bits", f"{c['workload']['ell_bits']:,}")]
-        for role in ROLES:
+        for offset, role in enumerate(ROLES):
+            row = 3 * (index - 1) + offset + 1
+            values = [cells.value(filename, row, "alpha", p + "/workload/alpha"),
+                      cells.value(filename, row, "ell_bits", p + "/workload/ell_bits", f"{c['workload']['ell_bits']:,}"),
+                      cells.value(filename, row, "method", p + "/method_roles/" + role,
+                                  {"P": "$P$", "R_matched": "$R_m$", "R_independent": "$R_i$"}[role])]
             cfgid = c["method_roles"][role]
             pointers = [p + "/configurations/" + cfgid + "/" + field for field in ("rho_0", "concurrency", "threads")]
             pointers += [p + "/accounting/" + role + "/actual_L"]
-            values.append(cells.record(filename, index, role + "_configuration", "/".join(str(resolve(summary, ptr)) for ptr in pointers), pointers,
-                                       type="exact_tuple", order=["rho_0", "concurrency", "threads_per_query", "actual_L"]))
-        rows.append(" & ".join(values) + r" \\")
-    caption = r"Selected primary configurations at $N=1024$, shared by both timing scopes. Each entry is $\rho_0/c/u/L$: segment width, concurrent query processes, reply threads per query and actual blocks per query."
-    note = "Selection uses separate preprocessing-excluded tuning trials. $P$ is packed, $R_m$ has matched layout, and $R_i$ is independently tuned. Actual $L$ is verified from ciphertext-buffer readback."
-    assets[filename] = table(caption, "tab:core-selected-configurations", "rrccc", r"$\alpha$ & $\ell$ (bits) & $P$: $\rho_0/c/u/L$ & $R_m$: $\rho_0/c/u/L$ & $R_i$: $\rho_0/c/u/L$", rows, note)
+            for column, ptr in zip(("rho_0", "concurrency", "threads_per_query", "actual_L"), pointers):
+                values.append(cells.record(filename, row, column, str(resolve(summary, ptr)), [ptr],
+                                           type="exact_integer", method=role, config_id=cfgid,
+                                           physical_column=len(values) + 1))
+            rows.append(" & ".join(values) + r" \\")
+        if index < len(selected):
+            rows.append(r"\addlinespace[5pt]")
+    caption = r"Selected primary configurations at $N=1024$, shared by both preprocessing timing scopes."
+    note = (r"$P$: packed; $R_m$: same-width repeated; $R_i$: independently tuned repeated. "
+            r"Reply threads are configured limits; a one-block reply cannot use block parallelism. "
+            r"Reply blocks are verified from ciphertext-buffer readback.")
+    assets[filename] = "\n".join([
+        r"\begin{table}[!ht]", r"\centering", r"\caption{" + caption + "}", r"\label{tab:core-selected-configurations}",
+        r"\begingroup", r"\fontsize{10}{12}\selectfont", r"\setlength{\tabcolsep}{3pt}",
+        r"\renewcommand{\arraystretch}{1.08}",
+        r"\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}rrccccc@{}}", r"\toprule",
+        r"$\alpha$ & \shortstack{Record length\\(bits)} & Method & \shortstack{Segment width\\(bits)} & \shortstack{Concurrent\\queries} & \shortstack{Reply threads\\per query} & \shortstack{Reply blocks\\per query} \\",
+        r"\midrule", *rows, r"\bottomrule", r"\end{tabular*}",
+        r"\par\smallskip\noindent\parbox{\linewidth}{\raggedright " + note + "}",
+        r"\endgroup", r"\end{table}", ""])
     return assets
 
 
@@ -272,7 +291,7 @@ def main() -> int:
     cells = Cells(summary)
     assets = build_tables(summary, cells)
     require(len(cells.records) == len({(r["file"], r["row"], r["column"]) for r in cells.records}), "Duplicate display-cell map")
-    require(len(cells.records) == 284 and sum(len(r["sources"]) for r in cells.records) == 450,
+    require(len(cells.records) == 380 and sum(len(r["sources"]) for r in cells.records) == 492,
             "A displayed numeric cell/source pointer is missing or added")
     for record in cells.records:
         for source in record["sources"] + record.get("archived_interval_sources", []):
@@ -288,13 +307,15 @@ def main() -> int:
                   archived_interval_sources_checked=len(archived))
     mapping = {"schema": "CORE_PAPER_CELL_MAPPING_V1", "run_id": summary["run_id"], "status": "PASS_NUMERIC_SOURCE_CHECKS",
                "input_sha256": before, "source_sha256": digest(Path(__file__)), "checks": checks,
-               "font_size_pt_by_file": {filename: (10 if filename == "costs.tex" else 8.5) for filename in assets},
+               "font_size_pt_by_file": {filename: 10 for filename in assets},
                "column_gap_pt_by_file": {filename: (5 if filename == "costs.tex" else 3) for filename in assets},
                "array_stretch_by_file": {filename: (1.12 if filename == "costs.tex" else 1.08) for filename in assets},
                "visual_changes": {"costs.tex": ["10pt table and note fonts", "5pt column spacing", "1.12 array stretch",
                                                   "full linewidth; metric groups with adjacent Packed/Repeated columns",
                                                   "six data rows grouped by scope; medians only; archived interval citation in note"],
-                                  "selected_configurations.tex": ["segment terminology in caption"]},
+                                  "selected_configurations.tex": ["18 method rows grouped by workload", "seven explicit columns; 72 configuration values", "full linewidth; 10pt font; configured reply-thread limits"],
+                                  "primary_results.tex": ["full linewidth; 10pt table and note fonts", "inline ratio and interval", "short caption; method and interval definitions in note"],
+                                  "capacity_results.tex": ["full linewidth; 10pt table and note fonts", "inline ratio and interval", "short caption; method and interval definitions in note"]},
                "cost_layout": {"width": "linewidth", "data_rows": 6, "columns": ["alpha", "P_cpu_time_ns", "R_independent_cpu_time_ns", "P_preprocessing_ns", "R_independent_preprocessing_ns"], "row_scopes": ["excluded"] * 3 + ["included"] * 3, "row_alpha": [2, 3, 4] * 2},
                "layout_status": "Requires final manuscript compile and page inspection; no automatic shrinking",
                "predeclared_cost_slice": {"study": "primary", "N": 1024, "ell_bits": 32768, "alpha": [2, 3, 4], "scopes": ["excluded", "included"]},

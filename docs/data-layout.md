@@ -23,7 +23,7 @@ The shortest redraw route reads only these already included full-precision refer
 - `revision_notes/B2_A_feasibility_frontier.json`
 - `artifact/results/B3_descriptive_v1/B3_cells.csv`
 
-[experiment-map.md](experiment-map.md) gives the earlier fields, conditions and output names. `scripts/present_results.py --root . --out UNUSED` reads those files without archive extraction, native code or bootstrap. All generated figures, tables, JSON, manifests and caches go into the unused output tree; `paper/generated/` remains historical evidence.
+[experiment-map.md](experiment-map.md) gives the earlier fields, conditions and output names. With the pinned analysis dependencies installed, `scripts/present_results.py --root . --out UNUSED` reads those files without archive extraction, native code or bootstrap. All generated figures, tables, JSON, manifests and caches go into the unused output tree. The former `paper/generated/` outputs remain in [historical commit 552da1aa](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/552da1aa2902a2a0497a60cc93537665644047ef/paper/generated); the replay's required frozen source/reference inputs remain in the current checkout.
 
 ## Archived observations and detailed checks
 
@@ -55,6 +55,6 @@ Frozen analysis sources/references remain required even if the current paper no 
 
 ## Historical and platform-specific material
 
-Existing `paper/`, `submission/`, `presentation_check/`, `release_validation/` and older validation manifests are historical artifacts; they are retained rather than refreshed as part of the current manuscript. Current manuscript/PDF/submission materials are excluded from this incremental update. Native executables, system libraries and rights-uncertain upstream sources are not newly redistributed.
+The `paper/` and `submission/` editorial trees have been removed from the current implementation checkout and remain in [historical commit 552da1aa](https://github.com/sea0114/single-query-packed-multi-record-xpir-for-JISA/tree/552da1aa2902a2a0497a60cc93537665644047ef). Retained `presentation_check/`, `release_validation/` and older validation manifests describe their original versions. The cleanup preserves required replay inputs, original data/archive hashes and Git history; it does not refresh old scientific or editorial acceptance. Current manuscript/PDF/submission materials, native executables, system libraries and rights-uncertain upstream sources are excluded.
 
 Optional old host-specific preflight inputs are not all distributed. Passing replay does not make a future campaign portable. Native build has a separate [independent-checkout route](building.md); it writes shared derived source and build selectors. New performance work requires a new configuration/identity and must not bypass original pins. `artifact/README.md` and `artifact/SUPPLEMENTARY_METHODS.md` are preserved historical provenance; the repository root README and these active docs are the current entry points.
